@@ -58,10 +58,15 @@
 
 " <SETTINGS> {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Enable filetype plugins
+   " Enable filetype plugins
     filetype plugin on
     filetype indent on
-  
+
+   filetype css if *.sass
+    augroup filetypedetect
+      au BufRead,BufNewFile *.sass set filetype=css
+    augroup END
+
   " jk as a ESC
     imap jk <esc>
 
@@ -517,7 +522,7 @@
     imap   <C-y>d   <plug>(emmet-balance-tag-inward)
     imap   <C-y>D   <plug>(emmet-balance-tag-outward)
     imap   <C-y>n   <plug>(emmet-move-next)
-    imap   <C-y>N   <plug>(emmet-move-prev)
+    imap   <C-y>b   <plug>(emmet-move-prev)
     imap   <C-y>i   <plug>(emmet-image-size)
     imap   <C-y>/   <plug>(emmet-toggle-comment)
     imap   <C-y>j   <plug>(emmet-split-join-tag)
