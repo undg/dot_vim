@@ -66,8 +66,8 @@
     filetype indent on
 
    " filetype css if *.sass
-    " au BufRead,BufNewFile *.scss set filetype=scss.css
-    " au BufRead,BufNewFile *.sass set filetype=sass.css
+    au BufRead,BufNewFile *.scss set filetype=scss.css
+    au BufRead,BufNewFile *.sass set filetype=sass.css
 
   " jk as a ESC
     imap jk <esc>
