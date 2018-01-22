@@ -11,9 +11,9 @@
   " Productivity
   Plug 'terryma/vim-multiple-cursors'
 
-  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeTabsToggle' } " <plNERDTREE>
-  Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeTabsToggle' }
-  Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeTabsToggle' }
+  Plug 'scrooloose/nerdtree' " <plNERDTREE>
+  Plug 'jistr/vim-nerdtree-tabs'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
 
   Plug 'vim-scripts/YankRing.vim' "<plYankRing>
   Plug 'ctrlpvim/ctrlp.vim' " <plCTRLP>
@@ -43,11 +43,14 @@
     Plug 'mattn/emmet-vim' " <plemmet>
 
   " SYNTAX
-  Plug 'jelera/vim-javascript-syntax'
+    Plug 'jelera/vim-javascript-syntax'
   " Plug 'ervandew/supertab'
   " AUTO ADD CLOUSING
     Plug 'Raimondi/delimitMate' "<plDELIMITMATE>
     Plug 'tmhedberg/matchit'
+    " sass and cs3 syntax
+    Plug 'cakebaker/scss-syntax.vim'
+    Plug 'hail2u/vim-css3-syntax'
 
   " Theme
   Plug 'morhetz/gruvbox'
@@ -62,10 +65,9 @@
     filetype plugin on
     filetype indent on
 
-   filetype css if *.sass
-    augroup filetypedetect
-      au BufRead,BufNewFile *.sass set filetype=css
-    augroup END
+   " filetype css if *.sass
+    " au BufRead,BufNewFile *.scss set filetype=scss.css
+    " au BufRead,BufNewFile *.sass set filetype=sass.css
 
   " jk as a ESC
     imap jk <esc>
@@ -348,13 +350,32 @@
 
   " <plNERDTREE> {{{
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " If is open toggle
+      function! ToogleFocusCloseNerdTree()
+        " open
+        if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+          " focus
+          if bufname("") == (t:NERDTreeBufName)
+            " silent NERDTreeTabsClose
+            call feedkeys("\<c-w>\<c-p>")
+
+          "not focus
+          else
+            silent NERDTreeTabsFind
+          endif
+        "close
+        else
+          silent NERDTreeTabsToggle
+        endif
+      endfunction
+
     " F2 to open/close sidebar with folders/files
-      map <F2> :NERDTreeTabsToggle<CR>
+      map <silent> <F2> :call ToogleFocusCloseNerdTree()<cr>
 
     " If vim opened empty open NERDTree
-    if empty(argv())
-        au VimEnter * NERDTree
-    endif
+      if empty(argv())
+        au VimEnter * NERDTreeTabsOpen
+      endif
 
     " Show hidden files
       " let NERDTreeShowHidden=1
@@ -366,7 +387,7 @@
       " let g:nerdtree_tabs_open_on_console_startup = 0
 
     " Do not open NERDTree if vim starts in diff mode (1)
-      " let g:nerdtree_tabs_no_startup_for_diff = 1
+      let g:nerdtree_tabs_no_startup_for_diff = 1
 
     " On startup - focus NERDTree when opening a directory, focus the file if editing a specified file. When set to `2`, always focus file after startup. (1)
       " let g:nerdtree_tabs_smart_startup_focus = 1
@@ -378,16 +399,16 @@
       " let g:nerdtree_tabs_meaningful_tab_names = 1
 
     " Close current tab if there is only one window in it and it's NERDTree (1)
-      " let g:nerdtree_tabs_autoclose = 1
+      let g:nerdtree_tabs_autoclose = 1
 
     " Synchronize view of all NERDTree windows (scroll and cursor position) (1)
-      " let g:nerdtree_tabs_synchronize_view = 1
+      let g:nerdtree_tabs_synchronize_view = 1
 
     " Synchronize focus when switching tabs (focus NERDTree after tab switch if and only if it was focused before tab switch) (1)
-      " let g:nerdtree_tabs_synchronize_focus = 1
+      let g:nerdtree_tabs_synchronize_focus = 1
 
     " When switching into a tab, make sure that focus is on the file window, not in the NERDTree window. (Note that this can get annoying if you use NERDTree's feature "open in new tab silently", as you will lose focus on the NERDTree.) (0)
-      " let g:nerdtree_tabs_focus_on_files = 0
+      let g:nerdtree_tabs_focus_on_files = 0
       
     " NERDTree-git-plugin
       let g:NERDTreeIndicatorMapCustom = {
