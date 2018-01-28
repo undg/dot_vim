@@ -357,32 +357,35 @@
 
   " <plNERDTREE> {{{
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " If is open toggle
+    " If NEDRTree is open toggle
       function! ToogleFocusCloseNerdTree()
-        " open
         if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-          " focus
+          " IF NERD TREE IS OPEN
+          
           if bufname("") == (t:NERDTreeBufName)
-            " silent NERDTreeTabsClose
+            " IF CURSOR IS IN NERD TREE WINDOW
             call feedkeys("\<c-w>\<c-p>")
 
-          "not focus
           else
-            silent NERDTreeTabsFind
+            " IF CURSOR IS IN WIDOW
+            silent NERDTreeFocus
           endif
-        "close
+
         else
-          silent NERDTreeTabsToggle
+          " IF NERD TREE IS CLOSED
+          silent NERDTreeTabsOpen
+          silent NERDTreeTabsFind
         endif
       endfunction
 
     " F2 to open/close sidebar with folders/files
       map <silent> <F2> :call ToogleFocusCloseNerdTree()<cr>
+      map <silent> <leader><F2> :NERDTreeTabsClose<cr>
 
     " If vim opened empty open NERDTree
-      if empty(argv())
-        au VimEnter * NERDTreeTabsOpen
-      endif
+      " if empty(argv())
+      "   au VimEnter * NERDTreeTabsOpen
+      " endif
 
     " Show hidden files
       " let NERDTreeShowHidden=1
