@@ -58,6 +58,12 @@
     " sass and cs3 syntax
     Plug 'cakebaker/scss-syntax.vim'
     Plug 'hail2u/vim-css3-syntax'
+    " show indent vertical lines
+    " Plug 'Yggdroot/indentLine' 
+    Plug 'nathanaelkane/vim-indent-guides' "<plVIMINDENTGUIDES>
+    " HELP YOU READ COMPLEX CODE BY SHOWING DIFF LEVEL OF PARENTHESES IN DIFF COLOR !!
+    Plug 'luochen1990/rainbow'
+      let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
   " Theme
   Plug 'morhetz/gruvbox'
@@ -68,11 +74,11 @@
 
 " <SETTINGS> {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-   " Enable filetype plugins
+ " Enable filetype plugins
     filetype plugin on
     filetype indent on
 
-   " filetype css if *.sass
+ " filetype css if *.sass
     au BufRead,BufNewFile *.scss set filetype=scss.css
     au BufRead,BufNewFile *.sass set filetype=sass.css
 
@@ -189,6 +195,7 @@
   " 1 tab == 2 spaces
     set shiftwidth=2
     set tabstop=2
+    set expandtab
 
   " Linebreak on 500 characters
     set lbr
@@ -353,11 +360,11 @@
 
     " Zoom the runner pane (use <bind-key> z to restore runner pane)
     map <Leader>rz :call VimuxZoomRunner()<CR>
-  " }}}
+    " }}}
 
   " <plNERDTREE> {{{
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " If NEDRTree is open toggle
+    " If NEDRTree is open toggle focus
       function! ToogleFocusCloseNerdTree()
         if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
           " IF NERD TREE IS OPEN
@@ -433,30 +440,29 @@
       \ 'Ignored'   : '☒',
       \ "Unknown"   : "?"
       \ }
-  " }}}
+    " }}}
 
   " <plCTRLP> {{{
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  let g:ctrlp_open_new_file = 't'
-  let g:ctrlp_map = '<c-p>'
-  let g:ctrlp_cmd = 'CtrlP'
-  let g:ctrlp_working_path_mode = 'ra'
-  let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|tmp|node_modules|dist)$',
-  \ 'file': '\v\.(exe|so|dll|swp|zip|vim)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-  " }}}
+    let g:ctrlp_open_new_file = 't'
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
+    let g:ctrlp_working_path_mode = 'ra'
+    let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/](\.git|tmp|node_modules|dist)$',
+    \ 'file': '\v\.(exe|so|dll|swp|zip|vim)$',
+    \ 'link': 'some_bad_symbolic_links',
+    \ }
+    " }}}
 
   "<plYankRing> {{{
     nnoremap <silent> <F10> :YRShow<CR> 
     let g:yankring_replace_n_pkey = '<A-p>'
     let g:yankring_replace_n_nkey = '<A-n>'
-  "}}}
+    "}}}
   
   " <plYOUCOMPLETEME AUTOCOMPLETE> {{{
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
     " use python2
       let g:ycm_server_python_interpreter = '/usr/bin/python2'
       
@@ -473,7 +479,7 @@
     " The former line ensures that the autocomplete window goes away when you’re done with it, and the latter defines a shortcut for goto definition.
       " let g:ycm_autoclose_preview_window_after_completion=1
       " map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-  " }}}
+    " }}}
 
   " <plGITGUTTER> {{{
     " KEY MAPPINGS gitgutter {{{
@@ -539,11 +545,11 @@
   
   " <plTABLE> {{{
     map <silent> <leader>tb :TableModeToggle<CR> 
-  " }}}
+    " }}}
   
   "<plDELIMITMATE> {{{
     let delimitMate_expand_cr=1
-  "}}}
+    "}}}
   
   " Plug 'mattn/emmet-vim' " <plemmet> {{{
     let g:emmet_html5 = 0
@@ -562,6 +568,33 @@
     imap   <C-y>A   <plug>(emmet-anchorize-summary)
     imap   <C-y>m   <plug>(emmet-merge-lines)
     imap   <C-y>c   <plug>(emmet-code-pretty)
+    " }}}
+    
+   "<plVIMINDENTGUIDES> {{{
+    let g:indent_guides_enable_on_vim_startup = 1
+    let g:indent_guides_start_level = 1
+    let g:indent_guides_guide_size = 1
+    " }}}
+ 
+  " <plINDENTLINE> {{{
+    " DISABLE / ENABLE
+      " let g:indentLine_setColors = 0
+
+    " ¦ ┆ │ ⎸ ▏ ║
+      " let g:indentLine_char = '║'
+    " Vim
+      " let g:indentLine_color_term = 109
+
+    " GVim
+      " let g:indentLine_color_gui = '#A4E57E'
+
+    " none X terminal
+      " let g:indentLine_color_tty_light = 7 " (default: 4)
+      " let g:indentLine_color_dark = 1 " (default: 2)
+
+    " Background (Vim, GVim)
+      " let g:indentLine_bgcolor_term = 202
+      " let g:indentLine_bgcolor_gui = '#FF5F00'
+    " }}}
   " }}}
 
-" }}}
