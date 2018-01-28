@@ -3,31 +3,39 @@
   call plug#begin('~/.vim/plugged')
 
   " DOWNLOAD VIM-PLUG IN CASE OF FRESH START
-    if empty(glob('~/.vim/autoload/plug.vim'))
-      silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    endif
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
 
-  Plug 'tpope/vim-sensible' " vim-plug plugin manager
+  Plug 'tpope/vim-sensible'
 
   " GIT PLUGINS
   Plug 'tpope/vim-fugitive'
-  Plug 'airblade/vim-gitgutter' " <plGITGUTTER> git dif in gutter(column line number)
+  " git dif in gutter(column line number)
+  Plug 'airblade/vim-gitgutter' 
+  source ~/.vim/rc/plug/vim-gitgutter.vim
 
   " Productivity
   Plug 'terryma/vim-multiple-cursors'
 
-  Plug 'scrooloose/nerdtree' " <plNERDTREE>
+  " FILE MANAGERS
+  Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  source ~/.vim/rc/plug/nerdtree.vim
+  Plug 'ctrlpvim/ctrlp.vim'
+  source ~/.vim/rc/plug/ctrlp.vim
 
-  Plug 'vim-scripts/YankRing.vim' "<plYankRing>
-  Plug 'ctrlpvim/ctrlp.vim' " <plCTRLP>
+  Plug 'vim-scripts/YankRing.vim'
+  source ~/.vim/rc/plug/yankring.vim
 
   " YCM is instaled globaly for arch from aur
-  " Plug 'Valloric/YouCompleteMe' " <plYOUCOMPLETEME>
-  Plug 'w0rp/ale' "linting
+  " Plug 'Valloric/YouCompleteMe'
+  source ~/.vim/rc/plug/youcompleteme.vim
+  "linting
+  Plug 'w0rp/ale'
 
   Plug 'chrisbra/Colorizer', { 'on': 'ColorToogle' }
   Plug 'blindFS/vim-colorpicker'
@@ -35,36 +43,43 @@
 
   Plug 'tpope/vim-commentary'
   Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-  Plug 'tmhedberg/SimpylFold' " <plSIMPLYFOLD>
-  Plug 'dhruvasagar/vim-table-mode' " <plTABLE-MODE>
+  Plug 'tmhedberg/SimpylFold'
+  source ~/.vim/rc/plug/simplyfold.vim
+  Plug 'dhruvasagar/vim-table-mode'
+  source ~/.vim/rc/plug/vim-table-mode.vim
 
-  Plug 'christoomey/vim-tmux-navigator' " <plTMUXNAVIGATOR>
-  Plug 'benmills/vimux' " <plVIMUX>
+  Plug 'christoomey/vim-tmux-navigator'
+  source ~/.vim/rc/plug/vim-tmux-navigator.vim
+  Plug 'benmills/vimux'
+  source ~/.vim/rc/plug/vimux.vim
   Plug 'blueyed/vim-diminactive'
 
-  Plug 'terryma/vim-expand-region' " <plEXPANDREGION>
+  Plug 'terryma/vim-expand-region'
+  source ~/.vim/rc/plug/vim-expand-region.vim
 
   Plug 'djoshea/vim-autoread'
 
-  " html plugins
-    Plug 'mattn/emmet-vim' " <plemmet>
+  " HTML PLUGINS
+  Plug 'mattn/emmet-vim'
+  source ~/.vim/rc/plug/emmet-vim.vim
 
   " SYNTAX
     Plug 'jelera/vim-javascript-syntax'
   " Plug 'ervandew/supertab'
   " AUTO ADD CLOUSING
-    Plug 'Raimondi/delimitMate' "<plDELIMITMATE>
+    Plug 'Raimondi/delimitMate'
+    source ~/.vim/rc/plug/delimate.vim
     Plug 'tmhedberg/matchit'
     " sass and cs3 syntax
     Plug 'cakebaker/scss-syntax.vim'
     Plug 'hail2u/vim-css3-syntax'
     " show indent vertical lines
     " Plug 'Yggdroot/indentLine' 
-    Plug 'nathanaelkane/vim-indent-guides' "<plVIMINDENTGUIDES>
-    " HELP YOU READ COMPLEX CODE BY SHOWING DIFF LEVEL OF PARENTHESES IN DIFF COLOR !!
+    " PARENTHESES IN DIFF COLOR !!
     Plug 'luochen1990/rainbow'
-      let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
-
+    " SHOW INDENTATION
+    Plug 'nathanaelkane/vim-indent-guides'
+    source ~/.vim/rc/plug/vim-indent-guides.vim
   " Theme
   Plug 'morhetz/gruvbox'
   " Plug 'altercation/vim-colors-solarized'
@@ -252,9 +267,6 @@
   " Enable folding with the spacebar
     nnoremap <Leader>f za
 
-  " Want to see the docstrings for folded code?
-    let g:SimpylFold_docstring_preview=1 " <plSIMPLYFOLD>
-
   " Add a bit extra margin to the left
     set foldcolumn=5
 
@@ -332,269 +344,3 @@
   " fulscreen window
     nnoremap <leader>z :tabnew %<CR>
 " }}}
-
-" <PLUGINS SETTINGS> {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " <plVIMUX RUN COMMAND IN TMUX PANE> {{{
-  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " map <f8> :call VimuxRunCommand("clear; python3 -i " . bufname("%"))<CR>
-    map <f9> :call VimuxRunCommand("./" . bufname("%"))<CR>
-
-    " Run the current file with rspec
-    map <Leader>rb :call VimuxRunCommand("rspec " . bufname("%"))<CR>
-
-    " Prompt for a command to run
-    map <Leader>r :VimuxPromptCommand<CR>
-
-    " Run last command executed by VimuxRunCommand
-    map <Leader>rr :VimuxRunLastCommand<CR>
-
-    " Inspect runner pane
-    map <Leader>ri :VimuxInspectRunner<CR>
-
-    " Close vim tmux runner opened by VimuxRunCommand
-    map <Leader>rq :VimuxCloseRunner<CR>
-
-    " Interrupt any command running in the runner pane
-    map <Leader>rx :VimuxInterruptRunner<CR>
-
-    " Zoom the runner pane (use <bind-key> z to restore runner pane)
-    map <Leader>rz :call VimuxZoomRunner()<CR>
-    " }}}
-
-  " <plNERDTREE> {{{
-  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " If NEDRTree is open toggle focus
-      function! ToogleFocusCloseNerdTree()
-        if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-          " IF NERD TREE IS OPEN
-          
-          if bufname("") == (t:NERDTreeBufName)
-            " IF CURSOR IS IN NERD TREE WINDOW
-            call feedkeys("\<c-w>\<c-p>")
-
-          else
-            " IF CURSOR IS IN WIDOW
-            silent NERDTreeFocus
-          endif
-
-        else
-          " IF NERD TREE IS CLOSED
-          silent NERDTreeTabsOpen
-          silent NERDTreeTabsFind
-        endif
-      endfunction
-
-    " F2 to open/close sidebar with folders/files
-      map <silent> <F2> :call ToogleFocusCloseNerdTree()<cr>
-      map <silent> <leader><F2> :NERDTreeTabsClose<cr>
-
-    " If vim opened empty open NERDTree
-      " if empty(argv())
-      "   au VimEnter * NERDTreeTabsOpen
-      " endif
-
-    " Show hidden files
-      " let NERDTreeShowHidden=1
-
-    " Open NERDTree on gvim/macvim startup (1)
-      " let g:nerdtree_tabs_open_on_gui_startup = 1
-
-    " Open NERDTree on console vim startup (0)
-      " let g:nerdtree_tabs_open_on_console_startup = 0
-
-    " Do not open NERDTree if vim starts in diff mode (1)
-      let g:nerdtree_tabs_no_startup_for_diff = 1
-
-    " On startup - focus NERDTree when opening a directory, focus the file if editing a specified file. When set to `2`, always focus file after startup. (1)
-      " let g:nerdtree_tabs_smart_startup_focus = 1
-
-    " Open NERDTree on new tab creation (if NERDTree was globally opened by :NERDTreeTabsToggle) (1)
-      " let g:nerdtree_tabs_open_on_new_tab = 1
-
-    " Unfocus NERDTree when leaving a tab for descriptive tab names (1)
-      " let g:nerdtree_tabs_meaningful_tab_names = 1
-
-    " Close current tab if there is only one window in it and it's NERDTree (1)
-      let g:nerdtree_tabs_autoclose = 1
-
-    " Synchronize view of all NERDTree windows (scroll and cursor position) (1)
-      let g:nerdtree_tabs_synchronize_view = 1
-
-    " Synchronize focus when switching tabs (focus NERDTree after tab switch if and only if it was focused before tab switch) (1)
-      let g:nerdtree_tabs_synchronize_focus = 1
-
-    " When switching into a tab, make sure that focus is on the file window, not in the NERDTree window. (Note that this can get annoying if you use NERDTree's feature "open in new tab silently", as you will lose focus on the NERDTree.) (0)
-      let g:nerdtree_tabs_focus_on_files = 0
-      
-    " NERDTree-git-plugin
-      let g:NERDTreeIndicatorMapCustom = {
-      \ "Modified"  : "✹",
-      \ "Staged"    : "✚",
-      \ "Untracked" : "✭",
-      \ "Renamed"   : "➜",
-      \ "Unmerged"  : "═",
-      \ "Deleted"   : "✖",
-      \ "Dirty"     : "✗",
-      \ "Clean"     : "✔︎",
-      \ 'Ignored'   : '☒',
-      \ "Unknown"   : "?"
-      \ }
-    " }}}
-
-  " <plCTRLP> {{{
-  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    let g:ctrlp_open_new_file = 't'
-    let g:ctrlp_map = '<c-p>'
-    let g:ctrlp_cmd = 'CtrlP'
-    let g:ctrlp_working_path_mode = 'ra'
-    let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.git|tmp|node_modules|dist)$',
-    \ 'file': '\v\.(exe|so|dll|swp|zip|vim)$',
-    \ 'link': 'some_bad_symbolic_links',
-    \ }
-    " }}}
-
-  "<plYankRing> {{{
-    nnoremap <silent> <F10> :YRShow<CR> 
-    let g:yankring_replace_n_pkey = '<A-p>'
-    let g:yankring_replace_n_nkey = '<A-n>'
-    "}}}
-  
-  " <plYOUCOMPLETEME AUTOCOMPLETE> {{{
-  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " use python2
-      let g:ycm_server_python_interpreter = '/usr/bin/python2'
-      
-    " ctrl+space function signature
-      let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] }
-
-    " auto close previev window
-      let g:ycm_autoclose_preview_window_after_completion=1
-
-      " let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-      " let g:ycm_server_keep_logfiles = 1
-      " let g:ycm_server_log_level = 'debug'
-     
-    " The former line ensures that the autocomplete window goes away when you’re done with it, and the latter defines a shortcut for goto definition.
-      " let g:ycm_autoclose_preview_window_after_completion=1
-      " map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-    " }}}
-
-  " <plGITGUTTER> {{{
-    " KEY MAPPINGS gitgutter {{{
-      " To change the hunk-jumping maps (defaults shown):
-        nmap [h <Plug>GitGutterPrevHunk
-        nmap ]h <Plug>GitGutterNextHunk
-
-      " To change the hunk-staging/undoing/previewing maps (defaults shown):
-        nmap <Leader>hs <Plug>GitGutterStageHunk
-        nmap <Leader>hu <Plug>GitGutterUndoHunk
-        nmap <Leader>hp <Plug>GitGutterPreviewHunk
-
-      " To change the hunk text object maps (defaults shown):
-        " omap ic <Plug>GitGutterTextObjectInnerPending
-        " omap ac <Plug>GitGutterTextObjectOuterPending
-
-      " To change the hunk text object maps (defaults shown):
-        " xmap ic <Plug>GitGutterTextObjectInnerVisual
-        " xmap ac <Plug>GitGutterTextObjectOuterVisual
-
-      " To disable all key maps:
-        " let g:gitgutter_map_keys = 0
-    " }}}
-
-    " SETTINGS gitgutter {{{
-      " To use a custom grep command
-      " To use a custom invocation for grep, use this:
-        " let g:gitgutter_grep_command = 'grep --color=never -e'
-
-      " To turn off vim-gitgutter by default
-        " let g:gitgutter_enabled = 0
-
-      " To turn off signs by default
-      " Note that the sign column will still be present if you have line highlighting switched on.
-        " let g:gitgutter_signs = 0
-
-      " To turn on line highlighting by default
-        " let g:gitgutter_highlight_lines = 1
-
-      " To stop vim-gitgutter running in realtime
-        " let g:gitgutter_realtime = 0
-
-      " To stop vim-gitgutter running eagerly
-        " let g:gitgutter_eager = 0
-
-      " To turn off asynchronous updates
-      " By default diffs are run asynchronously.  To run diffs synchronously
-      " instead:
-        " let g:gitgutter_async = 0
-    " }}}
-
-  " }}}
-
-  " <plEXPANDREGION> {{{
-    vmap v <Plug>(expand_region_expand)
-    vmap <C-v> <Plug>(expand_region_shrink)
-  " }}}
-  
-  " <plTMUXNAVIGATOR> {{{
-    " This will execute the update command on leaving vim to a tmux pane. Default is Zero
-      let g:tmux_navigator_save_on_switch = 1
-  " }}}
-  
-  " <plTABLE> {{{
-    map <silent> <leader>tb :TableModeToggle<CR> 
-    " }}}
-  
-  "<plDELIMITMATE> {{{
-    let delimitMate_expand_cr=1
-    "}}}
-  
-  " Plug 'mattn/emmet-vim' " <plemmet> {{{
-    let g:emmet_html5 = 0
-    imap   <C-y>,   <plug>(emmet-expand-abbr)
-    imap   <C-y>;   <plug>(emmet-expand-word)
-    imap   <C-y>u   <plug>(emmet-update-tag)
-    imap   <C-y>d   <plug>(emmet-balance-tag-inward)
-    imap   <C-y>D   <plug>(emmet-balance-tag-outward)
-    imap   <C-y>n   <plug>(emmet-move-next)
-    imap   <C-y>b   <plug>(emmet-move-prev)
-    imap   <C-y>i   <plug>(emmet-image-size)
-    imap   <C-y>/   <plug>(emmet-toggle-comment)
-    imap   <C-y>j   <plug>(emmet-split-join-tag)
-    imap   <C-y>k   <plug>(emmet-remove-tag)
-    imap   <C-y>a   <plug>(emmet-anchorize-url)
-    imap   <C-y>A   <plug>(emmet-anchorize-summary)
-    imap   <C-y>m   <plug>(emmet-merge-lines)
-    imap   <C-y>c   <plug>(emmet-code-pretty)
-    " }}}
-    
-   "<plVIMINDENTGUIDES> {{{
-    let g:indent_guides_enable_on_vim_startup = 1
-    let g:indent_guides_start_level = 1
-    let g:indent_guides_guide_size = 1
-    " }}}
- 
-  " <plINDENTLINE> {{{
-    " DISABLE / ENABLE
-      " let g:indentLine_setColors = 0
-
-    " ¦ ┆ │ ⎸ ▏ ║
-      " let g:indentLine_char = '║'
-    " Vim
-      " let g:indentLine_color_term = 109
-
-    " GVim
-      " let g:indentLine_color_gui = '#A4E57E'
-
-    " none X terminal
-      " let g:indentLine_color_tty_light = 7 " (default: 4)
-      " let g:indentLine_color_dark = 1 " (default: 2)
-
-    " Background (Vim, GVim)
-      " let g:indentLine_bgcolor_term = 202
-      " let g:indentLine_bgcolor_gui = '#FF5F00'
-    " }}}
-  " }}}
-
