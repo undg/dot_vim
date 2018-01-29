@@ -17,9 +17,6 @@
   Plug 'airblade/vim-gitgutter' 
   source ~/.vim/rc/plug/vim-gitgutter.vim
 
-  " Productivity
-  Plug 'terryma/vim-multiple-cursors'
-
   " FILE MANAGERS
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
@@ -28,8 +25,12 @@
   Plug 'ctrlpvim/ctrlp.vim'
   source ~/.vim/rc/plug/ctrlp.vim
 
+  " Productivity
+  Plug 'terryma/vim-multiple-cursors'
+
   Plug 'vim-scripts/YankRing.vim'
   source ~/.vim/rc/plug/yankring.vim
+  Plug 'simeji/winresizer' " Ctrl+e
 
   " YCM is instaled globaly for arch from aur
   " Plug 'Valloric/YouCompleteMe'
@@ -59,7 +60,7 @@
 
   Plug 'djoshea/vim-autoread'
 
-  " HTML PLUGINS
+  " HTML
   Plug 'mattn/emmet-vim'
   source ~/.vim/rc/plug/emmet-vim.vim
 
@@ -99,6 +100,9 @@
 
   " jk as a ESC
     imap jk <esc>
+
+  " Change leader key
+    let mapleader=","
 
   " Auto save on focus lost
     au FocusLost * :wa
@@ -147,9 +151,6 @@
 
   " Use Unix as the standard file type
     set ffs=unix,dos,mac
-
-  " Change leader key
-    let mapleader=","
 
   " fugitive Gdiff verticaly
   set diffopt+=vertical
