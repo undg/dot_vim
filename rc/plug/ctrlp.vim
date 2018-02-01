@@ -1,5 +1,5 @@
 let g:ctrlp_open_new_file = 't'
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<leader>.'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
   " 'c' - the directory of the current file.

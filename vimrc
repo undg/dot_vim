@@ -3,70 +3,67 @@
   call plug#begin('~/.vim/plugged')
 
   " DOWNLOAD VIM-PLUG IN CASE OF FRESH START
-  if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  endif
+    if empty(glob('~/.vim/autoload/plug.vim'))
+      silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
 
   Plug 'tpope/vim-sensible'
 
   " GIT PLUGINS
-  Plug 'tpope/vim-fugitive'
-  " git dif in gutter(column line number)
-  Plug 'airblade/vim-gitgutter' 
-  source ~/.vim/rc/plug/vim-gitgutter.vim
+    Plug 'tpope/vim-fugitive'
+    " git dif in gutter(column line number)
+    Plug 'airblade/vim-gitgutter' 
+    source ~/.vim/rc/plug/vim-gitgutter.vim
 
   " FILE MANAGERS
-  Plug 'scrooloose/nerdtree'
-  Plug 'jistr/vim-nerdtree-tabs'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  source ~/.vim/rc/plug/nerdtree.vim
-  Plug 'ctrlpvim/ctrlp.vim'
-  source ~/.vim/rc/plug/ctrlp.vim
+    Plug 'scrooloose/nerdtree'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    source ~/.vim/rc/plug/nerdtree.vim
+    Plug 'ctrlpvim/ctrlp.vim'
+    source ~/.vim/rc/plug/ctrlp.vim
 
   " Productivity
-  Plug 'terryma/vim-multiple-cursors'
+    " Plug 'terryma/vim-multiple-cursors'
+    Plug 'vim-scripts/YankRing.vim'
+    source ~/.vim/rc/plug/yankring.vim
+    Plug 'simeji/winresizer' " <C-e>
 
-  Plug 'vim-scripts/YankRing.vim'
-  source ~/.vim/rc/plug/yankring.vim
-  Plug 'simeji/winresizer' " Ctrl+e
+    " YCM is instaled globaly for arch from aur
+    " Plug 'Valloric/YouCompleteMe'
+    source ~/.vim/rc/plug/youcompleteme.vim
+    "linting
+    Plug 'w0rp/ale'
 
-  " YCM is instaled globaly for arch from aur
-  " Plug 'Valloric/YouCompleteMe'
-  source ~/.vim/rc/plug/youcompleteme.vim
-  "linting
-  Plug 'w0rp/ale'
+    Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
+    Plug 'blindFS/vim-colorpicker'
+    " Plug 'davidhalter/jedi-vim' " python
 
-  Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
-  Plug 'blindFS/vim-colorpicker'
-  " Plug 'davidhalter/jedi-vim' " python
+    Plug 'tpope/vim-commentary'
+    Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+    Plug 'tmhedberg/SimpylFold'
+    source ~/.vim/rc/plug/simplyfold.vim
+    Plug 'dhruvasagar/vim-table-mode'
+    source ~/.vim/rc/plug/vim-table-mode.vim " <,tb>
 
-  Plug 'tpope/vim-commentary'
-  Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-  Plug 'tmhedberg/SimpylFold'
-  source ~/.vim/rc/plug/simplyfold.vim
-  Plug 'dhruvasagar/vim-table-mode'
-  source ~/.vim/rc/plug/vim-table-mode.vim
+    Plug 'christoomey/vim-tmux-navigator'
+    source ~/.vim/rc/plug/vim-tmux-navigator.vim
+    Plug 'benmills/vimux'
+    source ~/.vim/rc/plug/vimux.vim
+    Plug 'blueyed/vim-diminactive'
 
-  Plug 'christoomey/vim-tmux-navigator'
-  source ~/.vim/rc/plug/vim-tmux-navigator.vim
-  Plug 'benmills/vimux'
-  source ~/.vim/rc/plug/vimux.vim
-  Plug 'blueyed/vim-diminactive'
+    Plug 'terryma/vim-expand-region'
+    source ~/.vim/rc/plug/vim-expand-region.vim
+    Plug 'terryma/vim-smooth-scroll'
+    source ~/.vim/rc/plug/vim-smooth-scroll.vim
 
-  Plug 'terryma/vim-expand-region'
-  source ~/.vim/rc/plug/vim-expand-region.vim
-  Plug 'terryma/vim-smooth-scroll'
-  source ~/.vim/rc/plug/vim-smooth-scroll.vim
-  Plug 'severin-lemaignan/vim-minimap'
-  source ~/.vim/rc/plug/vim-minimap.vim
-
-  Plug 'djoshea/vim-autoread'
+    Plug 'djoshea/vim-autoread'
 
   " HTML
-  Plug 'mattn/emmet-vim'
-  source ~/.vim/rc/plug/emmet-vim.vim
+    Plug 'mattn/emmet-vim'
+    source ~/.vim/rc/plug/emmet-vim.vim
 
   " SYNTAX
     Plug 'jelera/vim-javascript-syntax'
@@ -78,13 +75,12 @@
     " sass and cs3 syntax
     Plug 'cakebaker/scss-syntax.vim'
     Plug 'hail2u/vim-css3-syntax'
-    " show indent vertical lines
-    " Plug 'Yggdroot/indentLine' 
     " PARENTHESES IN DIFF COLOR !!
     Plug 'luochen1990/rainbow'
     " SHOW INDENTATION
     Plug 'nathanaelkane/vim-indent-guides'
     source ~/.vim/rc/plug/vim-indent-guides.vim
+    " Plug 'Yggdroot/indentLine' 
 
   " THEME
   Plug 'morhetz/gruvbox'

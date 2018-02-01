@@ -19,7 +19,7 @@
 
 " F2 to open/close sidebar with folders/files
   map <silent> <F2> :call ToogleFocusCloseNerdTree()<cr>
-  map <silent> <leader><F2> :NERDTreeTabsClose<cr>
+  map <silent> <leader><F2> :NERDTreeClose<cr>
 
 " If vim opened empty open NERDTree
   " if empty(argv())
