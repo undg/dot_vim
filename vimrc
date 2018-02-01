@@ -38,7 +38,7 @@
   "linting
   Plug 'w0rp/ale'
 
-  Plug 'chrisbra/Colorizer', { 'on': 'ColorToogle' }
+  Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
   Plug 'blindFS/vim-colorpicker'
   " Plug 'davidhalter/jedi-vim' " python
 
@@ -57,6 +57,10 @@
 
   Plug 'terryma/vim-expand-region'
   source ~/.vim/rc/plug/vim-expand-region.vim
+  Plug 'terryma/vim-smooth-scroll'
+  source ~/.vim/rc/plug/vim-smooth-scroll.vim
+  Plug 'severin-lemaignan/vim-minimap'
+  source ~/.vim/rc/plug/vim-minimap.vim
 
   Plug 'djoshea/vim-autoread'
 
@@ -81,8 +85,10 @@
     " SHOW INDENTATION
     Plug 'nathanaelkane/vim-indent-guides'
     source ~/.vim/rc/plug/vim-indent-guides.vim
-  " Theme
+
+  " THEME
   Plug 'morhetz/gruvbox'
+    source ~/.vim/rc/plug/gruvbox.vim
   " Plug 'altercation/vim-colors-solarized'
 
   call plug#end()
@@ -173,7 +179,7 @@
     endtry
 
     set background=dark
-    
+
     set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
     set nolist
 
