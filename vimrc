@@ -22,8 +22,15 @@
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     source ~/.vim/rc/plug/nerdtree.vim
-    Plug 'ctrlpvim/ctrlp.vim'
-    source ~/.vim/rc/plug/ctrlp.vim
+    " Plug 'ctrlpvim/ctrlp.vim'
+    " source ~/.vim/rc/plug/ctrlp.vim
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    map <leader>. :FZF<cr>
+    map <leader>m :GFiles<cr>
+  " \ 'dir':  '\v[\/](\.git|tmp|node_modules|dist)$',
+  " \ 'file': '\v\.(exe|so|dll|swp|zip|vim)$',
+  " \ 'link': 'some_bad_symbolic_links',
 
   " Productivity
     " Plug 'terryma/vim-multiple-cursors'
