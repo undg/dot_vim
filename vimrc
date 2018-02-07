@@ -1,3 +1,6 @@
+" Change leader key
+  let mapleader=","
+
 " <VIM-PLUG PLUGINS> {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   call plug#begin('~/.vim/plugged')
@@ -106,14 +109,15 @@
   " jk as a ESC
     imap jk <esc>
 
-  " Change leader key
-    let mapleader=","
-
   " Auto save on focus lost
     au FocusLost * :wa
 
   " Stop that stupid window from popping up:
     map q: :q
+
+  " Timeout for pressing key sequences
+    set notimeout
+    set ttimeout
 
   " Enable mouse, usefull for window resizing
     set mouse=a
@@ -331,6 +335,9 @@
   " Type ',w' or ',,' to save file (a lot faster than ':w<Enter>'):
     nnoremap <Leader>w :w<CR>
     nnoremap <Leader>, :w<CR>
+
+  " Type ',q' to quit file
+    nnoremap <Leader>q :q<CR>
 
   " Copy & paste to system clipboard with ',p' and ',y':
     vmap <Leader>y "+y
