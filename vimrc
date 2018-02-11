@@ -260,8 +260,8 @@
     nnoremap <C-L> <C-W><C-L>
     nnoremap <C-H> <C-W><C-H>
 
-  " fulscreen window ',f'
-    nnoremap <leader>f :tabnew %<CR>
+  " fulscreen window ',z'
+    nnoremap <leader>z :tabnew %<CR>
 " }}}
 
 " <FOLDING> {{{
