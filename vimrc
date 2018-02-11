@@ -251,14 +251,17 @@
   " Map ; to : 
     map ; :
 
-  " Disable highlight when <leader><cr> is pressed
-    map <silent> <leader><cr> :noh<cr>
+  " Disable highlight ',/'
+    map <silent> <leader>/ :noh<cr>
 
   "split navigations
     nnoremap <C-J> <C-W><C-J>
     nnoremap <C-K> <C-W><C-K>
     nnoremap <C-L> <C-W><C-L>
     nnoremap <C-H> <C-W><C-H>
+
+  " fulscreen window ',f'
+    nnoremap <leader>f :tabnew %<CR>
 " }}}
 
 " <FOLDING> {{{
@@ -353,7 +356,4 @@
   
   " save ',s' and open sesion with 'vim -S'
     nnoremap <leader>s :mksession!<CR>
-
-  " fulscreen window
-    nnoremap <leader>z :tabnew %<CR>
 " }}}
