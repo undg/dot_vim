@@ -106,8 +106,10 @@
     au BufRead,BufNewFile *.scss set filetype=scss.css
     au BufRead,BufNewFile *.sass set filetype=sass.css
 
-  " jk as a ESC
+  " jk and jj as a ESC
     imap jk <esc>
+    imap jj <esc>
+    imap kk <esc>
 
   " Auto save on focus lost
     au FocusLost * :wa
