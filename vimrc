@@ -1,7 +1,8 @@
 " Change leader key
   let mapleader=","
 
-" <VIM-PLUG PLUGINS> {{{
+  
+" <VIM-PLUG PLUGINS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   call plug#begin('~/.vim/plugged')
 
@@ -94,9 +95,9 @@
   " Plug 'altercation/vim-colors-solarized'
 
   call plug#end()
-" }}}
 
-" <SETTINGS> {{{
+
+" <SETTINGS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " Enable filetype plugins
     filetype plugin on
@@ -171,9 +172,9 @@
       autocmd!
       autocmd BufWritePost $MYVIMRC source $MYVIMRC
     augroup END " }
-" }}}
 
-" <COLORS> {{{
+
+" <COLORS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Enable syntax highlighting
     syntax enable 
@@ -198,9 +199,9 @@
 
   " Fix background in tmux
     set t_ut=
-" }}}
 
-" <FILES, BACKUPS AND UNDO> {{{
+
+" <FILES, BACKUPS AND UNDO> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Turn backup off, since most stuff is in SVN, git et.c anyway...
     set nobackup
@@ -209,9 +210,9 @@
 
   " Set to auto read when a file is changed from the outside
     set autoread
-" }}}
 
-" <TEXT, TAB AND INDENT RELATED> {{{
+
+" <TEXT, TAB AND INDENT RELATED> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Use spaces instead of tabs
     set expandtab
@@ -231,9 +232,9 @@
     set ai "Auto indent
     set si "Smart indent
     set wrap "Wrap lines
-" }}}
 
-" <VISUAL MODE> {{{
+
+" <VISUAL MODE> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " highlight in visual stay
     vnoremap > >gv
@@ -242,9 +243,9 @@
   " This way v replaces viw, vaw, vi", va", vi(, va(, vi[, va[, vi{, va{, vip, vap, vit, vat, ... you get the idea.
     vmap v <Plug>(expand_region_expand)
     vmap <C-v> <Plug>(expand_region_shrink)
-" }}}
 
-" <MOVING AROUND, TABS, WINDOWS AND BUFFERS> {{{
+
+" <MOVING AROUND, TABS, WINDOWS AND BUFFERS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Treat long lines as break lines (useful when moving around in them)
     map j gj
@@ -264,19 +265,23 @@
 
   " fulscreen window ',z'
     nnoremap <leader>z :tabnew %<CR>
-" }}}
 
-" <FOLDING> {{{
+
+" <FOLDING> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Enable folding
     " set foldmethod=manual
     set foldmethod=indent
     " set foldmethod=expr 
+    " expresion to fold paragrafs with two empty lines
+    set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'^\\s*$'&&getline(v:lnum+2)=~'\\S'?'<1':1
+    " modeline version (escape colon's)
+    " // vim: foldmethod=expr foldexpr=getline(v\:lnum)=~'^\\s*$'&&getline(v\:lnum+1)=~'^\\s*$'&&getline(v\:lnum+2)=~'\\S'?'<1'\:1
     " set foldmethod=marker 
     " set foldmethod=syntax 
     " set foldmethod=diff 
 
-    " set foldmarker={{{,}}}
+    " set foldmarker=,}}}
     set foldlevel=9
 
   " Enable folding with the spacebar
@@ -285,9 +290,8 @@
   " Add a bit extra margin to the left
     set foldcolumn=5
 
-" }}}
 
-" <SEARCH> {{{
+" <SEARCH> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Ignore case when searching
     set ignorecase
@@ -308,9 +312,8 @@
   " search visual selected '//'
   vnoremap // y/<C-R>"<CR>
 
-" }}}
 
-" <HIGHLIGHT ALL INSTANCES OF WORD UNDER CURSOR, WHEN IDLE> {{{
+" <HIGHLIGHT ALL INSTANCES OF WORD UNDER CURSOR, WHEN IDLE> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " useful when studying strange source code.
 " type ',hh' to toggle highlighting on/off.
@@ -333,9 +336,9 @@
     return 1
     endif
   endfunction
-" }}}
 
-" <PRODUCTIVITY, KEYBINDINGS > {{{
+
+" <PRODUCTIVITY, KEYBINDINGS > 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Type ',w' or ',,' to save file (a lot faster than ':w<Enter>'):
     nnoremap <Leader>w :w<CR>
@@ -358,4 +361,3 @@
   
   " save ',s' and open sesion with 'vim -S'
     nnoremap <leader>s :mksession!<CR>
-" }}}
