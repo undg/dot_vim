@@ -186,7 +186,12 @@
 
     set background=dark
 
-    set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+    if has("patch-7.4.710")
+      set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+    else
+      set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
+    endif
+
     set nolist
 
   " Set extra options when running in GUI mode
