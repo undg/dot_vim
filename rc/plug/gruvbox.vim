@@ -1,5 +1,8 @@
 " TRUE COLORS
-set termguicolors
+if has("patch-7.4.710")
+  set termguicolors
+endif
+
 " OR TRANSPARENT BACKGROUND
 hi Normal ctermbg=none
 hi NonText ctermbg=none
