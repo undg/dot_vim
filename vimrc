@@ -84,6 +84,7 @@
     Plug 'hail2u/vim-css3-syntax'
     " PARENTHESES IN DIFF COLOR !!
     Plug 'luochen1990/rainbow'
+    source ~/.vim/rc/plug/rainbow.vim
     " SHOW INDENTATION
     Plug 'nathanaelkane/vim-indent-guides'
     source ~/.vim/rc/plug/vim-indent-guides.vim
