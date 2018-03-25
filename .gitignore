@@ -17,3 +17,5 @@ dist/
 plugged/
 # nerdtree history
 .netrwhist
+# keep custom.vimrc empty
+custom.vimrc

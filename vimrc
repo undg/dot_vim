@@ -1,3 +1,4 @@
+  let customConfig = '~/.vim/custom.vimrc'
 " Change leader key
   let mapleader=","
 
@@ -367,3 +368,15 @@
   
   " save ',s' and open sesion with 'vim -S'
     nnoremap <leader>s :mksession!<CR>
+
+
+" <CUSTOM VIMRC>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " Override global cfg in '~/.vim/custom.vimrc'
+  if !empty(glob(customConfig))
+    exe 'source' . customConfig
+  else
+    echo "Creating " . customConfig 
+    " call !mkdir customConfig
+    silent exe '!touch '.customConfig
+  endif
