@@ -5,7 +5,6 @@
 # Session.vim
 Session.vim
 # YCM
-.tern-project
 
 # node
 dist/

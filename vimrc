@@ -40,9 +40,10 @@
     Plug 'simeji/winresizer' " <C-e>
 
     " YCM is instaled globaly for arch from aur
-    " Plug 'Valloric/YouCompleteMe'
+    Plug 'Valloric/YouCompleteMe'
     source ~/.vim/rc/plug/youcompleteme.vim
     "linting
+    " Plug 'vim-syntastic/syntastic'
     Plug 'w0rp/ale'
 
     Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
@@ -72,7 +73,7 @@
   " HTML
     Plug 'mattn/emmet-vim'
     source ~/.vim/rc/plug/emmet-vim.vim
-
+    
   " SYNTAX
     Plug 'jelera/vim-javascript-syntax'
   " Plug 'ervandew/supertab'

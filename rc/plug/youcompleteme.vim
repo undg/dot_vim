@@ -1,8 +1,8 @@
 " use python2
-  let g:ycm_server_python_interpreter = '/usr/bin/python2'
+  " let g:ycm_server_python_interpreter = '/usr/bin/python2'
   
 " ctrl+space function signature
-  let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] }
+  " let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] }
 
 " auto close previev window
   let g:ycm_autoclose_preview_window_after_completion=1
