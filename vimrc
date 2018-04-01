@@ -44,7 +44,7 @@
     source ~/.vim/rc/plug/youcompleteme.vim
     "linting
     " Plug 'vim-syntastic/syntastic'
-    Plug 'w0rp/ale'
+    " Plug 'w0rp/ale'
 
     Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
     Plug 'blindFS/vim-colorpicker'
