@@ -2,7 +2,7 @@
   " let g:ycm_server_python_interpreter = '/usr/bin/python2'
   
 " ctrl+space function signature
-  " let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] }
+  let g:ycm_semantic_triggers = { 'cpp': [ 're!.' ] }
 
 " auto close previev window
   let g:ycm_autoclose_preview_window_after_completion=1
@@ -12,5 +12,5 @@
 " let g:ycm_server_log_level = 'debug'
 
 " The former line ensures that the autocomplete window goes away when you’re done with it, and the latter defines a shortcut for goto definition.
-  " let g:ycm_autoclose_preview_window_after_completion=1
-  " map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+  let g:ycm_autoclose_preview_window_after_completion=1
+  map <leader>k  :YcmCompleter GoToDefinitionElseDeclaration<CR>
