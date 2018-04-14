@@ -51,7 +51,7 @@
     " Plug 'davidhalter/jedi-vim' " python
 
     Plug 'tpope/vim-commentary'
-    Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+    " Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     Plug 'tmhedberg/SimpylFold'
     source ~/.vim/rc/plug/simplyfold.vim
     Plug 'dhruvasagar/vim-table-mode'
