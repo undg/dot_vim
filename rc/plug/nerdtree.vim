@@ -16,24 +16,26 @@
       silent NERDTreeTabsFind
     endif
   endfunction
-
 " F2 to open/close sidebar with folders/files
   map <silent> <F2> :call ToogleFocusCloseNerdTree()<cr>
   map <silent> <leader><F2> :NERDTreeTabsClose<cr>
 
-" If vim opened empty open NERDTree
-  " if empty(argv())
-  "   au VimEnter * NERDTreeTabsOpen
-  " endif
-
-" Show hidden files
-  " let NERDTreeShowHidden=1
+  let NERDTreeShowHidden=0
+  let NERDTreeMinimalUI=1
+  let NERDTreeShowLineNumbers=0
+  let NERDTreeAutoDeleteBuffer=1
 
 " Open NERDTree on gvim/macvim startup (1)
   " let g:nerdtree_tabs_open_on_gui_startup = 1
 
 " Open NERDTree on console vim startup (0)
   " let g:nerdtree_tabs_open_on_console_startup = 0
+  
+" If vim opened empty open NERDTree
+  " if empty(argv())
+  "   au VimEnter * NERDTreeTabsOpen
+  " endif
+
 
 " Do not open NERDTree if vim starts in diff mode (1)
   let g:nerdtree_tabs_no_startup_for_diff = 1
@@ -59,6 +61,8 @@
 " When switching into a tab, make sure that focus is on the file window, not in the NERDTree window. (Note that this can get annoying if you use NERDTree's feature "open in new tab silently", as you will lose focus on the NERDTree.) (0)
   let g:nerdtree_tabs_focus_on_files = 0
   
+
+
 " NERDTree-git-plugin
   let g:NERDTreeIndicatorMapCustom = {
   \ "Modified"  : "✹",
@@ -72,4 +76,3 @@
   \ 'Ignored'   : '☒',
   \ "Unknown"   : "?"
   \ }
-" }}}
