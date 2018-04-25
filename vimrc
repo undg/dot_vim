@@ -43,7 +43,15 @@
     Plug 'Valloric/YouCompleteMe'
     source ~/.vim/rc/plug/youcompleteme.vim
     "linting
-    " Plug 'vim-syntastic/syntastic'
+    Plug 'vim-syntastic/syntastic'
+      set statusline+=%#warningmsg#
+      set statusline+=%{SyntasticStatuslineFlag()}
+      set statusline+=%*
+
+      let g:syntastic_always_populate_loc_list = 1
+      let g:syntastic_auto_loc_list = 1
+      let g:syntastic_check_on_open = 1
+      let g:syntastic_check_on_wq = 0
     " Plug 'w0rp/ale'
 
     Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
