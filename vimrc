@@ -38,6 +38,7 @@
     Plug 'vim-scripts/YankRing.vim'
     source ~/.vim/rc/plug/yankring.vim
     Plug 'simeji/winresizer' " <C-e>
+    Plug 'vimwiki/vimwiki'
 
     " YCM is instaled globaly for arch from aur
     Plug 'Valloric/YouCompleteMe'
