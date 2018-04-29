@@ -14,7 +14,8 @@
       autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     endif
 
-  Plug 'tpope/vim-sensible'
+    " step above 'nocompatible'
+    Plug 'tpope/vim-sensible'
 
   " GIT PLUGINS
     Plug 'tpope/vim-fugitive'
@@ -33,35 +34,36 @@
     Plug 'junegunn/fzf.vim'
     source ~/.vim/rc/plug/fzf.vim
 
-  " Productivity
-    " Plug 'terryma/vim-multiple-cursors'
+  " PRODUCTIVITY
+    "Plug 'terryma/vim-multiple-cursors'
     Plug 'vim-scripts/YankRing.vim'
     source ~/.vim/rc/plug/yankring.vim
     Plug 'simeji/winresizer' " <C-e>
     Plug 'vimwiki/vimwiki'
 
-    " YCM is instaled globaly for arch from aur
+    "YCM autocomplete
     Plug 'Valloric/YouCompleteMe'
     source ~/.vim/rc/plug/youcompleteme.vim
+    "definition's doc and renaming
     Plug 'ternjs/tern_for_vim'
     "linting
     Plug 'vim-syntastic/syntastic'
-      set statusline+=%#warningmsg#
-      set statusline+=%{SyntasticStatuslineFlag()}
-      set statusline+=%*
+      " set statusline+=%#warningmsg#
+      " set statusline+=%{SyntasticStatuslineFlag()}
+      " set statusline+=%*
 
-      let g:syntastic_always_populate_loc_list = 0
-      let g:syntastic_auto_loc_list = 0
-      let g:syntastic_check_on_open = 0
-      let g:syntastic_check_on_wq = 0
-    " Plug 'w0rp/ale'
+      " let g:syntastic_always_populate_loc_list = 0
+      " let g:syntastic_auto_loc_list = 0
+      " let g:syntastic_check_on_open = 0
+      " let g:syntastic_check_on_wq = 0
+    "Plug 'w0rp/ale'
 
     Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
     Plug 'blindFS/vim-colorpicker'
-    " Plug 'davidhalter/jedi-vim' " python
+    "Plug 'davidhalter/jedi-vim' " python
 
     Plug 'tpope/vim-commentary'
-    " Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+    "Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     Plug 'tmhedberg/SimpylFold'
     source ~/.vim/rc/plug/simplyfold.vim
     Plug 'dhruvasagar/vim-table-mode'
@@ -86,8 +88,8 @@
     
   " SYNTAX
     Plug 'jelera/vim-javascript-syntax'
-  " Plug 'ervandew/supertab'
-  " AUTO ADD CLOUSING
+    " Plug 'ervandew/supertab'
+    " AUTO ADD CLOUSING
     Plug 'Raimondi/delimitMate'
     source ~/.vim/rc/plug/delimate.vim
     Plug 'tmhedberg/matchit'
@@ -103,9 +105,9 @@
     " Plug 'Yggdroot/indentLine' 
 
   " THEME
-  Plug 'morhetz/gruvbox'
+    Plug 'morhetz/gruvbox'
     source ~/.vim/rc/plug/gruvbox.vim
-  " Plug 'altercation/vim-colors-solarized'
+    " Plug 'altercation/vim-colors-solarized'
 
   call plug#end()
 
