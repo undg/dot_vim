@@ -4,8 +4,8 @@ if has("patch-7.4.710")
 endif
 
 " OR TRANSPARENT BACKGROUND
-hi Normal ctermbg=none
-hi NonText ctermbg=none
+" hi Normal ctermbg=none
+" hi NonText ctermbg=none
 
 " Options
 " In order to change these options, type let g:gruvbox_(option) = '(value)' in your .vimrc (with quotes).

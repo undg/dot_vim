@@ -1,4 +1,4 @@
-let g:emmet_html5 = 0
+let g:emmet_html5 = 1
 imap   <C-y>,   <plug>(emmet-expand-abbr)
 imap   <C-y>;   <plug>(emmet-expand-word)
 imap   <C-y>u   <plug>(emmet-update-tag)

@@ -1,12 +1,9 @@
-  let customConfig = '~/.vim/custom.vimrc'
-" Change leader key
-  let mapleader=","
+let customConfig = '~/.vim/custom.vimrc'
+let mapleader=","
 
-  
 " <VIM-PLUG PLUGINS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   call plug#begin('~/.vim/plugged')
-
   " DOWNLOAD VIM-PLUG IN CASE OF FRESH START
     if empty(glob('~/.vim/autoload/plug.vim'))
       silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -14,45 +11,42 @@
       autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     endif
 
-    " step above 'nocompatible'
-    Plug 'tpope/vim-sensible'
+  " STEP ABOVE 'NOCOMPATIBLE'
+  Plug 'tpope/vim-sensible'
 
   " GIT PLUGINS
     Plug 'tpope/vim-fugitive'
     " git dif in gutter(column line number)
     Plug 'airblade/vim-gitgutter' 
-    source ~/.vim/rc/plug/vim-gitgutter.vim
+    source ~/.vim/pluginsRC/vim-gitgutter.vim
 
   " FILE MANAGERS
     Plug 'scrooloose/nerdtree'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'Xuyuanp/nerdtree-git-plugin'
-    source ~/.vim/rc/plug/nerdtree.vim
-    " Plug 'ctrlpvim/ctrlp.vim'
-    " source ~/.vim/rc/plug/ctrlp.vim
+      source ~/.vim/pluginsRC/nerdtree.vim
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-    source ~/.vim/rc/plug/fzf.vim
+      nnoremap <leader>m :FZF<cr>
+      nnoremap <leader>. :GFiles<cr>
 
   " PRODUCTIVITY
-    "Plug 'terryma/vim-multiple-cursors'
-    Plug 'vim-scripts/YankRing.vim'
-    source ~/.vim/rc/plug/yankring.vim
-    Plug 'simeji/winresizer' " <C-e>
-    Plug 'vimwiki/vimwiki'
+    " Plug 'vim-scripts/YankRing.vim'
+    "   nnoremap <silent> <F10> :YRShow<CR> 
+    "   let g:yankring_clipboard_monitor=0
+    Plug 'bfredl/nvim-miniyank'
+      map p <Plug>(miniyank-autoput)
+      map P <Plug>(miniyank-autoPut)
+      map <leader>n <Plug>(miniyank-cycle) 
 
-    "YCM autocomplete
     Plug 'Valloric/YouCompleteMe'
-    source ~/.vim/rc/plug/youcompleteme.vim
+      source ~/.vim/pluginsRC/youcompleteme.vim
+    Plug 'mattn/emmet-vim'
+      source ~/.vim/pluginsRC/emmet-vim.vim
     "definition's doc and renaming
     Plug 'ternjs/tern_for_vim'
     "linting
     Plug 'vim-syntastic/syntastic'
-      " let g:syntastic_always_populate_loc_list = 0
-      " let g:syntastic_auto_loc_list = 0
-      " let g:syntastic_check_on_open = 0
-      " let g:syntastic_check_on_wq = 0
-    "Plug 'w0rp/ale'
 
     Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
     Plug 'blindFS/vim-colorpicker'
@@ -61,48 +55,44 @@
     Plug 'tpope/vim-commentary'
     "Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     Plug 'tmhedberg/SimpylFold'
-    source ~/.vim/rc/plug/simplyfold.vim
+      source ~/.vim/pluginsRC/simplyfold.vim
     Plug 'dhruvasagar/vim-table-mode'
-    source ~/.vim/rc/plug/vim-table-mode.vim " <,tb>
+      source ~/.vim/pluginsRC/vim-table-mode.vim " <,tb>
 
     Plug 'christoomey/vim-tmux-navigator'
-    source ~/.vim/rc/plug/vim-tmux-navigator.vim
+      source ~/.vim/pluginsRC/vim-tmux-navigator.vim
     Plug 'benmills/vimux'
-    source ~/.vim/rc/plug/vimux.vim
+      source ~/.vim/pluginsRC/vimux.vim
     Plug 'blueyed/vim-diminactive'
 
     Plug 'terryma/vim-expand-region'
-    source ~/.vim/rc/plug/vim-expand-region.vim
+      source ~/.vim/pluginsRC/vim-expand-region.vim
     Plug 'terryma/vim-smooth-scroll'
-    source ~/.vim/rc/plug/vim-smooth-scroll.vim
-
+      source ~/.vim/pluginsRC/vim-smooth-scroll.vim
+    Plug 'simeji/winresizer' " <C-e>
+    Plug 'vimwiki/vimwiki'
     Plug 'djoshea/vim-autoread'
 
-  " HTML
-    Plug 'mattn/emmet-vim'
-    source ~/.vim/rc/plug/emmet-vim.vim
-    
   " SYNTAX
     Plug 'jelera/vim-javascript-syntax'
     " Plug 'ervandew/supertab'
     " AUTO ADD CLOUSING
     Plug 'Raimondi/delimitMate'
-    source ~/.vim/rc/plug/delimate.vim
+    source ~/.vim/pluginsRC/delimate.vim
     Plug 'tmhedberg/matchit'
     " sass and cs3 syntax
     Plug 'cakebaker/scss-syntax.vim'
     Plug 'hail2u/vim-css3-syntax'
     " PARENTHESES IN DIFF COLOR !!
     Plug 'luochen1990/rainbow'
-    source ~/.vim/rc/plug/rainbow.vim
-    " SHOW INDENTATION
+      let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+    source ~/.vim/pluginsRC/rainbow.vim
     Plug 'nathanaelkane/vim-indent-guides'
-    source ~/.vim/rc/plug/vim-indent-guides.vim
-    " Plug 'Yggdroot/indentLine' 
+      let g:indent_guides_enable_on_vim_startup = 1
 
   " THEME
     Plug 'morhetz/gruvbox'
-    source ~/.vim/rc/plug/gruvbox.vim
+      source ~/.vim/pluginsRC/gruvbox.vim
     " Plug 'altercation/vim-colors-solarized'
 
   call plug#end()
@@ -110,37 +100,37 @@
 
 " <SETTINGS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
- " Enable filetype plugins
-    filetype plugin on
-    filetype indent on
+  " Enable filetype plugins
+  filetype plugin on
+  filetype indent on
 
- " filetype css if *.sass
-    au BufRead,BufNewFile *.scss set filetype=scss.css
-    au BufRead,BufNewFile *.sass set filetype=sass.css
+  " filetype css if *.sass
+  au BufRead,BufNewFile *.scss set filetype=scss.css
+  au BufRead,BufNewFile *.sass set filetype=sass.css
 
   " jk and jj as a ESC
-    imap jk <esc>
-    imap jj <esc>
-    imap kk <esc>
+  imap jk <esc>
+  imap jj <esc>
+  imap kk <esc>
 
   " Auto save on focus lost
-    au FocusLost * :wa
+  au FocusLost * :wa
 
   " Stop that stupid window from popping up:
-    map q: :q
+  map q: :q
 
   " Timeout for pressing key sequences
-    set notimeout
-    set ttimeout
+  set notimeout
+  set ttimeout
 
   " Enable mouse, usefull for window resizing
-    set mouse=a
+  set mouse=a
 
   " Set history
-    set history=900
+  set history=900
 
   " Set <so> lines to the cursor and relative numbers
-    set so=5
+  set so=5
 
   " Set relativenumber
     " Automatic toggling between line number modes
@@ -155,25 +145,25 @@
     augroup END
 
   " Areas of the screen where the splits should occur
-    set splitbelow
-    set splitright
+  set splitbelow
+  set splitright
 
   " Don't redraw while executing macros (good performance config)
-    set lazyredraw 
+  set lazyredraw 
 
   " For regular expressions turn magic on
-    set magic
+  set magic
 
   " No annoying sound on errors
-    set noerrorbells
-    set novisualbell
-    set t_vb=
-    set tm=500
+  set noerrorbells
+  set novisualbell
+  set t_vb=
+  set tm=500
 
-    set encoding=utf8
+  set encoding=utf8
 
   " Use Unix as the standard file type
-    set ffs=unix,dos,mac
+  set ffs=unix,dos,mac
 
   " fugitive Gdiff verticaly
   set diffopt+=vertical
@@ -182,40 +172,8 @@
     augroup reload_vimrc " {
       autocmd!
       autocmd BufWritePost $MYVIMRC source $MYVIMRC
+      autocmd BufWritePost '~/.vim/vimrc' source '~/.vim/vimrc'
     augroup END " }
-
-
-" <STATUSLINE>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  function! GitBranch()
-    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-  endfunction
-
-  function! StatuslineGit()
-    let l:branchname = GitBranch()
-    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-  endfunction
-
-  set statusline=
-  set statusline+=%#PmenuSel#
-  set statusline+=%{StatuslineGit()}
-  set statusline+=%#LineNr#
-  set statusline+=\ %f
-  set statusline+=%m
-  set statusline+=%=
-  set statusline+=%#CursorColumn#
-  set statusline+=\ %y
-  set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-  set statusline+=\[%{&fileformat}\]
-  set statusline+=\ %p%%
-  set statusline+=\ %l:%c
-  set statusline+=\ %#warningmsg#
-  " set statusline+=\ %{SyntasticStatuslineFlag()}
-  " set statusline+=\ %*
-  " set statusline+=\ 
-
-
-
 
 
 " <COLORS> 
@@ -248,6 +206,41 @@
 
   " Fix background in tmux
     set t_ut=
+
+
+" <TAB BAR> 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " hi TabLine ctermfg=Grey ctermbg=Grey
+
+
+" <STATUSLINE>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  function! GitBranch()
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+  endfunction
+
+  function! StatuslineGit()
+    let l:branchname = GitBranch()
+    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+  endfunction
+
+  set statusline=
+  set statusline+=%#PmenuSel#
+  set statusline+=%{StatuslineGit()}
+  set statusline+=%#LineNr#
+  set statusline+=\ %f
+  set statusline+=%m
+  set statusline+=%=
+  set statusline+=%#CursorColumn#
+  set statusline+=\ %y
+  set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+  set statusline+=\[%{&fileformat}\]
+  set statusline+=\ %p%%
+  set statusline+=\ %l:%c
+  set statusline+=\ %#warningmsg#
+  " set statusline+=\ %{SyntasticStatuslineFlag()}
+  " set statusline+=\ %*
+  " set statusline+=\ 
 
 
 " <FILES, BACKUPS AND UNDO> 
