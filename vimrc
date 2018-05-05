@@ -210,32 +210,64 @@ let mapleader=","
 
 " <TAB BAR> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " hi TabLine ctermfg=Grey ctermbg=Grey
+  function! Tabline()
+    let s = ''
+    for i in range(tabpagenr('$'))
+      let tab = i + 1
+      let winnr = tabpagewinnr(tab)
+      let buflist = tabpagebuflist(tab)
+      let bufnr = buflist[winnr - 1]
+      let bufname = bufname(bufnr)
+      let bufmodified = getbufvar(bufnr, "&mod")
+
+      let s .= '%' . tab . 'T'
+      let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+      let s .= ' ' . tab .'°'
+      let s .= (bufname != '' ? fnamemodify(bufname, ':t')  : '[No Name]')
+
+      if bufmodified
+        let s .= '[+]'
+      endif
+        let s .= ' '
+    endfor
+
+    let s .= '%#TabLineFill#'
+    if (exists("g:tablineclosebutton"))
+      let s .= '%=%999XX'
+    endif
+    return s
+  endfunction
+  set tabline=%!Tabline()
+
+
+
+
+  " TabLineSel -  active tab label
+  " TabLine - not active.
+  " TabLineFill - background
+  hi! TabLineFill cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#3A3A3A 
+  hi! TabLine     cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#A8A8A8
+  hi! TabLineSel  cterm=none gui=none ctermfg=59 ctermbg=214 guifg=#5F5F5F guibg=#FFAF00 
+
 
 
 " <STATUSLINE>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  function! GitBranch()
-    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-  endfunction
-
-  function! StatuslineGit()
-    let l:branchname = GitBranch()
-    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-  endfunction
-
+  " hi! statusline guibg=210 ctermfg=100 guifg=100 ctermbg=210
   set statusline=
   set statusline+=%#PmenuSel#
-  set statusline+=%{StatuslineGit()}
-  set statusline+=%#LineNr#
-  set statusline+=\ %f
+  " Name of the current function (needs taglist.vim)
+  " set statusline +=\ [Fun(%{Tlist_Get_Tagname_By_Line()})]
+  " set statusline +=\ [Fun(%{tagbar#currenttag('%s','')})]
+  set statusline+=%{fugitive#statusline()}
+  set statusline+=\ %f      
   set statusline+=%m
   set statusline+=%=
-  set statusline+=%#CursorColumn#
   set statusline+=\ %y
   set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
   set statusline+=\[%{&fileformat}\]
-  set statusline+=\ %p%%
+  set statusline+=\ %p%%  
+  set statusline+=\[%L]
   set statusline+=\ %l:%c
   set statusline+=\ %#warningmsg#
   " set statusline+=\ %{SyntasticStatuslineFlag()}
