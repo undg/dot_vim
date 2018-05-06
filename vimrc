@@ -29,6 +29,10 @@ let mapleader=","
     Plug 'junegunn/fzf.vim'
       nnoremap <leader>m :FZF<cr>
       nnoremap <leader>. :GFiles<cr>
+      let g:default_action = {
+        \ 'ctrl-t': 'tab split',
+        \ 'ctrl-s': 'split',
+        \ 'ctrl-i': 'vsplit' }
 
   " PRODUCTIVITY
     " Plug 'vim-scripts/YankRing.vim'

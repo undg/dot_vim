@@ -20,9 +20,14 @@
   map <silent> <F2> :call ToogleFocusCloseNerdTree()<cr>
   map <silent> <leader><F2> :NERDTreeTabsClose<cr>
 
+  let NERDTreeMapOpenSplit      = 's'
+  let NERDTreeMapPreviewSplit   = 'gs'
+  let NERDTreeMapOpenVSplit     = 'i'
+  let NERDTreeMapPreviewVSplit  = 'gi'
+
   let NERDTreeShowHidden=0
   let NERDTreeMinimalUI=1
-  let NERDTreeShowLineNumbers=0
+  let NERDTreeShowLineNumbers=1
   let NERDTreeAutoDeleteBuffer=1
 
 " Open NERDTree on gvim/macvim startup (1)
