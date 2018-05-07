@@ -251,7 +251,7 @@
     return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
   endfunction
   function! GitFileStatus()
-    return system("[[ -n \"$(git status --porcelain " . shellescape(expand("%")) . ")\" ]] && echo -n '['+']'")
+    return system("[[ -n \"$(git status --porcelain " . shellescape(expand("%")) . " 2>/dev/null )\" ]] && echo -n '['+']'")
   endfunction
 
   function! StatuslineGit()
