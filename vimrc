@@ -1,17 +1,18 @@
-"""""""" Same cfg for vim and nvim """""""""""""
-" put it to ~/.config/nvim/init.vim
-" set runtimepath^=~/.vim runtimepath+=~/.vim/after
-" let &packpath = &runtimepath
-" source ~/.vim/vimrc
-""""""""""""""""""""""""""""""""""""""""""""""""
-" and pick one of them
-let vimrc = "~/.vim/vimrc"
-" let vimrc = "~/.config/nvim/init.vim"
-" let vimrc = $MYVIMRC
+" <INIT>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  """""""" Same cfg for vim and nvim """""""""""""
+  " put it to ~/.config/nvim/init.vim
+  " set runtimepath^=~/.vim runtimepath+=~/.vim/after
+  " let &packpath = &runtimepath
+  " source ~/.vim/vimrc
+  """"""""""""""""""""""""""""""""""""""""""""""""
+  " and pick one of them
+  let vimrc = "~/.vim/vimrc"
+  " let vimrc = "~/.config/nvim/init.vim"
+  " let vimrc = $MYVIMRC
 
-let customConfig = '~/.vim/custom.vimrc'
-let mapleader=","
-
+  let customConfig = '~/.vim/custom.vimrc'
+  let mapleader=","
 
 " <VIM-PLUG PLUGINS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -107,7 +108,6 @@ let mapleader=","
 
   call plug#end()
 
-
 " <SETTINGS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Enable filetype plugins
@@ -178,26 +178,25 @@ let mapleader=","
   " fugitive Gdiff verticaly
   set diffopt+=vertical
 
-
 " <COLORS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Enable syntax highlighting
-    syntax enable 
+  syntax enable 
+  try
+    colorscheme gruvbox
+  catch
+  endtry
 
-    try
-      colorscheme gruvbox
-    catch
-    endtry
+  set background=dark
+  hi Normal ctermbg=0 guibg=#131313
+  hi ColorColumn ctermbg=0 guibg=#303030
 
-    set background=dark
+  if has("patch-7.4.710")
+    set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+  else
+    set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
+  endif
 
-    if has("patch-7.4.710")
-      set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-    else
-      set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
-    endif
-
-    set nolist
+  set nolist
 
   " Set extra options when running in GUI mode
     if has("gui_running")
@@ -209,7 +208,6 @@ let mapleader=","
 
   " Fix background in tmux
     set t_ut=
-
 
 " <TAB BAR> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -252,7 +250,6 @@ let mapleader=","
   hi! TabLine     cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#A8A8A8
   hi! TabLineSel  cterm=none gui=none ctermfg=59 ctermbg=214 guifg=#5F5F5F guibg=#FFAF00 
 
-
 " <STATUSLINE>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " hi! statusline guibg=210 ctermfg=100 guifg=100 ctermbg=210
@@ -276,7 +273,6 @@ let mapleader=","
   " set statusline+=\ %*
   " set statusline+=\ 
 
-
 " <FILES, BACKUPS AND UNDO> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Turn backup off, since most stuff is in SVN, git et.c anyway...
@@ -286,7 +282,6 @@ let mapleader=","
 
   " Set to auto read when a file is changed from the outside
     set autoread
-
 
 " <TEXT, TAB AND INDENT RELATED> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -309,7 +304,6 @@ let mapleader=","
     set si "Smart indent
     set wrap "Wrap lines
 
-
 " <VISUAL MODE> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " highlight in visual stay
@@ -319,7 +313,6 @@ let mapleader=","
   " This way v replaces viw, vaw, vi", va", vi(, va(, vi[, va[, vi{, va{, vip, vap, vit, vat, ... you get the idea.
     vmap v <Plug>(expand_region_expand)
     vmap <C-v> <Plug>(expand_region_shrink)
-
 
 " <MOVING AROUND, TABS, WINDOWS AND BUFFERS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -341,7 +334,6 @@ let mapleader=","
 
   " fulscreen window ',z'
     nnoremap <leader>z :tabnew %<CR>
-
 
 " <FOLDING> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -366,7 +358,6 @@ let mapleader=","
   " Add a bit extra margin to the left
     set foldcolumn=5
 
-
 " <SEARCH> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Ignore case when searching
@@ -388,11 +379,10 @@ let mapleader=","
   " search visual selected '//'
   vnoremap // y/<C-R>"<CR>
 
-
 " <HIGHLIGHT ALL INSTANCES OF WORD UNDER CURSOR, WHEN IDLE> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" useful when studying strange source code.
-" type ',hh' to toggle highlighting on/off.
+  " useful when studying strange source code.
+  " type ',hh' to toggle highlighting on/off.
   nnoremap <leader>hh :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
   function! AutoHighlightToggle()
     let @/ = ''
@@ -412,7 +402,6 @@ let mapleader=","
     return 1
     endif
   endfunction
-
 
 " <PRODUCTIVITY, KEYBINDINGS > 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -445,8 +434,6 @@ let mapleader=","
       autocmd BufWritePost vimrc source vimrc | echom "SOURCE ".vimrc
     augroup END 
 
-
-
 " <CUSTOM VIMRC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Override global cfg in '~/.vim/custom.vimrc'
@@ -457,3 +444,4 @@ let mapleader=","
     " call !mkdir customConfig
     silent exe '!touch '.customConfig
   endif
+
