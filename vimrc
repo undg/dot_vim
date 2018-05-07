@@ -189,6 +189,7 @@
   set background=dark
   hi Normal ctermbg=0 guibg=#131313
   hi ColorColumn ctermbg=0 guibg=#303030
+  hi LineNr ctermbg=0 guibg=#3C3836
 
   if has("patch-7.4.710")
     set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
@@ -240,38 +241,46 @@
   endfunction
   set tabline=%!Tabline()
 
-
-
-
-  " TabLineSel -  active tab label
-  " TabLine - not active.
-  " TabLineFill - background
   hi! TabLineFill cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#3A3A3A 
   hi! TabLine     cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#A8A8A8
   hi! TabLineSel  cterm=none gui=none ctermfg=59 ctermbg=214 guifg=#5F5F5F guibg=#FFAF00 
 
 " <STATUSLINE>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  function! GitBranch()
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+  endfunction
+  function! GitFileStatus()
+    return system("[[ -n \"$(git status --porcelain " . shellescape(expand("%")) . ")\" ]] && echo -n '['+']'")
+  endfunction
+
+  function! StatuslineGit()
+    let l:branchname = GitBranch()
+    let l:status = GitFileStatus()
+    return strlen(l:branchname) > 0?'  '.l:branchname.l:status.' ':''
+  endfunction
+
   " hi! statusline guibg=210 ctermfg=100 guifg=100 ctermbg=210
   set statusline=
-  set statusline+=%#PmenuSel#
+  " set statusline+=%#PmenuSel#
   " Name of the current function (needs taglist.vim)
   " set statusline +=\ [Fun(%{Tlist_Get_Tagname_By_Line()})]
   " set statusline +=\ [Fun(%{tagbar#currenttag('%s','')})]
-  set statusline+=%{fugitive#statusline()}
-  set statusline+=\ %f      
-  set statusline+=%m
+  " set statusline+=%{fugitive#head()}
+  set statusline+=\ %.35{getcwd()}
   set statusline+=%=
-  set statusline+=\ %y
-  set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-  set statusline+=\[%{&fileformat}\]
+  " set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+  " set statusline+=\[%{&fileformat}\]
   set statusline+=\ %p%%  
   set statusline+=\[%L]
   set statusline+=\ %l:%c
-  set statusline+=\ %#warningmsg#
+  set statusline+=\ %y
+  set statusline+=%{StatuslineGit()}
+  set statusline+=\%#warningmsg#
+  set statusline+=\ %f%m 
   " set statusline+=\ %{SyntasticStatuslineFlag()}
-  " set statusline+=\ %*
-  " set statusline+=\ 
+  set statusline+=\ %*
+  set statusline+=\ 
 
 " <FILES, BACKUPS AND UNDO> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
