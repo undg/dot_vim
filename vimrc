@@ -271,10 +271,10 @@
   set statusline+=%=
   " set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
   " set statusline+=\[%{&fileformat}\]
+  set statusline+=\ %y
   set statusline+=\ %p%%  
   set statusline+=\[%L]
   set statusline+=\ %l:%c
-  set statusline+=\ %y
   set statusline+=%{StatuslineGit()}
   set statusline+=\%#warningmsg#
   set statusline+=\ %f%m 
