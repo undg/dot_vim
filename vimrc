@@ -1,5 +1,17 @@
+"""""""" Same cfg for vim and nvim """""""""""""
+" put it to ~/.config/nvim/init.vim
+" set runtimepath^=~/.vim runtimepath+=~/.vim/after
+" let &packpath = &runtimepath
+" source ~/.vim/vimrc
+""""""""""""""""""""""""""""""""""""""""""""""""
+" and pick one of them
+let vimrc = "~/.vim/vimrc"
+" let vimrc = "~/.config/nvim/init.vim"
+" let vimrc = $MYVIMRC
+
 let customConfig = '~/.vim/custom.vimrc'
 let mapleader=","
+
 
 " <VIM-PLUG PLUGINS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -8,7 +20,7 @@ let mapleader=","
     if empty(glob('~/.vim/autoload/plug.vim'))
       silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+      autocmd VimEnter * PlugInstall --sync | source vimrc
     endif
 
   " STEP ABOVE 'NOCOMPATIBLE'
@@ -35,13 +47,7 @@ let mapleader=","
         \ 'ctrl-i': 'vsplit' }
 
   " PRODUCTIVITY
-    " Plug 'vim-scripts/YankRing.vim'
-    "   nnoremap <silent> <F10> :YRShow<CR> 
-    "   let g:yankring_clipboard_monitor=0
-    Plug 'bfredl/nvim-miniyank'
-      map p <Plug>(miniyank-autoput)
-      map P <Plug>(miniyank-autoPut)
-      map <leader>n <Plug>(miniyank-cycle) 
+    Plug 'Shougo/neoyank.vim'
 
     Plug 'Valloric/YouCompleteMe'
       source ~/.vim/pluginsRC/youcompleteme.vim
@@ -172,13 +178,6 @@ let mapleader=","
   " fugitive Gdiff verticaly
   set diffopt+=vertical
 
-  " autoreload vimrc
-    augroup reload_vimrc " {
-      autocmd!
-      autocmd BufWritePost $MYVIMRC source $MYVIMRC
-      autocmd BufWritePost '~/.vim/vimrc' source '~/.vim/vimrc'
-    augroup END " }
-
 
 " <COLORS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -252,7 +251,6 @@ let mapleader=","
   hi! TabLineFill cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#3A3A3A 
   hi! TabLine     cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#A8A8A8
   hi! TabLineSel  cterm=none gui=none ctermfg=59 ctermbg=214 guifg=#5F5F5F guibg=#FFAF00 
-
 
 
 " <STATUSLINE>
@@ -402,7 +400,7 @@ let mapleader=","
     au! auto_highlight
     augroup! auto_highlight
     setl updatetime=4000
-    echo 'Highlight current word: off'
+    echom 'Highlight current word: off'
     return 0
     else
     augroup auto_highlight
@@ -410,7 +408,7 @@ let mapleader=","
       au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
     augroup end
     setl updatetime=500
-    echo 'Highlight current word: ON'
+    echom 'Highlight current word: ON'
     return 1
     endif
   endfunction
@@ -421,6 +419,9 @@ let mapleader=","
   " Type ',w' or ',,' to save file (a lot faster than ':w<Enter>'):
     nnoremap <Leader>w :w<CR>
     nnoremap <Leader>, :w<CR>
+  
+  " save ',s' and open sesion with 'vim -S'
+    nnoremap <leader>s :mksession!<CR>
 
   " Type ',q' to quit file
     nnoremap <Leader>q :q<CR>
@@ -430,15 +431,20 @@ let mapleader=","
     vmap <Leader>d "+d
     nmap <Leader>p "+p
     nmap <Leader>P "+P
-    vmap <Leader>p "+p
-    vmap <Leader>P "+P
+
+  " selecting pasted text 'gp'
+    map gp `[v`]
+    map g/ /<C-r>"
 
   " Open vimrc with ',ev'
-    nnoremap <leader>ev :tabnew $MYVIMRC<CR>
-    nnoremap <leader>eu :source $MYVIMRC<CR>
-  
-  " save ',s' and open sesion with 'vim -S'
-    nnoremap <leader>s :mksession!<CR>
+    nnoremap <leader>ev :tabnew vimrc<CR>
+    nnoremap <leader>ec :source %<CR>:echom 'SOURCE current file'<CR>
+  " autoreload vimrc
+    augroup reload_vimrc 
+      autocmd!
+      autocmd BufWritePost vimrc source vimrc | echom "SOURCE ".vimrc
+    augroup END 
+
 
 
 " <CUSTOM VIMRC>
@@ -447,7 +453,7 @@ let mapleader=","
   if !empty(glob(customConfig))
     exe 'source' . customConfig
   else
-    echo "Creating " . customConfig 
+    echom "Creating " . customConfig 
     " call !mkdir customConfig
     silent exe '!touch '.customConfig
   endif
