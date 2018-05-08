@@ -253,33 +253,32 @@
     return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
   endfunction
   function! GitFileStatus()
-    return system("[[ -n \"$(git status --porcelain " . shellescape(expand("%")) . " 2>/dev/null )\" ]] && echo -n '['+']'")
+    return system("[[ -n \"$(git status --porcelain " . shellescape(expand("%")) . " 2>/dev/null )\" ]] && echo -n ✰ ")
   endfunction
 
   function! StatuslineGit()
     let l:branchname = GitBranch()
     let l:status = GitFileStatus()
-    return strlen(l:branchname) > 0?'  '.l:branchname.l:status.' ':''
+    return strlen(l:branchname) > 0?'['.l:branchname.l:status.']':''
   endfunction
 
-  " hi! statusline guibg=210 ctermfg=100 guifg=100 ctermbg=210
+  hi User1 guibg=#FFAF00 guifg=#222222
+  hi User2 guibg=#504945  guifg=#191919
+  hi User3 guibg= #A8A8A8 guifg=#222222
+
   set statusline=
-  " set statusline+=%#PmenuSel#
   " Name of the current function (needs taglist.vim)
   " set statusline +=\ [Fun(%{Tlist_Get_Tagname_By_Line()})]
   " set statusline +=\ [Fun(%{tagbar#currenttag('%s','')})]
-  " set statusline+=%{fugitive#head()}
-  set statusline+=\ %.35{getcwd()}
-  set statusline+=%=
-  " set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-  " set statusline+=\[%{&fileformat}\]
+  set statusline+=\ %1*\ %.35{getcwd()}
+  set statusline+=\ %2*%=
   set statusline+=\ %y
   set statusline+=\ %p%%  
   set statusline+=\[%L]
   set statusline+=\ %l:%c
-  set statusline+=%{StatuslineGit()}
-  set statusline+=\%#warningmsg#
-  set statusline+=\ %f%m 
+  set statusline+=\ %3*\ %{StatuslineGit()}\ %2*
+  set statusline+=\ %1*\ %f%m  
+  " set statusline+=\ %#warningmsg#
   " set statusline+=\ %{SyntasticStatuslineFlag()}
   set statusline+=\ %*
   set statusline+=\ 
@@ -456,6 +455,8 @@
       autocmd BufWritePost vimrc source vimrc | echom "SOURCE ".vimrc
     augroup END 
 
+  " cd to current file dir, only current window
+  nnoremap <silent> <leader>cd :lcd %:p:h<CR>
 " <CUSTOM VIMRC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Override global cfg in '~/.vim/custom.vimrc'
