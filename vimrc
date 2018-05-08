@@ -434,6 +434,17 @@
     map gp `[v`]
     map g/ /<C-r>"
 
+  " Highlihgt yanked
+    nnoremap <silent> <? :let @/=substitute(escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<CR>:set hlsearch<cr> 
+
+  " Search selected
+    vnoremap <silent> * :<C-U>
+      \let old_reg=getreg('"')<bar>
+      \let old_regmode=getregtype('"')<cr>
+      \gvy/<C-R><C-R>=substitute(
+      \escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<cr><cr>
+      \:call setreg('"', old_reg, old_regmode)<cr>
+
   " Open vimrc with ',ev'
     nnoremap <leader>ev :tabnew vimrc<CR>
     nnoremap <leader>ec :source %<CR>:echom 'SOURCE current file'<CR>
