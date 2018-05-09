@@ -60,6 +60,9 @@
     Plug 'ternjs/tern_for_vim'
     "linting
     Plug 'vim-syntastic/syntastic'
+      let g:syntastic_always_populate_loc_list = 1
+      let g:syntastic_auto_loc_list = 1
+      let g:syntastic_check_on_open = 1
 
     Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
     Plug 'blindFS/vim-colorpicker'
@@ -270,16 +273,16 @@
   " Name of the current function (needs taglist.vim)
   " set statusline +=\ [Fun(%{Tlist_Get_Tagname_By_Line()})]
   " set statusline +=\ [Fun(%{tagbar#currenttag('%s','')})]
-  set statusline+=\ %1*\ %.35{getcwd()}
-  set statusline+=\ %2*%=
-  set statusline+=\ %y
+  set statusline+=\ %#warningmsg#
+  set statusline+=\ %{SyntasticStatuslineFlag()}
+  set statusline+=\ %2*%y
   set statusline+=\ %p%%  
   set statusline+=\[%L]
   set statusline+=\ %l:%c
+  set statusline+=\ %=
+  set statusline+=\ %1*\ %.35{getcwd()}\ %2*
   set statusline+=\ %3*\ %{StatuslineGit()}\ %2*
   set statusline+=\ %1*\ %f%m  
-  " set statusline+=\ %#warningmsg#
-  " set statusline+=\ %{SyntasticStatuslineFlag()}
   set statusline+=\ %*
   set statusline+=\ 
 
