@@ -123,10 +123,10 @@
   au BufRead,BufNewFile *.scss set filetype=scss.css
   au BufRead,BufNewFile *.sass set filetype=sass.css
 
-  " jk and jj as a ESC
+  " jk  as a ESC
   imap jk <esc>
-  imap jj <esc>
-  imap kk <esc>
+  " imap jj <esc>
+  " imap kk <esc>
 
   " Auto save on focus lost
   au FocusLost * :wa
@@ -182,6 +182,10 @@
 
   " fugitive Gdiff verticaly
   set diffopt+=vertical
+
+  " auto change dir to dir of current file. Possible some plugins compatibility issue 
+  " set autochdir
+
 
 " <COLORS> 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -455,7 +459,7 @@
   " autoreload vimrc
     augroup reload_vimrc 
       autocmd!
-      autocmd BufWritePost $vimrc source $vimrc | echom "SOURCE ".vimrc
+      autocmd BufWritePost $vimrc source $vimrc | echom "SOURCE ".$vimrc
     augroup END 
 
   " cd to current file dir, only current window
