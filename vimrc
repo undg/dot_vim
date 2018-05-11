@@ -7,11 +7,11 @@
   " source ~/.vim/vimrc
   """"""""""""""""""""""""""""""""""""""""""""""""
   " and pick one of them
-  let vimrc = "~/.vim/vimrc"
-  " let vimrc = "~/.config/nvim/init.vim"
-  " let vimrc = $MYVIMRC
+  let $vimrc = $HOME."/.vim/vimrc"
+  " let $vimrc = $HOME."/.config/nvim/init.vim"
+  " let $vimrc = $MYVIMRC
 
-  let customConfig = '~/.vim/custom.vimrc'
+  let customConfig = $HOME."/.vim/custom.vimrc"
   let mapleader=","
 
 " <VIM-PLUG PLUGINS> 
@@ -450,12 +450,12 @@
       \:call setreg('"', old_reg, old_regmode)<cr>
 
   " Open vimrc with ',ev'
-    nnoremap <leader>ev :tabnew vimrc<CR>
+    nnoremap <leader>ev :tabnew $vimrc<CR>
     nnoremap <leader>ec :source %<CR>:echom 'SOURCE current file'<CR>
   " autoreload vimrc
     augroup reload_vimrc 
       autocmd!
-      autocmd BufWritePost vimrc source vimrc | echom "SOURCE ".vimrc
+      autocmd BufWritePost $vimrc source $vimrc | echom "SOURCE ".vimrc
     augroup END 
 
   " cd to current file dir, only current window
