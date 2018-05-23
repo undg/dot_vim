@@ -74,6 +74,7 @@
       source ~/.vim/pluginsRC/simplyfold.vim
     Plug 'dhruvasagar/vim-table-mode'
       source ~/.vim/pluginsRC/vim-table-mode.vim " <,tb>
+    Plug 'AndrewRadev/linediff.vim'
 
     Plug 'christoomey/vim-tmux-navigator'
       source ~/.vim/pluginsRC/vim-tmux-navigator.vim
@@ -99,7 +100,7 @@
     " sass and cs3 syntax
     Plug 'cakebaker/scss-syntax.vim'
     Plug 'hail2u/vim-css3-syntax'
-    " PARENTHESES IN DIFF COLOR !!
+    " PARENTHESES IN DIFFERENT COLOR !!
     Plug 'luochen1990/rainbow'
       let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
     source ~/.vim/pluginsRC/rainbow.vim
