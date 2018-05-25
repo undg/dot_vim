@@ -62,6 +62,7 @@
     Plug 'vim-syntastic/syntastic'
       let g:syntastic_always_populate_loc_list = 1
       let g:syntastic_auto_loc_list = 1
+      let g:syntastic_loc_list_height=3
       let g:syntastic_check_on_open = 1
 
     Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
@@ -72,6 +73,7 @@
     "Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     Plug 'tmhedberg/SimpylFold'
       source ~/.vim/pluginsRC/simplyfold.vim
+    Plug 'godlygeek/tabular'
     Plug 'dhruvasagar/vim-table-mode'
       source ~/.vim/pluginsRC/vim-table-mode.vim " <,tb>
     Plug 'AndrewRadev/linediff.vim'
@@ -457,6 +459,7 @@
   " Open vimrc with ',ev'
     nnoremap <leader>ev :tabnew $vimrc<CR>
     nnoremap <leader>ec :source %<CR>:echom 'SOURCE current file'<CR>
+    nnoremap <leader>es :source $vimrc <CR>:echom 'SOURCE vimrc'<CR>
   " autoreload vimrc
     augroup reload_vimrc 
       autocmd!
