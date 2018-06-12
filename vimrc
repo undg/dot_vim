@@ -95,7 +95,7 @@
   " SYNTAX
     Plug 'jelera/vim-javascript-syntax'
     " Plug 'ervandew/supertab'
-    " AUTO ADD CLOUSING
+    " AUTO ADD CLOSING
     Plug 'Raimondi/delimitMate'
     source ~/.vim/pluginsRC/delimate.vim
     Plug 'tmhedberg/matchit'
@@ -141,7 +141,7 @@
   set notimeout
   set ttimeout
 
-  " Enable mouse, usefull for window resizing
+  " Enable mouse, useful for window resizing
   set mouse=a
 
   " Set history
@@ -183,7 +183,7 @@
   " Use Unix as the standard file type
   set ffs=unix,dos,mac
 
-  " fugitive Gdiff verticaly
+  " fugitive Gdiff vertically
   set diffopt+=vertical
 
   " auto change dir to dir of current file. Possible some plugins compatibility issue 
@@ -316,7 +316,7 @@
     set tabstop=2
     set expandtab
 
-  " Linebreak on 500 characters
+  " Line break on 500 characters
     set lbr
     set tw=500
 
@@ -330,7 +330,7 @@
     vnoremap > >gv
     vnoremap < <gv
 
-  " This way v replaces viw, vaw, vi", va", vi(, va(, vi[, va[, vi{, va{, vip, vap, vit, vat, ... you get the idea.
+  " This way v replaces viw, vaw, vi", va", vi(, va(, vi[, va[, vi{, va{, vip, vap, vit, vat, ... You get the idea.
     vmap v <Plug>(expand_region_expand)
     vmap <C-v> <Plug>(expand_region_shrink)
 
@@ -352,7 +352,7 @@
     nnoremap <C-L> <C-W><C-L>
     nnoremap <C-H> <C-W><C-H>
 
-  " fulscreen window ',z'
+  " fullscreen window ',z'
     nnoremap <leader>z :tabnew %<CR>
 
 " <FOLDING> 
@@ -423,13 +423,13 @@
     endif
   endfunction
 
-" <PRODUCTIVITY, KEYBINDINGS > 
+" <PRODUCTIVITY, KEY BINDINGS > 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Type ',w' or ',,' to save file (a lot faster than ':w<Enter>'):
     nnoremap <Leader>w :w<CR>
     nnoremap <Leader>, :w<CR>
   
-  " save ',s' and open sesion with 'vim -S'
+  " save ',s' and open session with 'vim -S'
     nnoremap <leader>s :mksession!<CR>
 
   " Type ',q' to quit file
@@ -441,11 +441,11 @@
     nmap <Leader>p "+p
     nmap <Leader>P "+P
 
-  " selecting pasted text 'gp'
+  " selecting/searching yanked text 'gp'
     map gp `[v`]
     map g/ /<C-r>"
 
-  " Highlihgt yanked
+  " Highlight yanked
     nnoremap <silent> <? :let @/=substitute(escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<CR>:set hlsearch<cr> 
 
   " Search selected
@@ -460,7 +460,7 @@
     nnoremap <leader>ev :tabnew $vimrc<CR>
     nnoremap <leader>ec :source %<CR>:echom 'SOURCE current file'<CR>
     nnoremap <leader>es :source $vimrc <CR>:echom 'SOURCE vimrc'<CR>
-  " autoreload vimrc
+  " auto reload vimrc
     augroup reload_vimrc 
       autocmd!
       autocmd BufWritePost $vimrc source $vimrc | echom "SOURCE ".$vimrc
@@ -468,6 +468,11 @@
 
   " cd to current file dir, only current window
   nnoremap <silent> <leader>cd :lcd %:p:h<CR>
+
+  " toggle spell check locally
+  nnoremap <F7> :setlocal spell! spell?<CR>
+  imap <F7> <c-o>:setlocal spell! spell?<CR>
+
 " <CUSTOM VIMRC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Override global cfg in '~/.vim/custom.vimrc'
