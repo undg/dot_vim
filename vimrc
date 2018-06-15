@@ -137,6 +137,9 @@
   " Stop that stupid window from popping up:
   map q: :q
 
+  " Open buffers in tabs
+  :au BufAdd,BufNewFile * nested tab sball
+
   " Timeout for pressing key sequences
   set notimeout
   set ttimeout
