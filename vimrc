@@ -50,7 +50,8 @@
         \ 'ctrl-i': 'vsplit' }
 
   " PRODUCTIVITY
-    Plug 'Shougo/neoyank.vim'
+    " Plug 'Shougo/neoyank.vim'
+    Plug 'vim-scripts/YankRing.vim'
 
     Plug 'Valloric/YouCompleteMe'
       source ~/.vim/pluginsRC/youcompleteme.vim
@@ -123,8 +124,10 @@
   filetype indent on
 
   " filetype css if *.sass
-  au BufRead,BufNewFile *.scss set filetype=scss.css
+  au BufRead,BufNewFile *.scss set filetype=sass.css
+  " au BufRead,BufNewFile *.scss set filetype=css.scss
   au BufRead,BufNewFile *.sass set filetype=sass.css
+  " au BufRead,BufNewFile *.sass set filetype=css.sass
 
   " jk  as a ESC
   imap jk <esc>
