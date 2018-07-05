@@ -48,6 +48,13 @@
         \ 'ctrl-t': 'tab split',
         \ 'ctrl-s': 'split',
         \ 'ctrl-i': 'vsplit' }
+    " quickfix window (cw) open in split/tab...
+    Plug 'yssl/QFEnter'
+    augroup myvimrc
+      autocmd!
+      autocmd QuickFixCmdPost [^l]* cwindow
+      autocmd QuickFixCmdPost l*    lwindow
+    augroup END
 
   " PRODUCTIVITY
     " Plug 'Shougo/neoyank.vim'
