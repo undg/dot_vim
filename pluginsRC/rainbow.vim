@@ -20,5 +20,8 @@ let g:rainbow_conf = {
 \			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
 \		},
 \		'css': 0,
+\		'scss': {
+\			'parentheses': ['start=/(/ end=/)/ contains=scssFunction,scssVariable fold', 'start=/\[/ end=/\]/ contains=scssFunction,scssVariable fold', 'start=/{/ end=/}/ contains=cssComment,cssInclude,cssFontDescriptor,scssAtRootStatement,scssComment,scssDefinition,scssProperty,scssSelector,scssVariable,scssImport,scssExtend,scssInclude,scssFunction,@scssControl,scssWarn,scssError,scssDebug,scssReturn fold'],
+\		},
 \	}
 \}

@@ -52,19 +52,7 @@
   " PRODUCTIVITY
     " Plug 'Shougo/neoyank.vim'
     Plug 'vim-scripts/YankRing.vim'
-
-    Plug 'Valloric/YouCompleteMe'
-      source ~/.vim/pluginsRC/youcompleteme.vim
-    Plug 'mattn/emmet-vim'
-      source ~/.vim/pluginsRC/emmet-vim.vim
-    "definition's doc and renaming
-    Plug 'ternjs/tern_for_vim'
-    "linting
-    Plug 'vim-syntastic/syntastic'
-      let g:syntastic_always_populate_loc_list = 1
-      let g:syntastic_auto_loc_list = 1
-      let g:syntastic_loc_list_height=3
-      let g:syntastic_check_on_open = 1
+    Plug 'vim-scripts/Tabmerge'
 
     Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
     Plug 'blindFS/vim-colorpicker'
@@ -94,6 +82,19 @@
     Plug 'djoshea/vim-autoread'
 
   " SYNTAX
+    Plug 'Valloric/YouCompleteMe'
+      source ~/.vim/pluginsRC/youcompleteme.vim
+    Plug 'mattn/emmet-vim'
+      source ~/.vim/pluginsRC/emmet-vim.vim
+    "definition's doc and renaming
+    Plug 'ternjs/tern_for_vim'
+    "linting
+    Plug 'vim-syntastic/syntastic'
+      let g:syntastic_always_populate_loc_list = 1
+      let g:syntastic_auto_loc_list = 1
+      let g:syntastic_loc_list_height=3
+      let g:syntastic_check_on_open = 1
+
     Plug 'jelera/vim-javascript-syntax'
     " Plug 'ervandew/supertab'
     " AUTO ADD CLOSING
@@ -124,9 +125,9 @@
   filetype indent on
 
   " filetype css if *.sass
-  au BufRead,BufNewFile *.scss set filetype=sass.css
+  au BufRead,BufNewFile *.scss set filetype=scss.css
   " au BufRead,BufNewFile *.scss set filetype=css.scss
-  au BufRead,BufNewFile *.sass set filetype=sass.css
+  au BufRead,BufNewFile *.sass set filetype=scss.css
   " au BufRead,BufNewFile *.sass set filetype=css.sass
 
   " jk  as a ESC
