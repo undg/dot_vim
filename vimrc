@@ -102,7 +102,11 @@
       let g:syntastic_loc_list_height=3
       let g:syntastic_check_on_open = 1
 
+    " JAVACSRIPT
+    " Plug 'pangloss/vim-javascript'
     Plug 'jelera/vim-javascript-syntax'
+    Plug 'othree/javascript-libraries-syntax.vim'
+
     " Plug 'ervandew/supertab'
     " AUTO ADD CLOSING
     Plug 'Raimondi/delimitMate'
