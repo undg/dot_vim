@@ -70,7 +70,7 @@
     Plug 'tmhedberg/SimpylFold'
       source ~/.vim/pluginsRC/simplyfold.vim
     Plug 'godlygeek/tabular'
-      nnoremap <leader>t :Tabularize/
+      vmap <leader>t :Tabularize/
     Plug 'dhruvasagar/vim-table-mode'
       source ~/.vim/pluginsRC/vim-table-mode.vim " <,tb>
     Plug 'AndrewRadev/linediff.vim'
