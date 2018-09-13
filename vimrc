@@ -59,7 +59,7 @@
   " PRODUCTIVITY
     " Plug 'Shougo/neoyank.vim'
     Plug 'vim-scripts/YankRing.vim'
-    Plug 'vim-scripts/Tabmerge'
+    Plug 'und3rdg/Tabmerge'
 
     Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
     Plug 'blindFS/vim-colorpicker'
