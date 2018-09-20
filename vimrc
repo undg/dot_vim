@@ -61,7 +61,9 @@
     Plug 'vim-scripts/YankRing.vim'
     Plug 'und3rdg/Tabmerge'
 
-    Plug 'chrisbra/Colorizer' ", { 'on': 'ColorToogle' }
+    Plug 'lilydjwg/colorizer' ", { 'on': 'Colorizer' }
+      let g:colorizer_startup = 0
+      let g:colorizer_maxlines = 1000
     Plug 'blindFS/vim-colorpicker'
     "Plug 'davidhalter/jedi-vim' " python
 
