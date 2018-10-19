@@ -90,7 +90,6 @@
     Plug 'simeji/winresizer' " <C-e>
     Plug 'vimwiki/vimwiki'
     Plug 'djoshea/vim-autoread'
-    Plug 'vim-scripts/caniuse.vim' " ,ciu
 
   " SYNTAX
     Plug 'Valloric/YouCompleteMe'
