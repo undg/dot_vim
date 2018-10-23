@@ -491,6 +491,9 @@
   nnoremap <F7> :setlocal spell! spell?<CR>
   imap <F7> <c-o>:setlocal spell! spell?<CR>
 
+  " remove html tag, keep content
+  map <leader>dt "aditcat<C-x><C-r>a<ESC>
+
 " <CUSTOM VIMRC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Override global cfg in '~/.vim/custom.vimrc'
