@@ -1,1 +1,1 @@
-/home/undg/.vim/vimrc
+../.config/nvim/init.vim
