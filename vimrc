@@ -67,6 +67,7 @@
       map <leader>rt  :RangerCurrentFileNewTab<CR>
       " map <leader>rt  :RangerCurrentDirectoryNewTab<CR>gT<c-o>
       map <leader>rd  :RangerWorkingDirectoryNewTab<CR>
+    Plug 'seletskiy/vim-refugi'
 
   " PRODUCTIVITY
     " Plug 'Shougo/neoyank.vim'
