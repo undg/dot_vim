@@ -103,6 +103,7 @@
     Plug 'simeji/winresizer' " <C-e>
     Plug 'vimwiki/vimwiki'
     Plug 'djoshea/vim-autoread'
+    Plug 'kshenoy/vim-signature'
 
   " SYNTAX
     Plug 'Valloric/YouCompleteMe'
