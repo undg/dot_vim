@@ -162,7 +162,7 @@
   " au BufRead,BufNewFile *.sass set filetype=css.sass
 
   " jk, jj or kk  AS A ESC (as capslock in my systms is rmaped to esc, thre is no more need for this)
-  " imap jk <esc>
+  imap jk <esc>
   " imap jj <esc>
   " imap kk <esc>
 
