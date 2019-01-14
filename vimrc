@@ -125,7 +125,7 @@
     Plug 'jelera/vim-javascript-syntax'
     Plug 'othree/javascript-libraries-syntax.vim'
     " Plug 'mxw/vim-jsx'
-    Plug 'neoclide/vim-jsx-improve'
+    Plug 'chemzqm/vim-jsx-improve'
 
     " Plug 'ervandew/supertab'
     " AUTO ADD CLOSING
