@@ -81,7 +81,6 @@
     "Plug 'davidhalter/jedi-vim' " python
 
     Plug 'tpope/vim-commentary'
-    "Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     Plug 'tmhedberg/SimpylFold'
       source ~/.vim/pluginsRC/simplyfold.vim
     Plug 'godlygeek/tabular'
@@ -104,6 +103,7 @@
     Plug 'vimwiki/vimwiki'
     Plug 'djoshea/vim-autoread'
     Plug 'kshenoy/vim-signature'
+      nnoremap m<space> :SignatureToggleSigns<cr>
 
   " SYNTAX
     Plug 'Valloric/YouCompleteMe'
@@ -114,12 +114,7 @@
     Plug 'ternjs/tern_for_vim'
     "linting
     Plug 'vim-syntastic/syntastic'
-      let g:syntastic_always_populate_loc_list = 1
-      let g:syntastic_auto_loc_list = 1
-      let g:syntastic_loc_list_height=3
-      let g:syntastic_check_on_open = 1
-      let g:syntastic_javascript_checkers = ['eslint']
-      let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+      source ~/.vim/pluginsRC/syntastic.vim
 
     " JAVACSRIPT
     " Plug 'pangloss/vim-javascript'
@@ -131,7 +126,7 @@
     " Plug 'ervandew/supertab'
     " AUTO ADD CLOSING
     Plug 'Raimondi/delimitMate'
-    source ~/.vim/pluginsRC/delimate.vim
+      source ~/.vim/pluginsRC/delimate.vim
     Plug 'tmhedberg/matchit'
     " sass and cs3 syntax
     Plug 'cakebaker/scss-syntax.vim'
