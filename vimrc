@@ -103,7 +103,7 @@
     Plug 'vimwiki/vimwiki'
     Plug 'djoshea/vim-autoread'
     Plug 'kshenoy/vim-signature'
-      nnoremap m<space> :SignatureToggleSigns<cr>
+      nnoremap mt :SignatureToggleSigns<cr>
 
   " SYNTAX
     Plug 'Valloric/YouCompleteMe'
