@@ -29,8 +29,8 @@
 
   " GIT PLUGINS
     Plug 'tpope/vim-fugitive'
-    Plug 'shumphrey/fugitive-gitlab.vim' " Gbrowse gitlab
-    Plug 'tpope/vim-rhubarb' " Gbrowse github
+    " Plug 'shumphrey/fugitive-gitlab.vim' " Gbrowse gitlab
+    " Plug 'tpope/vim-rhubarb' " Gbrowse github
     " git dif in gutter(column line number)
     Plug 'airblade/vim-gitgutter' 
     source ~/.vim/pluginsRC/vim-gitgutter.vim
