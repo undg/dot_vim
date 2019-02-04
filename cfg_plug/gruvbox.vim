@@ -1,6 +1,6 @@
 " TRUE COLORS
 if has("patch-7.4.710")
-  set termguicolors
+    set termguicolors
 endif
 
 " OR TRANSPARENT BACKGROUND
