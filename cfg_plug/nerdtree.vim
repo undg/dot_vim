@@ -12,15 +12,18 @@ function! ToogleFocusCloseNerdTree()
         endif
     else
         " IF NERD TREE IS CLOSED
-        " silent NERDTreeTabsOpen " can by annoying when you have many tabs open
+            " silent NERDTreeTabsOpen " can by annoying when you have many tabs open
         silent NERDTree
-        silent NERDTreeTabsFind
+            " bug: NERDTreeTabsFind need to by fixed in this scenario
+        " silent NERDTreeFocus
+        " silent NERDTreeTabsFind
     endif
 endfunction
 
 " F2 to open/close sidebar with folders/files
 map <silent> <F2> :call ToogleFocusCloseNerdTree()<cr>
 map <silent> <leader><F2> :NERDTreeTabsClose<cr>
+map <silent> <F3> :NERDTreeTabsFind<cr>
 
 " let NERDTreeMapOpenSplit      = 's'
 " let NERDTreeMapOpenVSplit     = 'i'
