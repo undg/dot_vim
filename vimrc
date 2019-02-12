@@ -54,7 +54,6 @@
         " Plug 'rafaqz/ranger.vim'
         Plug 'francoiscabrol/ranger.vim'
             source ~/.vim/cfg_plug/ranger.vim
-        Plug 'seletskiy/vim-refugi'
 
     " PRODUCTIVITY
         " Plug 'Shougo/neoyank.vim'
