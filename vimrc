@@ -26,14 +26,14 @@
     " STEP ABOVE 'NOCOMPATIBLE'
     Plug 'tpope/vim-sensible'
 
-" <VIM-PLUG PLUGINS> 
+" <VIM-PLUG PLUGINS>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " GIT PLUGINS
         Plug 'tpope/vim-fugitive'
         " Plug 'shumphrey/fugitive-gitlab.vim' " Gbrowse gitlab
         " Plug 'tpope/vim-rhubarb' " Gbrowse github
         " git dif in gutter(column line number)
-        Plug 'airblade/vim-gitgutter' 
+        Plug 'airblade/vim-gitgutter'
             source ~/.vim/cfg_plug/vim-gitgutter.vim
 
     " FILE MANAGERS
@@ -131,7 +131,7 @@
 
     call plug#end()
 
-" <SETTINGS> 
+" <SETTINGS>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Enable filetype plugins
     filetype plugin on
@@ -167,7 +167,7 @@
 
     " Set relativenumber
     " Automatic toggling between line number modes
-    " Normal/Visual mode produce hybrid line numbers, 
+    " Normal/Visual mode produce hybrid line numbers,
     " Insert relative line numbers
     set number relativenumber
 
@@ -182,7 +182,7 @@
     set splitright
 
     " Don't redraw while executing macros (good performance config)
-    set lazyredraw 
+    set lazyredraw
 
     " For regular expressions turn magic on
     set magic
@@ -201,13 +201,13 @@
     " fugitive Gdiff vertically
     set diffopt+=vertical
 
-    " auto change dir to dir of current file. Possible some plugins compatibility issue 
+    " auto change dir to dir of current file. Possible some plugins compatibility issue
     " set autochdir
 
 
-" <COLORS> 
+" <COLORS>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    syntax enable 
+    syntax enable
     try
     colorscheme gruvbox
     catch
@@ -238,7 +238,7 @@
     " Fix background in tmux
     set t_ut=
 
-" <TAB BAR> 
+" <TAB BAR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     function! Tabline()
         let s = ''
@@ -269,9 +269,9 @@
     endfunction
     set tabline=%!Tabline()
 
-    hi! TabLineFill cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#3A3A3A 
+    hi! TabLineFill cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#3A3A3A
     hi! TabLine     cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#A8A8A8
-    hi! TabLineSel  cterm=none gui=none ctermfg=59 ctermbg=214 guifg=#5F5F5F guibg=#FFAF00 
+    hi! TabLineSel  cterm=none gui=none ctermfg=59 ctermbg=214 guifg=#5F5F5F guibg=#FFAF00
 
 " <STATUSLINE>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -299,17 +299,17 @@
     set statusline+=\ %#warningmsg#
     set statusline+=\ %{SyntasticStatuslineFlag()}
     set statusline+=\ %2*%y
-    set statusline+=\ %p%%  
+    set statusline+=\ %p%%
     set statusline+=\[%L]
     set statusline+=\ %l:%c
     set statusline+=\ %=
     set statusline+=\ %1*\ %.35{getcwd()}\ %2*
     set statusline+=\ %3*\ %{StatuslineGit()}\ %2*
-    set statusline+=\ %1*\ %f%m  
+    set statusline+=\ %1*\ %f%m
     set statusline+=\ %*
-    set statusline+=\ 
+    set statusline+=\
 
-" <FILES, BACKUPS AND UNDO> 
+" <FILES, BACKUPS AND UNDO>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Turn backup off, since most stuff is in SVN, git et.c anyway...
     set nobackup
@@ -319,7 +319,7 @@
     " Set to auto read when a file is changed from the outside
     set autoread
 
-" <TEXT, TAB AND INDENT RELATED> 
+" <TEXT, TAB AND INDENT RELATED>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Use spaces instead of tabs
     set expandtab
@@ -340,7 +340,7 @@
     set si "Smart indent
     set wrap "Wrap lines
 
-" <VISUAL MODE> 
+" <VISUAL MODE>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " highlight in visual stay
     vnoremap > >gv
@@ -350,7 +350,7 @@
     vmap v <Plug>(expand_region_expand)
     vmap <C-v> <Plug>(expand_region_shrink)
 
-" <MOVING AROUND, TABS, WINDOWS AND BUFFERS> 
+" <MOVING AROUND, TABS, WINDOWS AND BUFFERS>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Treat long lines as break lines (useful when moving around in them)
     map j gj
@@ -365,19 +365,19 @@
     " fullscreen window ',z'
     nnoremap <leader>z :tabnew %<CR>
 
-" <FOLDING> 
+" <FOLDING>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Enable folding
     " set foldmethod=manual
     set foldmethod=indent
-    " set foldmethod=expr 
+    " set foldmethod=expr
     " expresion to fold paragrafs with two empty lines
     set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'^\\s*$'&&getline(v:lnum+2)=~'\\S'?'<1':1
     " modeline version (escape colon's)
     " // vim: foldmethod=expr foldexpr=getline(v\:lnum)=~'^\\s*$'&&getline(v\:lnum+1)=~'^\\s*$'&&getline(v\:lnum+2)=~'\\S'?'<1'\:1
-    " set foldmethod=marker 
-    " set foldmethod=syntax 
-    " set foldmethod=diff 
+    " set foldmethod=marker
+    " set foldmethod=syntax
+    " set foldmethod=diff
 
     " set foldmarker=,}}}
     set foldlevel=9
@@ -388,18 +388,18 @@
     " Add a bit extra margin to the left
     set foldcolumn=5
 
-" <SEARCH> 
+" <SEARCH>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Ignore case when searching
     set ignorecase
-    " When searching try to be smart about cases 
+    " When searching try to be smart about cases
     set smartcase
     " Highlight search results
     set hlsearch
     " Makes search act like search in modern browsers
-    set incsearch 
+    set incsearch
     " Show matching brackets when text indicator is over them
-    set showmatch 
+    set showmatch
     " How many tenths of a second to blink when matching brackets
     set mat=4
 
@@ -430,7 +430,7 @@
                 \:call setreg('"', old_reg, old_regmode)<cr>
                 \<S-n>
 
-" <PRODUCTIVITY, KEY BINDINGS > 
+" <PRODUCTIVITY, KEY BINDINGS >
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Type ',,' to save file (a lot faster than ':w<Enter>'):
     nnoremap <Leader>, :w<CR>
@@ -453,10 +453,10 @@
     nnoremap <leader>es :source $vimrc <CR>:echom 'SOURCE vimrc'<CR>
     " auto reload vimrc
     " bug: it reloadnig only in vimrc, not in source's
-    augroup reload_vimrc 
+    augroup reload_vimrc
         autocmd!
         autocmd BufWritePost $vimrc source $vimrc | echom "SOURCE ".$vimrc
-    augroup END 
+    augroup END
 
     " cd to current file dir, only current window
     nnoremap <silent> <leader>cd :lcd %:p:h<CR>
@@ -480,7 +480,7 @@
     if !empty(glob(customConfig))
         exe 'source' . customConfig
     else
-        echom "Creating " . customConfig 
+        echom "Creating " . customConfig
         " call !mkdir customConfig
         silent exe '!touch '.customConfig
     endif
