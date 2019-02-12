@@ -222,8 +222,8 @@
         set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
     endif
 
-    " don't show white spaces
-    set nolist
+    " show white spaces
+    set list
 
     " Set extra options when running in GUI mode
     if has("gui_running")
