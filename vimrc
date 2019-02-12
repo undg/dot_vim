@@ -466,6 +466,10 @@
     " remove html tag, keep content
     map <leader>dt "aditcat<C-x><C-r>a<ESC>
 
+    " remove white spaces on end line
+    map <leader>sp :%s/\s\+$//ge<CR>:echomsg "white space cleaing"<cr>
+
+
 " <CUSTOM VIMRC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Override global cfg in '~/.vim/custom.vimrc'
