@@ -1,5 +1,6 @@
-" Run the current file with node
+" Run...
 map <Leader>vn :call VimuxRunCommand("node " . bufname("%"))<CR>
+map <Leader>vg :call VimuxRunCommand("gulp bar")<CR>
 
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>

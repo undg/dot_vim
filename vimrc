@@ -107,6 +107,8 @@
         Plug 'othree/javascript-libraries-syntax.vim'
         " Plug 'mxw/vim-jsx'
         Plug 'neoclide/vim-jsx-improve'
+        Plug 'mtscout6/syntastic-local-eslint.vim'
+
 
         " Plug 'ervandew/supertab'
         " AUTO ADD CLOSING
