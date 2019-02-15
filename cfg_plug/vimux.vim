@@ -21,7 +21,7 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
 " RESTART LAST TASK
-map <Leader>vr :call VimuxInterruptRunner() <bar> :call VimuxRunLastCommand() <cr>
+map <Leader>vr :call VimuxInterruptRunner() <bar> :call VimuxInterruptRunner() <bar> :call VimuxRunLastCommand() <cr>
 
 
 function! VimuxSlime()
