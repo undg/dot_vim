@@ -29,10 +29,10 @@ map <silent> <F3> :NERDTreeTabsFind<cr>
 " let NERDTreeMapOpenVSplit     = 'i'
 
 let NERDTreeMapOpenSplit      = '-'
-let NERDTreeMapOpenVSplit     = '<BS>'
+let NERDTreeMapOpenVSplit     = '\'
 
 let NERDTreeMapPreviewSplit   = 'p-'
-let NERDTreeMapPreviewVSplit  = 'p<BS>'
+let NERDTreeMapPreviewVSplit  = 'p\'
 
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI=1
