@@ -471,6 +471,8 @@
     " remove white spaces on end line
     map <leader>sp :%s/\s\+$//ge<CR>:echomsg "white space cleaing"<cr>
 
+    " get git branch go into insert mode.
+    map <leader>gb :0r!git rev-parse --abbrev-ref HEAD<CR>A:<SPACE>
 
 " <CUSTOM VIMRC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
