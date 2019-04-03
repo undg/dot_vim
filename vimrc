@@ -123,6 +123,7 @@
             source ~/.vim/cfg_plug/rainbow.vim
         Plug 'nathanaelkane/vim-indent-guides'
             source ~/.vim/cfg_plug/vim-indent-guides.vim
+        Plug 'zeekay/vim-beautify'
 
     " THEME
         Plug 'morhetz/gruvbox'
@@ -433,7 +434,7 @@
 " <PRODUCTIVITY, KEY BINDINGS >
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Type ',,' to save file (a lot faster than ':w<Enter>'):
-    nnoremap <Leader>, :w<CR>
+    nnoremap <Leader><Leader> :w<CR>
 
     " save ',s' and open session with 'vim -S'
     nnoremap <leader>s :mksession!<CR>
