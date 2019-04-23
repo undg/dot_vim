@@ -31,6 +31,7 @@
     " GIT PLUGINS
         Plug 'tpope/vim-fugitive'
         Plug 'shumphrey/fugitive-gitlab.vim' " Gbrowse gitlab
+        let g:fugitive_gitlab_domains = ['git.keepthinking.net']
         Plug 'tpope/vim-rhubarb' " Gbrowse github
         " git diff in gutter(column line number)
         Plug 'airblade/vim-gitgutter'
@@ -100,14 +101,14 @@
         "linting
         Plug 'vim-syntastic/syntastic'
             source ~/.vim/cfg_plug/syntastic.vim
+        Plug 'mtscout6/syntastic-local-eslint.vim'
 
         " JAVACSRIPT
-        " Plug 'pangloss/vim-javascript'
-        Plug 'jelera/vim-javascript-syntax'
         Plug 'othree/javascript-libraries-syntax.vim'
+        Plug 'neoclide/vim-jsx-improve' " have to be before other syntax plugins.
+        Plug 'jelera/vim-javascript-syntax' " keep it last
         " Plug 'mxw/vim-jsx'
-        Plug 'neoclide/vim-jsx-improve'
-        Plug 'mtscout6/syntastic-local-eslint.vim'
+        " Plug 'pangloss/vim-javascript'
 
 
         " Plug 'ervandew/supertab'
