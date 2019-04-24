@@ -90,6 +90,7 @@
         Plug 'djoshea/vim-autoread'
         Plug 'kshenoy/vim-signature'
             nnoremap mt :SignatureToggleSigns<cr>
+        Plug 'tpope/vim-surround'
 
     " SYNTAX
         Plug 'Valloric/YouCompleteMe'
