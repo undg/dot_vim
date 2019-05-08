@@ -367,6 +367,7 @@
 
     " fullscreen window ',z'
     nnoremap <leader>z :tabnew %<CR>
+    nnoremap <leader>b :Buffers<CR>
 
 " <FOLDING>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
