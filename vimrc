@@ -53,8 +53,8 @@
             autocmd QuickFixCmdPost l*    lwindow
         augroup END
         " Plug 'rafaqz/ranger.vim'
-        Plug 'francoiscabrol/ranger.vim'
-            source ~/.vim/cfg_plug/ranger.vim
+        " Plug 'francoiscabrol/ranger.vim'
+        "     source ~/.vim/cfg_plug/ranger.vim
 
     " PRODUCTIVITY
         " Plug 'Shougo/neoyank.vim'
