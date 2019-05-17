@@ -95,6 +95,18 @@
     " SYNTAX
         Plug 'Valloric/YouCompleteMe'
             source ~/.vim/cfg_plug/youcompleteme.vim
+
+        " if has('nvim')
+        "     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+        " else
+        "     Plug 'Shougo/deoplete.nvim'
+        "     Plug 'roxma/nvim-yarp'
+        "     Plug 'roxma/vim-hug-neovim-rpc'
+        " endif
+        " let g:deoplete#enable_at_startup = 1
+
+
+
         Plug 'mattn/emmet-vim'
             source ~/.vim/cfg_plug/emmet-vim.vim
         "definition's doc and renaming
