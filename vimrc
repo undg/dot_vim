@@ -234,7 +234,7 @@
     hi LineNr ctermbg=0 guibg=#3C3836
 
     if has("patch-7.4.710")
-        set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+        set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
     else
         set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
     endif
@@ -477,7 +477,11 @@
     " cd to current file dir, only current window
     nnoremap <silent> <leader>cd :lcd %:p:h<CR>
 
-    " toggle spell check locally
+    " F3: Toggle list (display unprintable characters).
+    nnoremap <F8> :set list!<CR>
+    imap <F8> <c-o>:set list!<CR>
+
+    " Toggle spell check locally
     nnoremap <F7> :setlocal spell! spell?<CR>
     imap <F7> <c-o>:setlocal spell! spell?<CR>
 
