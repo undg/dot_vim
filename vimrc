@@ -172,7 +172,7 @@
     set ttimeout
 
     " Enable mouse, useful for window resizing
-    " set mouse=a
+    set mouse=vn
 
     " Set history
     set history=900
