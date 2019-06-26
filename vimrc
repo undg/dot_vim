@@ -13,6 +13,7 @@
 
     let customConfig = $HOME."/.vim/custom.vimrc"
     let mapleader=","
+    let maplocalleader=","
 
     " VIMPLUG START
     call plug#begin('~/.vim/plugged')
@@ -91,6 +92,8 @@
         Plug 'kshenoy/vim-signature'
             nnoremap mt :SignatureToggleSigns<cr>
         Plug 'tpope/vim-surround'
+        Plug 'aserebryakov/vim-todo-lists'
+
 
     " SYNTAX
         Plug 'Valloric/YouCompleteMe'
@@ -111,6 +114,7 @@
             source ~/.vim/cfg_plug/emmet-vim.vim
         "definition's doc and renaming
         Plug 'ternjs/tern_for_vim'
+            source ~/.vim/cfg_plug/tern_for_vim.vim
         "linting
         Plug 'vim-syntastic/syntastic'
             source ~/.vim/cfg_plug/syntastic.vim
