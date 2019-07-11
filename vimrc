@@ -93,6 +93,7 @@
             nnoremap mt :SignatureToggleSigns<cr>
         Plug 'tpope/vim-surround'
         Plug 'aserebryakov/vim-todo-lists'
+            let g:VimTodoListsMoveItems = 0
 
 
     " SYNTAX
