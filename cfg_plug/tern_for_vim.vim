@@ -1,4 +1,18 @@
-nnoremap <leader>td :TernDoc<CR>
+let g:doc = 1
+function DocToggle()
+    if g:doc
+        TernDoc
+    else
+        pclose
+    endif
+    let g:doc = !g:doc 
+endfunction
+map _D :call DocToggle()<cr>
+nnoremap <leader>td :call DocToggle()<CR>
+" nnoremap <leader>td :TernDoc<CR>
+
+
+
 nnoremap <leader>tb :TernDocBrowse<CR>
 " emmet is using this key binding?
 " nnoremap <leader>tt :TernType<CR>

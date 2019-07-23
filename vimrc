@@ -97,9 +97,29 @@
 
 
     " SYNTAX
-        Plug 'Valloric/YouCompleteMe'
-            source ~/.vim/cfg_plug/youcompleteme.vim
+        " AUTOCOMPLEATION VERSION 3
+        if has('nvim')
+            Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+            let g:deoplete#enable_at_startup = 1
+            Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+                source ~/.vim/cfg_plug/deoplete-ternjs.vim
+        else
+            Plug 'Valloric/YouCompleteMe'
+                source ~/.vim/cfg_plug/youcompleteme.vim
+            Plug 'ternjs/tern_for_vim'
+                source ~/.vim/cfg_plug/tern_for_vim.vim
+        endif
 
+
+        " AUTOCOMPLEATION VERSION 1
+            " Plug 'Valloric/YouCompleteMe'
+            "     source ~/.vim/cfg_plug/youcompleteme.vim
+            " Plug 'ternjs/tern_for_vim'
+            "     source ~/.vim/cfg_plug/tern_for_vim.vim
+
+
+
+        " AUTOCOMPLEATION VERSION 2
         " if has('nvim')
         "     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         " else
@@ -110,12 +130,11 @@
         " let g:deoplete#enable_at_startup = 1
 
 
-
         Plug 'mattn/emmet-vim'
             source ~/.vim/cfg_plug/emmet-vim.vim
-        "definition's doc and renaming
-        Plug 'ternjs/tern_for_vim'
-            source ~/.vim/cfg_plug/tern_for_vim.vim
+        "definition's doc's and renaming
+        " Plug 'ternjs/tern_for_vim'
+        "     source ~/.vim/cfg_plug/tern_for_vim.vim
         "linting
         Plug 'vim-syntastic/syntastic'
             source ~/.vim/cfg_plug/syntastic.vim
@@ -499,6 +518,9 @@
     " get git branch go into insert mode.
     map <leader>gb :0r!git rev-parse --abbrev-ref HEAD<CR>A:<SPACE>
 
+    " popup selection (autocompleate)
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " <CUSTOM VIMRC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Override global cfg in '~/.vim/custom.vimrc'
