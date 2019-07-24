@@ -103,6 +103,8 @@
             let g:deoplete#enable_at_startup = 1
             Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
                 source ~/.vim/cfg_plug/deoplete-ternjs.vim
+            Plug 'ternjs/tern_for_vim'
+                source ~/.vim/cfg_plug/tern_for_vim.vim
         else
             Plug 'Valloric/YouCompleteMe'
                 source ~/.vim/cfg_plug/youcompleteme.vim
