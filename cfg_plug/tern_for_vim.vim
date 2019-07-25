@@ -37,8 +37,8 @@ nnoremap <leader>tR :TernRename<CR>
 " If you do not see argument hints while in insert mode you might
 " have to disable the mode indication (:set noshowmode). For more
 " information see 'noshowmode'.
-set updatetime=1
-let tern_show_argument_hints="on_hold"
+" set updatetime=1
+let tern_show_argument_hints="no"
 
 
 
