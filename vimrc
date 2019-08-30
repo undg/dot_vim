@@ -59,7 +59,10 @@
 
     " PRODUCTIVITY
         " Plug 'Shougo/neoyank.vim'
-        Plug 'vim-scripts/YankRing.vim'
+        " Plug 'vim-scripts/YankRing.vim'
+        Plug 'bfredl/nvim-miniyank'
+            source ~/.vim/cfg_plug/nvim-miniyank.vim
+
         Plug 'und3rdg/Tabmerge'
 
         Plug 'lilydjwg/colorizer' ", { 'on': 'Colorizer' }
@@ -486,8 +489,8 @@
     " Copy & paste to system clipboard with ',p' and ',y':
     vmap <Leader>y "+y
     vmap <Leader>d "+d
-    nmap <Leader>p "+p
-    nmap <Leader>P "+P
+    nmap <C-c> "+p
+    nmap <C-C> "+P
 
     " Open vimrc with ',ev'
     nnoremap <leader>ev :tabnew $vimrc<CR>

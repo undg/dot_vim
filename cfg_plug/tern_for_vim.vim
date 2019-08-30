@@ -1,5 +1,5 @@
 let g:doc = 1
-function DocToggle()
+function! DocToggle()
     if g:doc
         TernDoc
     else
@@ -13,17 +13,17 @@ nnoremap <leader>td :call DocToggle()<CR>
 
 
 
-nnoremap <leader>tb :TernDocBrowse<CR>
+nnoremap <leader>tb  : TernDocBrowse<CR>
+nnoremap <leader>ttp : TernType<CR>
+nnoremap <leader>tD  : TernDef<CR>
+"    map <leader>tp  : TernDefPreview<CR>
+nnoremap <leader>tpd : TernDefPreview<CR>
+nnoremap <leader>tsd : TernDefSplit<CR>
+nnoremap <leader>ttd : TernDefTab<CR>
+nnoremap <leader>tr  : TernRefs<CR>
+nnoremap <leader>tR  : TernRename<CR>
 " emmet is using this key binding?
-" nnoremap <leader>tt :TernType<CR>
-nnoremap <leader>ttp :TernType<CR>
-nnoremap <leader>tD :TernDef<CR>
-"    map <leader>tp :TernDefPreview<CR> 
-nnoremap <leader>tpd :TernDefPreview<CR>
-nnoremap <leader>tsd :TernDefSplit<CR>
-nnoremap <leader>ttd :TernDefTab<CR>
-nnoremap <leader>tr :TernRefs<CR>
-nnoremap <leader>tR :TernRename<CR> 
+" nnoremap <leader>tt              : TernType<CR>
 
 
 
