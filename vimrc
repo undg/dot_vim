@@ -182,7 +182,7 @@
     filetype indent on
 
     " filetype css if *.sass
-    au BufRead,BufNewFile *.scss set filetype=scss.css
+    au BufRead,BufNewFile *.scss set filetype=sass.css
     " au BufRead,BufNewFile *.scss set filetype=css.scss
     au BufRead,BufNewFile *.sass set filetype=sass
     " au BufRead,BufNewFile *.sass set filetype=css.sass
