@@ -159,8 +159,8 @@
             source ~/.vim/cfg_plug/delimate.vim
         Plug 'tmhedberg/matchit'
         " sass and cs3 syntax
-        Plug 'cakebaker/scss-syntax.vim'
         Plug 'hail2u/vim-css3-syntax'
+        Plug 'cakebaker/scss-syntax.vim'
         " PARENTHESES IN DIFFERENT COLOR !!
         Plug 'luochen1990/rainbow'
             source ~/.vim/cfg_plug/rainbow.vim
