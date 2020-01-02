@@ -11,12 +11,13 @@ map _D :call DocToggle()<cr>
 nnoremap <leader>td :call DocToggle()<CR>
 " nnoremap <leader>td :TernDoc<CR>
 
+map         _T  : TernDefPreview<CR>
+
 
 
 nnoremap <leader>tb  : TernDocBrowse<CR>
 nnoremap <leader>ttp : TernType<CR>
 nnoremap <leader>tD  : TernDef<CR>
-"    map <leader>tp  : TernDefPreview<CR>
 nnoremap <leader>tpd : TernDefPreview<CR>
 nnoremap <leader>tsd : TernDefSplit<CR>
 nnoremap <leader>ttd : TernDefTab<CR>
