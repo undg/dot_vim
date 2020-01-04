@@ -90,6 +90,7 @@
         Plug 'terryma/vim-smooth-scroll'
             source ~/.vim/cfg_plug/vim-smooth-scroll.vim
         Plug 'simeji/winresizer' " <C-e>
+            source ~/.vim/cfg_plug/winresizer.vim
         Plug 'vimwiki/vimwiki'
         Plug 'djoshea/vim-autoread'
         Plug 'kshenoy/vim-signature'
