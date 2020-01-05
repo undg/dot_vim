@@ -1,12 +1,12 @@
 " KEY MAPPINGS gitgutter {{{
     " To change the hunk-jumping maps (defaults shown):
-        nmap [h <Plug>GitGutterPrevHunk
-        nmap ]h <Plug>GitGutterNextHunk
+        nmap [h <Plug>(GitGutterPrevHunk)
+        nmap ]h <Plug>(GitGutterNextHunk)
 
     " To change the hunk-staging/undoing/previewing maps (defaults shown):
-        nmap <Leader>hs <Plug>GitGutterStageHunk
-        nmap <Leader>hu <Plug>GitGutterUndoHunk
-        nmap <Leader>hp <Plug>GitGutterPreviewHunk
+        nmap <Leader>hs <Plug>(GitGutterStageHunk)
+        nmap <Leader>hu <Plug>(GitGutterUndoHunk)
+        nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
 
     " To change the hunk text object maps (defaults shown):
         " omap ic <Plug>GitGutterTextObjectInnerPending
