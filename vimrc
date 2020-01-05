@@ -2,24 +2,25 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     """""""" Same cfg for vim and nvim """""""""""""
     " put it to ~/.config/nvim/init.vim
-    " set runtimepath^=~/.vim runtimepath+=~/.vim/after
-    " let &packpath = &runtimepath
-    " source ~/.vim/vimrc
+        " set runtimepath^=~/.vim runtimepath+=~/.vim/after
+        " let &packpath = &runtimepath
+        " source ~/.vim/vimrc
     """"""""""""""""""""""""""""""""""""""""""""""""
     " and pick one of them
-    let $vimrc = $HOME."/.vim/vimrc"
+    let $VIM = "~/.vim"
+    let $vimrc = $VIM."/vimrc"
     " let $vimrc = $HOME."/.config/nvim/init.vim"
     " let $vimrc = $MYVIMRC
 
-    let customConfig = $HOME."/.vim/custom.vimrc"
+    let customConfig = $VIM."/custom.vimrc"
     let mapleader=","
     let maplocalleader=","
 
     " VIMPLUG START
-    call plug#begin('~/.vim/plugged')
+    call plug#begin($VIM.'/plugged')
     " DOWNLOAD VIM-PLUG IN CASE OF FRESH START
-    if empty(glob('~/.vim/autoload/plug.vim'))
-        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    if empty(glob($VIM.'/autoload/plug.vim'))
+        silent !curl -fLo $VIM/autoload/plug.vim --create-dirs
                     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
         autocmd VimEnter * PlugInstall --sync | source vimrc
     endif
@@ -32,20 +33,20 @@
     " GIT PLUGINS
         Plug 'tpope/vim-fugitive'
         Plug 'shumphrey/fugitive-gitlab.vim' " Gbrowse gitlab
-        let g:fugitive_gitlab_domains = ['git.keepthinking.net']
+        " let g:fugitive_gitlab_domains = ['git.domain.tld']
         Plug 'tpope/vim-rhubarb' " Gbrowse github
         " git diff in gutter(column line number)
         Plug 'airblade/vim-gitgutter'
-            source ~/.vim/cfg_plug/vim-gitgutter.vim
+            source $VIM/cfg_plug/vim-gitgutter.vim
 
     " FILE MANAGERS
         Plug 'scrooloose/nerdtree'
         Plug 'jistr/vim-nerdtree-tabs'
         Plug 'Xuyuanp/nerdtree-git-plugin'
-            source ~/.vim/cfg_plug/nerdtree.vim
+            source $VIM/cfg_plug/nerdtree.vim
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
         Plug 'junegunn/fzf.vim'
-            source ~/.vim/cfg_plug/fzf.vim
+            source $VIM/cfg_plug/fzf.vim
         " quickfix window (cw) open in split/tab...
         Plug 'yssl/QFEnter'
         augroup myvimrc
@@ -55,42 +56,42 @@
         augroup END
         " Plug 'rafaqz/ranger.vim'
         " Plug 'francoiscabrol/ranger.vim'
-        "     source ~/.vim/cfg_plug/ranger.vim
+        "     source $VIM/cfg_plug/ranger.vim
 
     " PRODUCTIVITY
         " Plug 'Shougo/neoyank.vim'
         " Plug 'vim-scripts/YankRing.vim'
         Plug 'bfredl/nvim-miniyank'
-            source ~/.vim/cfg_plug/nvim-miniyank.vim
+            source $VIM/cfg_plug/nvim-miniyank.vim
 
         Plug 'und3rdg/Tabmerge'
 
         Plug 'lilydjwg/colorizer' ", { 'on': 'Colorizer' }
-            source ~/.vim/cfg_plug/colorizer.vim
+            source $VIM/cfg_plug/colorizer.vim
         Plug 'blindFS/vim-colorpicker'
         "Plug 'davidhalter/jedi-vim' " python
 
         Plug 'tpope/vim-commentary'
         Plug 'tmhedberg/SimpylFold'
-            source ~/.vim/cfg_plug/simplyfold.vim
+            source $VIM/cfg_plug/simplyfold.vim
         Plug 'godlygeek/tabular'
             vmap <leader>t :Tabularize/
         Plug 'dhruvasagar/vim-table-mode'
-            source ~/.vim/cfg_plug/vim-table-mode.vim " <,tb>
+            source $VIM/cfg_plug/vim-table-mode.vim " <,tb>
         Plug 'AndrewRadev/linediff.vim'
 
         Plug 'christoomey/vim-tmux-navigator'
-            source ~/.vim/cfg_plug/vim-tmux-navigator.vim
+            source $VIM/cfg_plug/vim-tmux-navigator.vim
         Plug 'benmills/vimux'
-            source ~/.vim/cfg_plug/vimux.vim
+            source $VIM/cfg_plug/vimux.vim
         Plug 'blueyed/vim-diminactive'
 
         Plug 'terryma/vim-expand-region'
-            source ~/.vim/cfg_plug/vim-expand-region.vim
+            source $VIM/cfg_plug/vim-expand-region.vim
         Plug 'terryma/vim-smooth-scroll'
-            source ~/.vim/cfg_plug/vim-smooth-scroll.vim
+            source $VIM/cfg_plug/vim-smooth-scroll.vim
         Plug 'simeji/winresizer' " <C-e>
-            source ~/.vim/cfg_plug/winresizer.vim
+            source $VIM/cfg_plug/winresizer.vim
         Plug 'vimwiki/vimwiki'
         Plug 'djoshea/vim-autoread'
         Plug 'kshenoy/vim-signature'
@@ -107,22 +108,22 @@
             Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
             let g:deoplete#enable_at_startup = 1
             Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-                source ~/.vim/cfg_plug/deoplete-ternjs.vim
+                source $VIM/cfg_plug/deoplete-ternjs.vim
             Plug 'ternjs/tern_for_vim'
-                source ~/.vim/cfg_plug/tern_for_vim.vim
+                source $VIM/cfg_plug/tern_for_vim.vim
         else
             Plug 'Valloric/YouCompleteMe'
-                source ~/.vim/cfg_plug/youcompleteme.vim
+                source $VIM/cfg_plug/youcompleteme.vim
             Plug 'ternjs/tern_for_vim'
-                source ~/.vim/cfg_plug/tern_for_vim.vim
+                source $VIM/cfg_plug/tern_for_vim.vim
         endif
 
 
         " AUTOCOMPLEATION VERSION 1
             " Plug 'Valloric/YouCompleteMe'
-            "     source ~/.vim/cfg_plug/youcompleteme.vim
+            "     source $VIM/cfg_plug/youcompleteme.vim
             " Plug 'ternjs/tern_for_vim'
-            "     source ~/.vim/cfg_plug/tern_for_vim.vim
+            "     source $VIM/cfg_plug/tern_for_vim.vim
 
 
 
@@ -138,10 +139,10 @@
 
 
         Plug 'mattn/emmet-vim'
-            source ~/.vim/cfg_plug/emmet-vim.vim
+            source $VIM/cfg_plug/emmet-vim.vim
         "linting
         Plug 'vim-syntastic/syntastic'
-            source ~/.vim/cfg_plug/syntastic.vim
+            source $VIM/cfg_plug/syntastic.vim
         Plug 'mtscout6/syntastic-local-eslint.vim'
 
         " JAVACSRIPT
@@ -155,21 +156,21 @@
         " Plug 'ervandew/supertab'
         " AUTO ADD CLOSING
         Plug 'Raimondi/delimitMate'
-            source ~/.vim/cfg_plug/delimate.vim
+            source $VIM/cfg_plug/delimate.vim
         Plug 'tmhedberg/matchit'
         " sass and cs3 syntax
         Plug 'hail2u/vim-css3-syntax'
         Plug 'cakebaker/scss-syntax.vim'
         " PARENTHESES IN DIFFERENT COLOR !!
         Plug 'luochen1990/rainbow'
-            source ~/.vim/cfg_plug/rainbow.vim
+            source $VIM/cfg_plug/rainbow.vim
         Plug 'nathanaelkane/vim-indent-guides'
-            source ~/.vim/cfg_plug/vim-indent-guides.vim
+            source $VIM/cfg_plug/vim-indent-guides.vim
         Plug 'zeekay/vim-beautify'
 
     " THEME
         Plug 'morhetz/gruvbox'
-            source ~/.vim/cfg_plug/gruvbox.vim
+            source $VIM/cfg_plug/gruvbox.vim
         " Plug 'altercation/vim-colors-solarized'
 
     call plug#end()
@@ -287,13 +288,13 @@
     hi! tab_bg         guifg=#5f5f5f guibg=#c8c8c8 cterm=none gui=none ctermfg=59 ctermbg=100 
     hi! tab_active_bg  guifg=#5f5f5f guibg=#ffaf00 cterm=none gui=none ctermfg=59 ctermbg=214 
 
-    source ~/.vim/func/Tabline.vim
+    source $VIM/func/Tabline.vim
     set tabline=%!Tabline()
 
 
 " <STATUSLINE>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    source ~/.vim/func/StatuslineGit.vim
+    source $VIM/func/StatuslineGit.vim
 
 
     hi User1 guibg=#FFAF00 guifg=#222222
@@ -416,7 +417,7 @@
     map <silent> <leader>/ :noh<cr>
 
     " useful when studying strange source code.
-        source ~/.vim/func/AutoHighlightToggle.vim
+    source $VIM/func/AutoHighlightToggle.vim
     nnoremap <leader>hh :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
     " search visual selected '//'
