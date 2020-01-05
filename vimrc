@@ -102,6 +102,7 @@
 
     " SYNTAX
         " AUTOCOMPLEATION VERSION 3
+        " plus: definition's doc's and renaming
         if has('nvim')
             Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
             let g:deoplete#enable_at_startup = 1
@@ -138,9 +139,6 @@
 
         Plug 'mattn/emmet-vim'
             source ~/.vim/cfg_plug/emmet-vim.vim
-        "definition's doc's and renaming
-        " Plug 'ternjs/tern_for_vim'
-        "     source ~/.vim/cfg_plug/tern_for_vim.vim
         "linting
         Plug 'vim-syntastic/syntastic'
             source ~/.vim/cfg_plug/syntastic.vim
@@ -320,18 +318,8 @@
 
 " <STATUSLINE>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    function! GitBranch()
-        return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-    endfunction
-    function! GitFileStatus()
-        return system("[[ -n \"$(git status --porcelain " . shellescape(expand("%")) . " 2>/dev/null )\" ]] && echo -n ✰ ")
-    endfunction
+    source ~/.vim/func/StatuslineGit.vim
 
-    function! StatuslineGit()
-        let l:branchname = GitBranch()
-        let l:status = GitFileStatus()
-        return strlen(l:branchname) > 0?'['.l:branchname.l:status.']':''
-    endfunction
 
     hi User1 guibg=#FFAF00 guifg=#222222
     hi User2 guibg=#504945  guifg=#191919
