@@ -283,38 +283,13 @@
 
 " <TAB BAR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    function! Tabline()
-        let s = ''
-        for i in range(tabpagenr('$'))
-            let tab = i + 1
-            let winnr = tabpagewinnr(tab)
-            let buflist = tabpagebuflist(tab)
-            let bufnr = buflist[winnr - 1]
-            let bufname = bufname(bufnr)
-            let bufmodified = getbufvar(bufnr, "&mod")
+    hi! tab_bar_bg     guifg=#5f5f5f guibg=#a8a8a8 cterm=none gui=none ctermfg=59 ctermbg=100 
+    hi! tab_bg         guifg=#5f5f5f guibg=#c8c8c8 cterm=none gui=none ctermfg=59 ctermbg=100 
+    hi! tab_active_bg  guifg=#5f5f5f guibg=#ffaf00 cterm=none gui=none ctermfg=59 ctermbg=214 
 
-            let s .= '%' . tab . 'T'
-            let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-            let s .= ' ' . tab .'°'
-            let s .= (bufname != '' ? fnamemodify(bufname, ':t')  : '[No Name]')
-
-            if bufmodified
-                let s .= '[+]'
-            endif
-            let s .= ' '
-        endfor
-
-        let s .= '%#TabLineFill#'
-        if (exists("g:tablineclosebutton"))
-            let s .= '%=%999XX'
-        endif
-        return s
-    endfunction
+    source ~/.vim/func/Tabline.vim
     set tabline=%!Tabline()
 
-    hi! TabLineFill cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#3A3A3A
-    hi! TabLine     cterm=none gui=none ctermfg=59 ctermbg=100 guifg=#5F5F5F guibg=#A8A8A8
-    hi! TabLineSel  cterm=none gui=none ctermfg=59 ctermbg=214 guifg=#5F5F5F guibg=#FFAF00
 
 " <STATUSLINE>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -323,7 +298,7 @@
 
     hi User1 guibg=#FFAF00 guifg=#222222
     hi User2 guibg=#504945  guifg=#191919
-    hi User3 guibg= #A8A8A8 guifg=#222222
+    hi User3 guibg=#A8A8A8 guifg=#222222
 
     set statusline=
     " Name of the current function (needs taglist.vim)
@@ -352,7 +327,7 @@
     " Set to auto read when a file is changed from the outside
     set autoread
 
-" <TEXT, TAB AND INDENT RELATED>
+" <TEXT AND INDENT RELATED>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Use spaces instead of tabs
     set expandtab
