@@ -17,16 +17,16 @@ Plug 'tpope/vim-sensible'
     Plug 'tpope/vim-rhubarb' " Gbrowse github
     " git diff in gutter(column line number)
     Plug 'airblade/vim-gitgutter'
-        source ~/.vim/cfg_plug/vim-gitgutter.vim
+        source ~/.vim/settingsForPlugins/vim-gitgutter.vim
 
 " FILE MANAGERS
     Plug 'scrooloose/nerdtree'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'Xuyuanp/nerdtree-git-plugin'
-        source ~/.vim/cfg_plug/nerdtree.vim
+        source ~/.vim/settingsForPlugins/nerdtree.vim
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-        source ~/.vim/cfg_plug/fzf.vim
+        source ~/.vim/settingsForPlugins/fzf.vim
     " quickfix window (cw) open in split/tab...
     Plug 'yssl/QFEnter'
     augroup myvimrc
@@ -36,42 +36,42 @@ Plug 'tpope/vim-sensible'
     augroup END
     " Plug 'rafaqz/ranger.vim'
     " Plug 'francoiscabrol/ranger.vim'
-    "     source ~/.vim/cfg_plug/ranger.vim
+    "     source ~/.vim/settingsForPlugins/ranger.vim
 
 " PRODUCTIVITY
     " Plug 'Shougo/neoyank.vim'
     " Plug 'vim-scripts/YankRing.vim'
     Plug 'bfredl/nvim-miniyank'
-        source ~/.vim/cfg_plug/nvim-miniyank.vim
+        source ~/.vim/settingsForPlugins/nvim-miniyank.vim
 
     Plug 'und3rdg/Tabmerge'
 
     Plug 'lilydjwg/colorizer' ", { 'on': 'Colorizer' }
-        source ~/.vim/cfg_plug/colorizer.vim
+        source ~/.vim/settingsForPlugins/colorizer.vim
     Plug 'blindFS/vim-colorpicker'
     "Plug 'davidhalter/jedi-vim' " python
 
     Plug 'tpope/vim-commentary'
     Plug 'tmhedberg/SimpylFold'
-        source ~/.vim/cfg_plug/simplyfold.vim
+        source ~/.vim/settingsForPlugins/simplyfold.vim
     Plug 'godlygeek/tabular'
         vmap <leader>t :Tabularize/
     Plug 'dhruvasagar/vim-table-mode'
-        source ~/.vim/cfg_plug/vim-table-mode.vim " <,tb>
+        source ~/.vim/settingsForPlugins/vim-table-mode.vim " <,tb>
     Plug 'AndrewRadev/linediff.vim'
 
     Plug 'christoomey/vim-tmux-navigator'
-        source ~/.vim/cfg_plug/vim-tmux-navigator.vim
+        source ~/.vim/settingsForPlugins/vim-tmux-navigator.vim
     Plug 'benmills/vimux'
-        source ~/.vim/cfg_plug/vimux.vim
+        source ~/.vim/settingsForPlugins/vimux.vim
     Plug 'blueyed/vim-diminactive'
 
     Plug 'terryma/vim-expand-region'
-        source ~/.vim/cfg_plug/vim-expand-region.vim
+        source ~/.vim/settingsForPlugins/vim-expand-region.vim
     Plug 'terryma/vim-smooth-scroll'
-        source ~/.vim/cfg_plug/vim-smooth-scroll.vim
+        source ~/.vim/settingsForPlugins/vim-smooth-scroll.vim
     Plug 'simeji/winresizer' " <C-e>
-        source ~/.vim/cfg_plug/winresizer.vim
+        source ~/.vim/settingsForPlugins/winresizer.vim
     Plug 'vimwiki/vimwiki'
     Plug 'djoshea/vim-autoread'
     Plug 'kshenoy/vim-signature'
@@ -88,22 +88,22 @@ Plug 'tpope/vim-sensible'
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         let g:deoplete#enable_at_startup = 1
         Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-            source ~/.vim/cfg_plug/deoplete-ternjs.vim
+            source ~/.vim/settingsForPlugins/deoplete-ternjs.vim
         Plug 'ternjs/tern_for_vim'
-            source ~/.vim/cfg_plug/tern_for_vim.vim
+            source ~/.vim/settingsForPlugins/tern_for_vim.vim
     else
         Plug 'Valloric/YouCompleteMe'
-            source ~/.vim/cfg_plug/youcompleteme.vim
+            source ~/.vim/settingsForPlugins/youcompleteme.vim
         Plug 'ternjs/tern_for_vim'
-            source ~/.vim/cfg_plug/tern_for_vim.vim
+            source ~/.vim/settingsForPlugins/tern_for_vim.vim
     endif
 
 
     Plug 'mattn/emmet-vim'
-        source ~/.vim/cfg_plug/emmet-vim.vim
+        source ~/.vim/settingsForPlugins/emmet-vim.vim
     "linting
     Plug 'vim-syntastic/syntastic'
-        source ~/.vim/cfg_plug/syntastic.vim
+        source ~/.vim/settingsForPlugins/syntastic.vim
     " Plug 'mtscout6/syntastic-local-eslint.vim'
 
     " JAVACSRIPT
@@ -117,21 +117,21 @@ Plug 'tpope/vim-sensible'
     " Plug 'ervandew/supertab'
     " AUTO ADD CLOSING
     Plug 'Raimondi/delimitMate'
-        source ~/.vim/cfg_plug/delimate.vim
+        source ~/.vim/settingsForPlugins/delimate.vim
     Plug 'tmhedberg/matchit'
     " sass and cs3 syntax
     Plug 'hail2u/vim-css3-syntax'
     Plug 'cakebaker/scss-syntax.vim'
     " PARENTHESES IN DIFFERENT COLOR !!
     Plug 'luochen1990/rainbow'
-        source ~/.vim/cfg_plug/rainbow.vim
+        source ~/.vim/settingsForPlugins/rainbow.vim
     Plug 'nathanaelkane/vim-indent-guides'
-        source ~/.vim/cfg_plug/vim-indent-guides.vim
+        source ~/.vim/settingsForPlugins/vim-indent-guides.vim
     Plug 'zeekay/vim-beautify'
 
 " THEME
     Plug 'morhetz/gruvbox'
-        source ~/.vim/cfg_plug/gruvbox.vim
+        source ~/.vim/settingsForPlugins/gruvbox.vim
     " Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
