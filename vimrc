@@ -31,8 +31,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " GIT PLUGINS
         Plug 'tpope/vim-fugitive'
-        Plug 'shumphrey/fugitive-gitlab.vim' " Gbrowse gitlab
-        let g:fugitive_gitlab_domains = ['git.keepthinking.net']
+        " Plug 'shumphrey/fugitive-gitlab.vim' " Gbrowse gitlab
+        " let g:fugitive_gitlab_domains = ['git.gitlab-domain.net']
         Plug 'tpope/vim-rhubarb' " Gbrowse github
         " git diff in gutter(column line number)
         Plug 'airblade/vim-gitgutter'
@@ -142,7 +142,7 @@
         "linting
         Plug 'vim-syntastic/syntastic'
             source ~/.vim/cfg_plug/syntastic.vim
-        Plug 'mtscout6/syntastic-local-eslint.vim'
+        " Plug 'mtscout6/syntastic-local-eslint.vim'
 
         " JAVACSRIPT
         Plug 'othree/javascript-libraries-syntax.vim'
@@ -212,7 +212,7 @@
     " Automatic toggling between line number modes
     " Normal/Visual mode produce hybrid line numbers,
     " Insert relative line numbers
-    set number relativenumber
+    " set number relativenumber
 
     augroup numbertoggle
         autocmd!
@@ -293,29 +293,7 @@
 
 " <STATUSLINE>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    source ~/.vim/func/StatuslineGit.vim
-
-
-    hi User1 guibg=#FFAF00 guifg=#222222
-    hi User2 guibg=#504945  guifg=#191919
-    hi User3 guibg=#A8A8A8 guifg=#222222
-
-    set statusline=
-    " Name of the current function (needs taglist.vim)
-    " set statusline +=\ [Fun(%{Tlist_Get_Tagname_By_Line()})]
-    " set statusline +=\ [Fun(%{tagbar#currenttag('%s','')})]
-    set statusline+=\ %#warningmsg#
-    set statusline+=\ %{SyntasticStatuslineFlag()}
-    set statusline+=\ %2*%y
-    set statusline+=\ %p%%
-    set statusline+=\[%L]
-    set statusline+=\ %l:%c
-    set statusline+=\ %=
-    set statusline+=\ %1*\ %.35{getcwd()}\ %2*
-    set statusline+=\ %3*\ %{StatuslineGit()}\ %2*
-    set statusline+=\ %1*\ %f%m
-    set statusline+=\ %*
-    set statusline+=\
+    source ~/.vim/settings/statusline.vim
 
 " <FILES, BACKUPS AND UNDO>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
