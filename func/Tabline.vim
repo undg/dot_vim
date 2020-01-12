@@ -1,10 +1,6 @@
-" tab bar 
-" example of use:
-    " hi! tab_bar_bg     guifg=#5f5f5f guibg=#a8a8a8 cterm=none gui=none ctermfg=59 ctermbg=100 
-    " hi! tab_bg         guifg=#5f5f5f guibg=#c8c8c8 cterm=none gui=none ctermfg=59 ctermbg=100 
-    " hi! tab_active_bg  guifg=#5f5f5f guibg=#ffaf00 cterm=none gui=none ctermfg=59 ctermbg=214 
-    " set tabline=%!tabline()
-
+hi! TAB_BAR_BG     guifg=#5f5f5f guibg=#a8a8a8 cterm=none gui=none ctermfg=59 ctermbg=100
+hi! TAB_BG         guifg=#5f5f5f guibg=#c8c8c8 cterm=none gui=none ctermfg=59 ctermbg=100
+hi! TAB_ACTIVE_BG  guifg=#5f5f5f guibg=#ffaf00 cterm=none gui=none ctermfg=59 ctermbg=214
 
 function! Tabline()
     let s = ''
@@ -35,3 +31,5 @@ function! Tabline()
     endif
     return s
 endfunction
+
+set tabline=%!Tabline()

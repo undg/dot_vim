@@ -1,4 +1,7 @@
 " Return current branch name to be used in status line.
+function! GitFileStatus()
+    return system("[[ -n \"$(git status --porcelain " . shellescape(expand("%")) . " 2>/dev/null )\" ]] && echo -n ✰ ")
+endfunction
 
 let s:status = GitFileStatus()
 
@@ -13,10 +16,6 @@ function! GitBranch()
     " return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
 
-
-function! GitFileStatus()
-    return system("[[ -n \"$(git status --porcelain " . shellescape(expand("%")) . " 2>/dev/null )\" ]] && echo -n ✰ ")
-endfunction
 
 augroup reload_vimrc
     autocmd!
