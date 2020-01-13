@@ -73,6 +73,7 @@ Plug 'tpope/vim-sensible'
     Plug 'simeji/winresizer' " <C-e>
         source ~/.vim/settingsForPlugins/winresizer.vim
     Plug 'vimwiki/vimwiki'
+        source ~/.vim/settingsForPlugins/vimwiki.vim
     Plug 'djoshea/vim-autoread'
     Plug 'kshenoy/vim-signature'
         nnoremap mt :SignatureToggleSigns<cr>
