@@ -17,6 +17,7 @@ map         _T  : TernDefPreview<CR>
 
 nnoremap <leader>tb  : TernDocBrowse<CR>
 nnoremap <leader>ttp : TernType<CR>
+nnoremap <leader>typ : TernType<CR>
 nnoremap <leader>tD  : TernDef<CR>
 nnoremap <leader>tpd : TernDefPreview<CR>
 nnoremap <leader>tsd : TernDefSplit<CR>
