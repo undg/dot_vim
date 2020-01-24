@@ -2,11 +2,11 @@
 filetype plugin on
 filetype indent on
 
-" filetype css if *.sass
-au BufRead,BufNewFile *.scss set filetype=sass.css
-" au BufRead,BufNewFile *.scss set filetype=css.scss
-au BufRead,BufNewFile *.sass set filetype=sass
-" au BufRead,BufNewFile *.sass set filetype=css.sass
+" set filletype for files with ext
+au BufRead,BufNewFile *.scss        set filetype=sass.css
+au BufRead,BufNewFile *.sass        set filetype=sass
+" .ts .js .tsx .jsx
+au BufRead,BufNewFile [jt]sx?.snap set filetype=xml.html
 
 " Auto save on focus lost
 au FocusLost * :wa
