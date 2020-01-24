@@ -54,3 +54,5 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Stop that stupid window from popping up:
 map q: :q
 
+" repeat last macro
+nnoremap <CR> @@
