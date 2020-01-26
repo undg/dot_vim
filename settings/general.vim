@@ -6,7 +6,10 @@ filetype indent on
 au BufRead,BufNewFile *.scss        set filetype=sass.css
 au BufRead,BufNewFile *.sass        set filetype=sass
 " .ts .js .tsx .jsx
-au BufRead,BufNewFile [jt]sx?.snap set filetype=xml.html
+au BufRead,BufNewFile *.[jt]sx?.snap set filetype=xml.html
+au BufRead,BufNewFile *.[jt]sx?.snap set filetype=xml.html
+" nvim, vim
+au BufRead,BufNewFile *.nvim set filetype=vim
 
 " Auto save on focus lost
 au FocusLost * :wa
