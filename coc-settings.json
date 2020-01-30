@@ -1,6 +1,6 @@
 {
     "coc.preferences.formatOnSaveFiletypes": ["json"],
-    "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
+    "eslint.filetypes": ["javascript", "javascriptreact"],
     "coc.preferences.diagnostic.virtualText": true,
     "snippets.autoTrigger": false,
     "javascript.validate.enable": true,

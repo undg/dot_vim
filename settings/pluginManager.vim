@@ -88,6 +88,7 @@ Plug 'tpope/vim-sensible'
         let g:coc_global_extensions = [ 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets' ]
 
     Plug 'honza/vim-snippets'
+    Plug 'heavenshell/vim-jsdoc'
 
     Plug 'mattn/emmet-vim'
         source ~/.vim/settingsForPlugins/emmet-vim.vim
