@@ -83,22 +83,13 @@ Plug 'tpope/vim-sensible'
 
 
 " SYNTAX
-    " AUTOCOMPLEATION VERSION 3
-    " plus: definition's doc's and renaming
-    if has('nvim')
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-        let g:deoplete#enable_at_startup = 1
-        Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-            source ~/.vim/settingsForPlugins/deoplete-ternjs.vim
-        Plug 'ternjs/tern_for_vim'
-            source ~/.vim/settingsForPlugins/tern_for_vim.vim
-    else
-        Plug 'Valloric/YouCompleteMe'
-            source ~/.vim/settingsForPlugins/youcompleteme.vim
-        Plug 'ternjs/tern_for_vim'
-            source ~/.vim/settingsForPlugins/tern_for_vim.vim
-    endif
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        source ~/.vim/settingsForPlugins/coc.nvim
+        let g:coc_global_extensions = [ 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets' ]
 
+    Plug 'honza/vim-snippets'
+    Plug 'heavenshell/vim-jsdoc'
+        source ~/.vim/settingsForPlugins/vim-jsdoc.vim
 
     Plug 'mattn/emmet-vim'
         source ~/.vim/settingsForPlugins/emmet-vim.vim
