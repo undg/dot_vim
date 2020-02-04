@@ -3,13 +3,18 @@ filetype plugin on
 filetype indent on
 
 " set filletype for files with ext
-au BufRead,BufNewFile *.scss        set filetype=scss.css
-au BufRead,BufNewFile *.sass        set filetype=sass
-" .ts .js .tsx .jsx
+au BufRead,BufNewFile *.scss         set filetype=scss.css
+au BufRead,BufNewFile *.sass         set filetype=sass
+" .ts .js .tsx .jsx .schtml
 au BufRead,BufNewFile *.[jt]sx?.snap set filetype=xml.html
-au BufRead,BufNewFile *.[jt]sx?.snap set filetype=xml.html
+au BufRead,BufNewFile *.cshtml       set filetype=xml.html
 " nvim, vim
-au BufRead,BufNewFile *.nvim set filetype=vim
+au BufRead,BufNewFile *.nvim         set filetype=vim
+
+" indentation
+au BufRead,BufNewFile *.*            set ts=4 sw=4
+au BufRead,BufNewFile *.s[ac]ss      set local ts=2 sw=2
+au BufRead,BufNewFile *.[jt]sx?.snap set local ts=2 sw=2
 
 " Auto save on focus lost
 au FocusLost * :wa

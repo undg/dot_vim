@@ -89,6 +89,7 @@ Plug 'tpope/vim-sensible'
 
     Plug 'honza/vim-snippets'
     Plug 'heavenshell/vim-jsdoc'
+        source ~/.vim/settingsForPlugins/vim-jsdoc.vim
 
     Plug 'mattn/emmet-vim'
         source ~/.vim/settingsForPlugins/emmet-vim.vim
