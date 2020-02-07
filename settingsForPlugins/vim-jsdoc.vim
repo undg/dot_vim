@@ -27,6 +27,6 @@ let g:jsdoc_type_hook = {}
 " Enable to use ECMAScript6's Shorthand function, Arrow function.
 let g:jsdoc_enable_es6 = 0
 " Allow use of alternate tags (the ones that support synonyms) per JSDoc documentation. Can be changed on a per tag basis, for example: let g:jsdoc_tags = {} | let g:jsdoc_tags['param'] = 'arg'
-let g:jsdoc_tags = see :h
+" let g:jsdoc_tags = see :h
 " Allow use of user_defined_tags.
 let g:jsdoc_user_defined_tags = {}
