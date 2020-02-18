@@ -24,9 +24,6 @@ set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'^\\s*$'&&getline(v:l
 
 set foldlevel=9
 
-" Enable folding with the spacebar
-nnoremap <Leader>f za
-
 " Add a bit extra margin to the left
 set foldcolumn=5
 
