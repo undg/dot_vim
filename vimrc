@@ -30,3 +30,27 @@
     source ~/.vim/settings/productivityKeyBindings.vim
     source ~/.vim/settings/customVimrc.vim
 
+
+
+
+" ~/.vim/settingsForPlugins/vim-gitgutter.vim
+" ~/.vim/settingsForPlugins/nerdtree.vim
+" ~/.vim/settingsForPlugins/fzf.vim
+" ~/.vim/settingsForPlugins/nvim-miniyank.vim
+" ~/.vim/settingsForPlugins/colorizer.vim
+" ~/.vim/settingsForPlugins/simplyfold.vim
+" ~/.vim/settingsForPlugins/vim-table-mode.vim " <,tb>
+" ~/.vim/settingsForPlugins/vim-tmux-navigator.vim
+" ~/.vim/settingsForPlugins/vimux.vim
+" ~/.vim/settingsForPlugins/vim-expand-region.vim
+" ~/.vim/settingsForPlugins/vim-smooth-scroll.vim
+" ~/.vim/settingsForPlugins/winresizer.vim
+" ~/.vim/settingsForPlugins/vimwiki.vim
+" ~/.vim/settingsForPlugins/coc.nvim
+" ~/.vim/settingsForPlugins/vim-jsdoc.vim
+" ~/.vim/settingsForPlugins/emmet-vim.vim
+" ~/.vim/settingsForPlugins/syntastic.vim
+" ~/.vim/settingsForPlugins/delimate.vim
+" ~/.vim/settingsForPlugins/rainbow.vim
+" ~/.vim/settingsForPlugins/vim-indent-guides.vim
+" ~/.vim/settingsForPlugins/gruvbox.vim
