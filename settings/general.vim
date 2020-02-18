@@ -14,10 +14,10 @@ au BufRead,BufNewFile *.nvim         set filetype=vim
 " indentation
 au BufRead,BufNewFile *.*            set ts=4 sw=4
 au BufRead,BufNewFile *.s[ac]ss      setlocal ts=2 sw=2
-au BufRead,BufNewFile *.[jt]sx?.snap setlocal ts=2 sw=2
+au BufRead,BufNewFile *.[jt]sx?.snap set ts=2 sw=2
 
 " Auto save on focus lost
-au FocusLost * :wa
+" au FocusLost * :wa
 
 " Timeout for pressing key sequences
 set notimeout
