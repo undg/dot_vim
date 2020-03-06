@@ -1,8 +1,20 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["json", "javascript", "typescript"],
-    "eslint.filetypes": ["typescript", "typescriptreact", "typescript", "typescriptreact"],
-    "coc.preferences.diagnostic.virtualText": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "json",
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact",
+        "typescript.tsx"
+    ],
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextPrefix": "// _",
     "snippets.autoTrigger": false,
     "javascript.validate.enable": true,
-    "javascript.suggestionActions.enabled": true,
+    "diagnostic.refreshAfterSave": true,
+    "diagnostic.level": "hint",
+    "suggest.minTriggerInputLength": 2,
+    "codeLens.enable": false,
+    "coc.preferences.colorSupport": false,
+    "javascript.suggestionActions.enabled": true
 }
