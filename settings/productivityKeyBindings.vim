@@ -1,13 +1,16 @@
 imap jk <esc>
 
 " Type ',,' to save file (a lot faster than ':w<Enter>'):
-nnoremap <Leader><Leader> :w<CR>
+nnoremap <Leader><Leader> :write<cr>
 
 " save ',s' and open session with 'vim -S'
 nnoremap <leader>s :mksession!<CR>
 
 " Type ',q' to quit file
-nnoremap <Leader>q :q<CR>
+nnoremap <leader>q :quit<cr>
+
+" open file under cursor in new tab
+nnoremap gf <C-W>gf
 
 " Copy & paste to system clipboard with ',p' and ',y':
 vmap <Leader>y "+y
