@@ -121,6 +121,9 @@ Plug 'tpope/vim-sensible'
         source ~/.vim/settingsForPlugins/vim-indent-guides.vim
     Plug 'zeekay/vim-beautify'
 
+    " c# and razor
+    Plug 'OrangeT/vim-csharp'
+
 " THEME
     Plug 'morhetz/gruvbox'
         source ~/.vim/settingsForPlugins/gruvbox.vim
