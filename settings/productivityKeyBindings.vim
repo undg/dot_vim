@@ -59,3 +59,4 @@ map q: :q
 
 " repeat last macro
 nnoremap <CR> @@
+

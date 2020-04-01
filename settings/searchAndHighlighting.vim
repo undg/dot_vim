@@ -38,3 +38,11 @@ vnoremap <silent> * :<C-U>
             \:call setreg('"', old_reg, old_regmode)<cr>
             \<S-n>
 
+
+" bind g/G to grep word under cursor
+nnoremap <leader>G :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+vnoremap <leader>G y:grep! "\b<C-R>"\b"<CR>:cw<CR>
+
+
+nnoremap <leader>g :grep! "\b<C-R><C-W>\b"
+vnoremap <leader>g y:grep! "\b<C-R>"\b"
