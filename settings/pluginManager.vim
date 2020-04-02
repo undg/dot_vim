@@ -100,10 +100,10 @@ Plug 'tpope/vim-sensible'
 
     " JAVACSRIPT
     Plug 'othree/javascript-libraries-syntax.vim'
+    Plug 'ianks/vim-tsx'
+    Plug 'leafgarland/typescript-vim'
     Plug 'neoclide/vim-jsx-improve' " have to be before other syntax plugins.
     Plug 'jelera/vim-javascript-syntax' " keep it last
-    " Plug 'mxw/vim-jsx'
-    " Plug 'pangloss/vim-javascript'
 
 
     " Plug 'ervandew/supertab'
@@ -123,11 +123,11 @@ Plug 'tpope/vim-sensible'
 
     " c# and razor
     Plug 'OrangeT/vim-csharp'
+    Plug 'adamclerk/vim-razor'
 
 " THEME
     Plug 'morhetz/gruvbox'
         source ~/.vim/settingsForPlugins/gruvbox.vim
-    " Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
