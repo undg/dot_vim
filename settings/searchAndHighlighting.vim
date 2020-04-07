@@ -40,9 +40,9 @@ vnoremap <silent> * :<C-U>
 
 
 " bind g/G to grep word under cursor
-nnoremap <leader>G :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-vnoremap <leader>G y:grep! "\b<C-R>"\b"<CR>:cw<CR>
+nnoremap <leader>S :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+vnoremap <leader>S y:grep! "\b<C-R>"\b"<CR>:cw<CR>
 
 
-nnoremap <leader>g :grep! "\b<C-R><C-W>\b"
-vnoremap <leader>g y:grep! "\b<C-R>"\b"
+nnoremap <leader>ss :grep! "\b<C-R><C-W>\b"
+vnoremap <leader>ss y:grep! "\b<C-R>"\b"
