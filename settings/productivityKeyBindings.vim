@@ -63,3 +63,7 @@ map q: :q
 " repeat last macro
 nnoremap <CR> @@
 
+" move selected up/down and reformat
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
