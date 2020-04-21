@@ -8,6 +8,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " STEP ABOVE 'NOCOMPATIBLE'
+Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-sensible'
 
 " GIT PLUGINS
@@ -44,21 +45,21 @@ Plug 'tpope/vim-sensible'
     Plug 'bfredl/nvim-miniyank'
         source ~/.vim/settingsForPlugins/nvim-miniyank.vim
 
-    Plug 'und3rdg/Tabmerge'
+    Plug 'und3rdg/Tabmerge', {'on': ['Tabmerge']} 
 
-    Plug 'lilydjwg/colorizer' ", { 'on': 'Colorizer' }
+    Plug 'lilydjwg/colorizer', {'on': ['ColorHighlight', 'ColorToggle']}
         source ~/.vim/settingsForPlugins/colorizer.vim
-    Plug 'blindFS/vim-colorpicker'
+    Plug 'blindFS/vim-colorpicker', { 'on': 'ColorPicker' }
     "Plug 'davidhalter/jedi-vim' " python
 
     Plug 'tpope/vim-commentary'
     Plug 'tmhedberg/SimpylFold'
         source ~/.vim/settingsForPlugins/simplyfold.vim
-    Plug 'godlygeek/tabular'
+    Plug 'godlygeek/tabular', {'on': ['Tabularize']}
         vmap <leader>t :Tabularize/
-    Plug 'dhruvasagar/vim-table-mode'
+    Plug 'dhruvasagar/vim-table-mode', {'on': ['TableModeToggle', 'TableModeEnable']}
         source ~/.vim/settingsForPlugins/vim-table-mode.vim " <,tb>
-    Plug 'AndrewRadev/linediff.vim'
+    Plug 'AndrewRadev/linediff.vim', {'on': ['Linediff']}
 
     Plug 'christoomey/vim-tmux-navigator'
         source ~/.vim/settingsForPlugins/vim-tmux-navigator.vim
@@ -70,16 +71,18 @@ Plug 'tpope/vim-sensible'
         source ~/.vim/settingsForPlugins/vim-expand-region.vim
     Plug 'terryma/vim-smooth-scroll'
         source ~/.vim/settingsForPlugins/vim-smooth-scroll.vim
-    Plug 'simeji/winresizer' " <C-e>
+    Plug 'simeji/winresizer', {'on': ['WinResizerStartResize']}
         source ~/.vim/settingsForPlugins/winresizer.vim
     Plug 'vimwiki/vimwiki'
         source ~/.vim/settingsForPlugins/vimwiki.vim
     Plug 'djoshea/vim-autoread'
-    Plug 'kshenoy/vim-signature'
+    Plug 'kshenoy/vim-signature', {'on': ['SignatureToggleSigns']}
         nnoremap mt :SignatureToggleSigns<cr>
     Plug 'tpope/vim-surround'
-    Plug 'aserebryakov/vim-todo-lists'
+    " Plug 'aserebryakov/vim-todo-lists'
         let g:VimTodoListsMoveItems = 0
+    Plug 'simnalamburt/vim-mundo'
+
 
 
 " SYNTAX
