@@ -64,6 +64,8 @@ Plug 'tpope/vim-sensible'
     Plug 'christoomey/vim-tmux-navigator'
         source ~/.vim/settingsForPlugins/vim-tmux-navigator.vim
     Plug 'jpalardy/vim-slime'
+        let g:slime_target = "tmux"
+
     Plug 'benmills/vimux'
         source ~/.vim/settingsForPlugins/vimux.vim
     Plug 'blueyed/vim-diminactive'

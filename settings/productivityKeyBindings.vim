@@ -67,3 +67,17 @@ nnoremap <CR> @@
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" diffget in three way merge conflict
+" get left/right HEAD/merged f/j
+if &runtimepath =~ 'vim-fugitive'
+    nmap <leader>dg :G<cr>
+    nmap <leader>df :diffget //2<cr>
+    nmap <leader>dj :diffget //3<cr>
+else
+    echo "key binding for :diffget can't be maped. vim-fugitive is installed?"
+endif
+
+" jump to next/prev conflict
+nmap <leader>dn />>>>>>>\|<<<<<<<\|=======<cr>:noh<cr>
+nmap <leader>dp ?>>>>>>>\|<<<<<<<\|=======<cr>:noh<cr>
+
