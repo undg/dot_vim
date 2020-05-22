@@ -7,7 +7,7 @@ nnoremap <Leader><Leader> :write<cr>
 nmap ;; :w<cr><Leader>vr
 
 " save ',s' and open session with 'vim -S'
-nnoremap <leader>s :mksession!<CR>
+nnoremap <leader>s :NERDTreeTabsClose<cr>:wa<CR>:mksession!<CR>
 
 " Type ',q' to quit file
 nnoremap <leader>q :quit<cr>
@@ -70,7 +70,8 @@ vnoremap K :m '<-2<CR>gv=gv
 " diffget in three way merge conflict
 " get left/right HEAD/merged f/j
 if &runtimepath =~ 'vim-fugitive'
-    nmap <leader>dg :G<cr>
+    nmap <leader>gg :G<cr>
+    nmap <leader>gq :G<cr>:q<cr>
     nmap <leader>df :diffget //2<cr>
     nmap <leader>dj :diffget //3<cr>
 else
