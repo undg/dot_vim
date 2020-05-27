@@ -63,10 +63,6 @@ map q: :q
 " repeat last macro
 nnoremap <CR> @@
 
-" move selected up/down and reformat
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
 " diffget in three way merge conflict
 " get left/right HEAD/merged f/j
 if &runtimepath =~ 'vim-fugitive'
@@ -79,6 +75,6 @@ else
 endif
 
 " jump to next/prev conflict
-nmap <leader>dn />>>>>>>\|<<<<<<<\|=======<cr>:noh<cr>
-nmap <leader>dp ?>>>>>>>\|<<<<<<<\|=======<cr>:noh<cr>
+nmap <leader>dn />>>>>>>\\|<<<<<<<\\|=======<cr>:noh<cr>
+nmap <leader>dp ?>>>>>>>\\|<<<<<<<\\|=======<cr>:noh<cr>
 
