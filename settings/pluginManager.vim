@@ -16,6 +16,7 @@ Plug 'tpope/vim-sensible'
     " Plug 'shumphrey/fugitive-gitlab.vim' " Gbrowse gitlab
     " let g:fugitive_gitlab_domains = ['git.gitlab-domain.net']
     Plug 'tpope/vim-rhubarb' " Gbrowse github
+    Plug 'cedarbaum/fugitive-azure-devops.vim'
     " git diff in gutter(column line number)
     Plug 'airblade/vim-gitgutter'
         source ~/.vim/settingsForPlugins/vim-gitgutter.vim
@@ -35,13 +36,8 @@ Plug 'tpope/vim-sensible'
         autocmd QuickFixCmdPost [^l]* cwindow
         autocmd QuickFixCmdPost l*    lwindow
     augroup END
-    " Plug 'rafaqz/ranger.vim'
-    " Plug 'francoiscabrol/ranger.vim'
-    "     source ~/.vim/settingsForPlugins/ranger.vim
 
 " PRODUCTIVITY
-    " Plug 'Shougo/neoyank.vim'
-    " Plug 'vim-scripts/YankRing.vim'
     Plug 'bfredl/nvim-miniyank'
         source ~/.vim/settingsForPlugins/nvim-miniyank.vim
 
@@ -83,7 +79,7 @@ Plug 'tpope/vim-sensible'
         nnoremap mt :SignatureToggleSigns<cr>
     Plug 'tpope/vim-surround'
     " Plug 'aserebryakov/vim-todo-lists'
-        let g:VimTodoListsMoveItems = 0
+        " let g:VimTodoListsMoveItems = 0
     Plug 'simnalamburt/vim-mundo'
 
 
