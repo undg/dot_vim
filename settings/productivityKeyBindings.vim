@@ -76,5 +76,5 @@ endif
 
 " jump to next/prev conflict
 nmap <leader>dn />>>>>>>\\|<<<<<<<\\|=======<cr>:noh<cr>
-nmap <leader>dp ?>>>>>>>\\|<<<<<<<\\|=======<cr>:noh<cr>
+nmap <leader>dN ?>>>>>>>\\|<<<<<<<\\|=======<cr>:noh<cr>
 
