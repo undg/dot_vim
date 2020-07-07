@@ -128,6 +128,7 @@ Plug 'tpope/vim-sensible'
     Plug 'adamclerk/vim-razor'
 
 " THEME
+    Plug 'vim-scripts/ShowMarks'
     Plug 'morhetz/gruvbox'
         source ~/.vim/settingsForPlugins/gruvbox.vim
 
