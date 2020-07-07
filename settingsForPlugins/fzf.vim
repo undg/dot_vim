@@ -1,10 +1,11 @@
 nnoremap <leader>m :FZF<cr>
 nnoremap <leader>. :GFiles<cr>
 nnoremap <leader><> :GFiles?<cr>
-let g:default_action = {
-            \ 'ctrl-t': 'tab split',
-            \ 'ctrl--': 'split',
-            \ 'ctrl-\': 'vsplit' }
+
+" let g:fzf_action = {
+"             \ 'ctrl-t': 'tab split',
+"             \ 'ctrl--': 'split',
+"             \ 'ctrl-\': 'vsplit' }
 
 " The Silver Searcher
 if executable('ag')
