@@ -1,7 +1,6 @@
 {
     "coc.preferences.formatOnSaveFiletypes": [
         "json",
-        "javascript",
         "typescript",
         "typescriptreact",
         "javascriptreact",
@@ -10,7 +9,7 @@
     "diagnostic.virtualText": true,
     "diagnostic.virtualTextPrefix": "// _",
     "snippets.autoTrigger": false,
-    "javascript.validate.enable": true,
+    "javascript.validate.enable": false,
     "diagnostic.refreshAfterSave": true,
     "diagnostic.level": "hint",
     "suggest.minTriggerInputLength": 2,

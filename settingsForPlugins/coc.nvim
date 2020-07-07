@@ -17,6 +17,10 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
+" Setup Prettier command
+" Then you can use :Prettier to format current buffer.
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -69,7 +73,8 @@ nmap <leader>rn <Plug>(coc-rename)
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
 " Remap for format whole buffer
-nmap <leader>f  <Plug>(coc-format)
+" nmap <leader>f  <Plug>(coc-format)
+nmap <leader>f :w<cr>:!yarn prettier --write %<cr> 
 
 augroup mygroup
     autocmd!
