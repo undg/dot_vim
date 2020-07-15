@@ -1,7 +1,6 @@
 " Run...
 map <Leader>vv :call VimuxRunCommand("./" . bufname("%"))<CR>
 map <Leader>vn :call VimuxRunCommand("node " . bufname("%"))<CR>
-map <Leader>vg :call VimuxRunCommand("gulp bar")<CR>
 
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
@@ -16,7 +15,7 @@ map <Leader>vi :VimuxInspectRunner<CR>
 map <Leader>vq :VimuxCloseRunner<CR>
 
 " Interrupt any command running in the runner pane
-map <Leader>vx :VimuxInterruptRunner<CR>
+map <Leader>vc :VimuxInterruptRunner<CR>
 
 " Zoom the runner pane (use <bind-key> z to restore runner pane)
 map <Leader>vz :call VimuxZoomRunner()<CR>
