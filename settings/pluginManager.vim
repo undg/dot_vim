@@ -86,9 +86,12 @@ Plug 'tpope/vim-sensible'
 
 
 " SYNTAX
-    Plug 'neoclide/coc.nvim' " , {'branch': 'release'}
+    " Plug 'ycm-core/YouCompleteMe'
+    "     source ~/.vim/settingsForPlugins/youcompleteme.vim
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
         source ~/.vim/settingsForPlugins/coc.nvim
-        let g:coc_global_extensions = [ 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets' ]
+
+    Plug 'sheerun/vim-polyglot'
 
     Plug 'honza/vim-snippets'
     Plug 'heavenshell/vim-jsdoc'
@@ -102,11 +105,11 @@ Plug 'tpope/vim-sensible'
     " Plug 'mtscout6/syntastic-local-eslint.vim'
 
     " JAVACSRIPT
-    Plug 'othree/javascript-libraries-syntax.vim'
-    Plug 'ianks/vim-tsx'
-    Plug 'leafgarland/typescript-vim'
-    Plug 'neoclide/vim-jsx-improve' " have to be before other syntax plugins.
-    Plug 'jelera/vim-javascript-syntax' " keep it last
+    " Plug 'othree/javascript-libraries-syntax.vim'
+    " Plug 'ianks/vim-tsx'
+    " Plug 'leafgarland/typescript-vim'
+    " Plug 'neoclide/vim-jsx-improve' " have to be before other syntax plugins.
+    " Plug 'jelera/vim-javascript-syntax' " keep it last
 
 
     " Plug 'ervandew/supertab'
@@ -115,8 +118,8 @@ Plug 'tpope/vim-sensible'
         source ~/.vim/settingsForPlugins/delimate.vim
     Plug 'tmhedberg/matchit'
     " sass and cs3 syntax
-    Plug 'hail2u/vim-css3-syntax'
-    Plug 'cakebaker/scss-syntax.vim'
+    " Plug 'hail2u/vim-css3-syntax'
+    " Plug 'cakebaker/scss-syntax.vim'
     " PARENTHESES IN DIFFERENT COLOR !!
     Plug 'luochen1990/rainbow'
         source ~/.vim/settingsForPlugins/rainbow.vim
@@ -125,8 +128,8 @@ Plug 'tpope/vim-sensible'
     Plug 'zeekay/vim-beautify'
 
     " c# and razor
-    Plug 'OrangeT/vim-csharp'
-    Plug 'adamclerk/vim-razor'
+    " Plug 'OrangeT/vim-csharp'
+    " Plug 'adamclerk/vim-razor'
 
 " THEME
     Plug 'morhetz/gruvbox'
