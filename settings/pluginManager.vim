@@ -45,21 +45,21 @@ Plug 'tpope/vim-sensible'
     Plug 'bfredl/nvim-miniyank'
         source ~/.vim/settingsForPlugins/nvim-miniyank.vim
 
-    Plug 'und3rdg/Tabmerge', {'on': ['Tabmerge']} 
+    Plug 'und3rdg/Tabmerge' " , {'on': ['Tabmerge']} 
 
     Plug 'lilydjwg/colorizer', {'on': ['ColorHighlight', 'ColorToggle']}
         source ~/.vim/settingsForPlugins/colorizer.vim
-    Plug 'blindFS/vim-colorpicker', { 'on': 'ColorPicker' }
+    Plug 'blindFS/vim-colorpicker' " , { 'on': 'ColorPicker' }
     "Plug 'davidhalter/jedi-vim' " python
 
     Plug 'tpope/vim-commentary'
     Plug 'tmhedberg/SimpylFold'
         source ~/.vim/settingsForPlugins/simplyfold.vim
-    Plug 'godlygeek/tabular', {'on': ['Tabularize']}
+    Plug 'godlygeek/tabular' " , {'on': ['Tabularize']}
         vmap <leader>t :Tabularize/
-    Plug 'dhruvasagar/vim-table-mode', {'on': ['TableModeToggle', 'TableModeEnable']}
+    Plug 'dhruvasagar/vim-table-mode' " , {'on': ['TableModeToggle', 'TableModeEnable']}
         source ~/.vim/settingsForPlugins/vim-table-mode.vim " <,tb>
-    Plug 'AndrewRadev/linediff.vim', {'on': ['Linediff']}
+    Plug 'AndrewRadev/linediff.vim' " , {'on': ['Linediff']}
 
     Plug 'christoomey/vim-tmux-navigator'
         source ~/.vim/settingsForPlugins/vim-tmux-navigator.vim
@@ -71,12 +71,12 @@ Plug 'tpope/vim-sensible'
         source ~/.vim/settingsForPlugins/vim-expand-region.vim
     Plug 'terryma/vim-smooth-scroll'
         source ~/.vim/settingsForPlugins/vim-smooth-scroll.vim
-    Plug 'simeji/winresizer', {'on': ['WinResizerStartResize']}
+    Plug 'simeji/winresizer' " , {'on': ['WinResizerStartResize']}
         source ~/.vim/settingsForPlugins/winresizer.vim
     Plug 'vimwiki/vimwiki'
         source ~/.vim/settingsForPlugins/vimwiki.vim
     Plug 'djoshea/vim-autoread'
-    Plug 'kshenoy/vim-signature', {'on': ['SignatureToggleSigns']}
+    Plug 'kshenoy/vim-signature' " , {'on': ['SignatureToggleSigns']}
         nnoremap mt :SignatureToggleSigns<cr>
     Plug 'tpope/vim-surround'
     " Plug 'aserebryakov/vim-todo-lists'
@@ -86,7 +86,7 @@ Plug 'tpope/vim-sensible'
 
 
 " SYNTAX
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim' " , {'branch': 'release'}
         source ~/.vim/settingsForPlugins/coc.nvim
         let g:coc_global_extensions = [ 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets' ]
 

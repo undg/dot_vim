@@ -1,11 +1,5 @@
 {
     "coc.preferences.formatOnSaveFiletypes": [
-        "json",
-        "javascript",
-        "typescript",
-        "typescriptreact",
-        "javascriptreact",
-        "typescript.tsx"
     ],
     "diagnostic.virtualText": true,
     "diagnostic.virtualTextPrefix": "// _",
