@@ -102,6 +102,7 @@ Plug 'tpope/vim-sensible'
     "linting
     Plug 'vim-syntastic/syntastic'
         source ~/.vim/settingsForPlugins/syntastic.vim
+    Plug 'gcorne/vim-sass-lint'
     " Plug 'mtscout6/syntastic-local-eslint.vim'
 
     " JAVACSRIPT

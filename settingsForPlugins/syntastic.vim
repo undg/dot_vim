@@ -5,6 +5,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['typescript/eslint']
 let g:syntastic_typescript_tsc_fname = ''
+let g:syntastic_scss_checkers = ['sasslint']
+let g:syntastic_sass_checkers = ['sasslint']
 
 
 " function! StrTrim(txt)

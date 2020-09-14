@@ -3,10 +3,10 @@ filetype plugin on
 filetype indent on
 
 " set filletype for files with ext
-au BufRead,BufNewFile *.scss         set filetype=scss.css
+" au BufRead,BufNewFile *.scss         set filetype=scss.css
 " au BufRead,BufNewFile *.sass         set filetype=sass
 " .ts .js .tsx .jsx .schtml
-au BufRead,BufNewFile *.[jt]sx?.snap set filetype=xml.html
+" au BufRead,BufNewFile *.[jt]sx?.snap set filetype=xml.html
 " au BufRead,BufNewFile *.cshtml       set filetype=xml.html
 " nvim, vim
 au BufRead,BufNewFile *.nvim         set filetype=vim
