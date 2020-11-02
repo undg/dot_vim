@@ -13,7 +13,7 @@ nnoremap <leader>s :mksession!<CR>
 nnoremap <leader>q :quit<cr>
 
 " open file under cursor in new tab
-nnoremap gf <C-W>gf
+" nnoremap gf <C-W>gf
 
 " Copy & paste to system clipboard with ',p' and ',y':
 vmap <Leader>y "+y

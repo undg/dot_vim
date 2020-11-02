@@ -57,7 +57,7 @@ let g:nerdtree_tabs_focus_on_files = 1 " When switching into a tab, make sure th
 
 
 " NERDTree-git-plugin
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
             \ "Modified"  : "✹",
             \ "Staged"    : "✚",
             \ "Untracked" : "✭",
