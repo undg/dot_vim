@@ -26,7 +26,9 @@ map <silent> <leader><F2> :NERDTreeTabsClose<cr>
 map <silent> <F3> :NERDTreeTabsFind<cr>
 
 " let NERDTreeMapOpenSplit      = 's'
-" let NERDTreeMapOpenVSplit     = 'i'
+" let NERDTreeMapOpenVSplit     = 'v'
+" let NERDTreeMapPreviewSplit   = 'ps'
+" let NERDTreeMapPreviewVSplit  = 'pv'
 
 let NERDTreeMapOpenSplit      = '-'
 let NERDTreeMapOpenVSplit     = '\'
