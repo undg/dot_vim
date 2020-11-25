@@ -18,6 +18,7 @@
 
 " <SETTINGS>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
     source ~/.vim/settings/general.vim
     source ~/.vim/settings/colors.vim
     source ~/.vim/func/Tabline.vim

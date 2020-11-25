@@ -62,4 +62,6 @@ set autoread
 
 set nolist
 
+set path+=**
+set wildmenu
 
