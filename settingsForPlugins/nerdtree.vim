@@ -36,6 +36,7 @@ let NERDTreeMapOpenVSplit     = '\'
 let NERDTreeMapPreviewSplit   = 'p-'
 let NERDTreeMapPreviewVSplit  = 'p\'
 
+let NERDTreeWinSize = 44
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI=1
 let NERDTreeShowLineNumbers=0
