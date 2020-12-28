@@ -53,7 +53,7 @@ map <leader>sp :%s/\s\+$//ge<CR>:echomsg "white space cleaing"<cr>
 " get git branch go into insert mode.
 map <leader>gb :0r!git rev-parse --abbrev-ref HEAD<CR>A:<SPACE>
 
-" popup selection (autocompleate)
+" pop-up selection (autocomplete)
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
@@ -66,4 +66,7 @@ nnoremap <CR> @@
 " move selected up/down and reformat
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" Insert line bellow (like enter), but cursor will stay on same line.
+inoremap <C-O> <C-o>O
 
