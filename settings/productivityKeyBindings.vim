@@ -12,15 +12,6 @@ nnoremap <leader>s :mksession!<CR>
 " Type ',q' to quit file
 nnoremap <leader>q :quit<cr>
 
-" open file under cursor in new tab
-" nnoremap gf <C-W>gf
-
-" Copy & paste to system clipboard with ',p' and ',y':
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <C-c> "+p
-nmap <C-C> "+P
-
 " Open vimrc with ',ev'
 nnoremap <leader>ev :tabnew $vimrc<CR>
 nnoremap <leader>ec :source %<CR>:echom 'SOURCE current file'<CR>
@@ -66,3 +57,10 @@ nnoremap <CR> @@
 " Insert line bellow (like enter), but cursor will stay on same line.
 inoremap <C-O> <C-o>O
 
+" Yanking/Pasting
+nnoremap <leader>p "+p
+vnoremap <leader>y "+y
+" Only visual, keep same yank in register
+vnoremap <leader>p "_dP
+" Delete and paste to end. Keep cursor in position.
+nnoremap <leader>D v$hc<c-r>0<esc>gvO<esc>
