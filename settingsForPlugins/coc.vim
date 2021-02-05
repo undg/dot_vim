@@ -17,7 +17,8 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-let g:coc_global_extensions = [ 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets' ]
+let g:coc_global_extensions = [ 'coc-prettier', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-snippets' ]
+" 'coc-prettier',
 
 " https://github.com/neoclide/coc.nvim/issues/2043
 " kill coc -9

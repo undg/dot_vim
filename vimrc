@@ -47,7 +47,7 @@
 " ~/.vim/settingsForPlugins/vim-smooth-scroll.vim
 " ~/.vim/settingsForPlugins/winresizer.vim
 " ~/.vim/settingsForPlugins/vimwiki.vim
-" ~/.vim/settingsForPlugins/coc.nvim
+" ~/.vim/settingsForPlugins/coc.vim
 " ~/.vim/settingsForPlugins/vim-jsdoc.vim
 " ~/.vim/settingsForPlugins/emmet-vim.vim
 " ~/.vim/settingsForPlugins/syntastic.vim

@@ -89,12 +89,20 @@ Plug 'tpope/vim-sensible'
     " Plug 'ycm-core/YouCompleteMe'
     "     source ~/.vim/settingsForPlugins/youcompleteme.vim
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        source ~/.vim/settingsForPlugins/coc.nvim
+        source ~/.vim/settingsForPlugins/coc.vim
+
+    " post install (yarn install | npm install) then load plugin only for editing supported files
+    " Plug 'prettier/vim-prettier', { 'do': 'yarn install',
+    "     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+    " source ~/.vim/settingsForPlugins/vim-prettier.vim
 
     Plug 'sheerun/vim-polyglot'
 
     Plug 'honza/vim-snippets'
-    Plug 'heavenshell/vim-jsdoc'
+    Plug 'heavenshell/vim-jsdoc', { 
+                \ 'for': ['javascript', 'javascript.jsx','typescript'], 
+                \ 'do': 'make install'
+                \}
         source ~/.vim/settingsForPlugins/vim-jsdoc.vim
 
     Plug 'mattn/emmet-vim'

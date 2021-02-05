@@ -31,7 +31,7 @@ function! VimuxSlime()
 endfunction
 
 " If text is selected, save it in the v buffer and send that buffer it to tmux
-vmap <LocalLeader>vs "vy :call VimuxSlime()<CR>
+vmap <Leader>vs "vy :call VimuxSlime()<CR>
 
 " Select current paragraph and send it to tmux
-nmap <LocalLeader>vs vip<LocalLeader>vs<CR>
+nmap <Leader>vs vip<LocalLeader>vs<CR>
