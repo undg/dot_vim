@@ -66,8 +66,8 @@ vnoremap <leader>p "_dP
 nnoremap <leader>D v$hc<c-r>0<esc>gvO<esc>
 
 " print all files from current directory except index.
-command! -bar GetFileList :r!ls %:h
 command! -bar Clear :0,$delete
+command! -bar GetFileList :r!ls %:h
 command! -bar DeleteIndexJs :%s/^index\.\(t\|j\)sx\?$\?\n//g
 command! -bar ExportAllJsSubstitute :%s/^\(.*\)\.\(t\|j\)sx\?$/export \* from '\.\/\1'/g|:sort u
-command! ExportAll Clear|GetFileList|:0delete|DeleteIndexJs|ExportAllJsSubstitute
+command! ExportAll Clear|GetFileList|:0delete|DeleteIndexJs|ExportAllJsSubstitute|:nohlsearch

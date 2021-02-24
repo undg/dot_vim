@@ -55,6 +55,3 @@
 " ~/.vim/settingsForPlugins/rainbow.vim
 " ~/.vim/settingsForPlugins/vim-indent-guides.vim
 " ~/.vim/settingsForPlugins/gruvbox.vim
-"
-
-command GetFileList :r!ls %:h
