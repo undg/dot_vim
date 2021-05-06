@@ -3,9 +3,6 @@ imap jk <esc>
 " Type ',,' to save file (a lot faster than ':w<Enter>'):
 nnoremap <Leader><Leader> :write<cr>
 
-" save and run last vimux
-nmap ;; :w<cr><Leader>vr
-
 " save ',s' and open session with 'vim -S'
 nnoremap <leader>s :mksession!<CR>
 
