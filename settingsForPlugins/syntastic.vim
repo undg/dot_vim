@@ -24,8 +24,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['typescript/eslint']
 let g:syntastic_typescriptreact_checkers = ['typescript/eslint']
 let g:syntastic_typescript_tsc_fname = ''
-let g:syntastic_scss_checkers = ['sasslint']
-let g:syntastic_sass_checkers = ['sasslint']
+let g:syntastic_scss_checkers = ['sass']
+let g:syntastic_sass_checkers = ['sass']
 
 
 " function! StrTrim(txt)
