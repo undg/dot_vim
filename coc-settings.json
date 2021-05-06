@@ -16,5 +16,5 @@
     "prettier.useTabs": false,
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
-    "prettier.trailingComma": "es5"
+    "prettier.trailingComma": "es5",
 }
