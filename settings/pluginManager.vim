@@ -78,9 +78,7 @@ Plug 'tpope/vim-sensible'
     Plug 'djoshea/vim-autoread'
     Plug 'kshenoy/vim-signature' " , {'on': ['SignatureToggleSigns']}
         nnoremap mt :SignatureToggleSigns<cr>
-    Plug 'tpope/vim-surround'
-    " Plug 'aserebryakov/vim-todo-lists'
-        let g:VimTodoListsMoveItems = 0
+    Plug 'jiangmiao/auto-pairs'
     Plug 'simnalamburt/vim-mundo'
 
 
@@ -100,7 +98,7 @@ Plug 'tpope/vim-sensible'
 
     Plug 'honza/vim-snippets'
     Plug 'heavenshell/vim-jsdoc', { 
-                \ 'for': ['javascript', 'javascript.jsx','typescript'], 
+                \ 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'], 
                 \ 'do': 'make install'
                 \}
         source ~/.vim/settingsForPlugins/vim-jsdoc.vim
@@ -138,7 +136,7 @@ Plug 'tpope/vim-sensible'
 
     " c# and razor
     " Plug 'OrangeT/vim-csharp'
-    " Plug 'adamclerk/vim-razor'
+    Plug 'adamclerk/vim-razor'
 
 " THEME
     Plug 'morhetz/gruvbox'
