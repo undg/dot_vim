@@ -10,6 +10,8 @@ endif
 " STEP ABOVE 'NOCOMPATIBLE'
 Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-sensible'
+" If you've ever tried using the . command after a plugin map, you were likely disappointed to discover it only repeated the last native command inside that map, rather than the map as a whole. That disappointment ends today. Repeat.vim remaps . in a way that plugins can tap into it.
+Plug 'tpope/vim-repeat'
 
 " GIT PLUGINS
     Plug 'tpope/vim-fugitive'
@@ -78,6 +80,7 @@ Plug 'tpope/vim-sensible'
     Plug 'djoshea/vim-autoread'
     Plug 'kshenoy/vim-signature' " , {'on': ['SignatureToggleSigns']}
         nnoremap mt :SignatureToggleSigns<cr>
+    Plug 'tpope/vim-surround'
     Plug 'jiangmiao/auto-pairs'
     Plug 'simnalamburt/vim-mundo'
 
