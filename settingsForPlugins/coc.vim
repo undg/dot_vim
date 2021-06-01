@@ -17,7 +17,7 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-let g:coc_global_extensions = [ 'coc-prettier', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-snippets' ]
+let g:coc_global_extensions = [ 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-snippets' ]
 " 'coc-prettier',
 
 " https://github.com/neoclide/coc.nvim/issues/2043
@@ -27,7 +27,7 @@ autocmd VimLeave * if get(g:, 'coc_process_pid', 0) | call system('kill -9 -'.g:
 
 " Setup Prettier command
 " Then you can use :Prettier to format current buffer.
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.

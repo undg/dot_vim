@@ -1,1 +1,1 @@
-nmap <Leader>f <Plug>(Prettier)
+nmap <Leader>f <Plug>(PrettierAsync)

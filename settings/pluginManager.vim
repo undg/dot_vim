@@ -83,7 +83,7 @@ Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-surround'
     Plug 'jiangmiao/auto-pairs'
     Plug 'simnalamburt/vim-mundo'
-
+    Plug 'rhysd/vim-grammarous'
 
 
 " SYNTAX
@@ -93,9 +93,8 @@ Plug 'tpope/vim-repeat'
         source ~/.vim/settingsForPlugins/coc.vim
 
     " post install (yarn install | npm install) then load plugin only for editing supported files
-    " Plug 'prettier/vim-prettier', { 'do': 'yarn install',
-    "     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-    " source ~/.vim/settingsForPlugins/vim-prettier.vim
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+    source ~/.vim/settingsForPlugins/vim-prettier.vim
 
     Plug 'sheerun/vim-polyglot'
 
@@ -108,11 +107,12 @@ Plug 'tpope/vim-repeat'
 
     Plug 'mattn/emmet-vim'
         source ~/.vim/settingsForPlugins/emmet-vim.vim
+    Plug 'niftylettuce/vim-jinja'
+
     "linting
     Plug 'vim-syntastic/syntastic'
         source ~/.vim/settingsForPlugins/syntastic.vim
     Plug 'gcorne/vim-sass-lint'
-    " Plug 'mtscout6/syntastic-local-eslint.vim'
 
     " JAVACSRIPT
     " Plug 'othree/javascript-libraries-syntax.vim'
@@ -139,7 +139,7 @@ Plug 'tpope/vim-repeat'
 
     " c# and razor
     " Plug 'OrangeT/vim-csharp'
-    Plug 'adamclerk/vim-razor'
+    " Plug 'adamclerk/vim-razor'
 
 " THEME
     Plug 'morhetz/gruvbox'

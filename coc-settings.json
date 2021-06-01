@@ -4,17 +4,16 @@
     "diagnostic.virtualTextPrefix": "// _",
     "snippets.autoTrigger": false,
     "javascript.validate.enable": true,
-    "diagnostic.refreshAfterSave": true,
     "diagnostic.level": "hint",
     "suggest.minTriggerInputLength": 2,
     "codeLens.enable": false,
     "coc.preferences.colorSupport": false,
     "javascript.suggestionActions.enabled": true,
-    "prettier.semi": false,
-    "prettier.endOfLine": "lf",
-    "prettier.printWidth": 120,
-    "prettier.useTabs": false,
-    "prettier.singleQuote": true,
-    "prettier.tabWidth": 4,
-    "prettier.trailingComma": "es5",
+    /* "prettier.semi": false, */
+    /* "prettier.endOfLine": "lf", */
+    /* "prettier.printWidth": 120, */
+    /* "prettier.useTabs": false, */
+    /* "prettier.singleQuote": true, */
+    /* "prettier.tabWidth": 4, */
+    /* "prettier.trailingComma": "es5", */
 }
