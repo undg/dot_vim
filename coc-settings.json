@@ -8,6 +8,7 @@
     "suggest.minTriggerInputLength": 2,
     "codeLens.enable": false,
     "coc.preferences.colorSupport": false,
+    "coc.preferences.extensionUpdateCheck": "daily",
     "javascript.suggestionActions.enabled": true,
     /* "prettier.semi": false, */
     /* "prettier.endOfLine": "lf", */

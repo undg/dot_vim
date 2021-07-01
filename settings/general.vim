@@ -19,6 +19,9 @@ au BufRead,BufNewFile *.[jt]sx?.snap setlocal ts=2 sw=2
 " Auto save on focus lost
 " au FocusLost * :wa
 
+" auto :edit<CR>
+set autoread
+
 " Timeout for pressing key sequences
 set notimeout
 set ttimeout
