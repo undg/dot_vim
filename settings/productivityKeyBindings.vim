@@ -66,5 +66,7 @@ nnoremap <leader>D v$hc<c-r>0<esc>gvO<esc>
 command! -bar Clear :0,$delete
 command! -bar GetFileList :r!ls %:h
 command! -bar DeleteIndexJs :%s/^index\.\(t\|j\)sx\?$\?\n//g
-command! -bar ExportAllJsSubstitute :%s/^\(.*\)\.\(t\|j\)sx\?$/export \* from '\.\/\1'/g|:sort u
-command! ExportAll Clear|GetFileList|:0delete|DeleteIndexJs|ExportAllJsSubstitute|:nohlsearch
+command! -bar DeleteCss :%s/^.*\.scss$\n//g
+command! -bar DeleteEmptyLines :%s/^$\n//g
+command! -bar ExportAllJsSubstitute :%s/^\(.*\)$/export \* from '\.\/\1'/g|:%s/\(.js\|.ts\|.jsx\|.tsx\)//g|:sort u
+command! ExportAll Clear|GetFileList|:0delete|DeleteIndexJs|DeleteCss|DeleteEmptyLines|ExportAllJsSubstitute|:nohlsearch
