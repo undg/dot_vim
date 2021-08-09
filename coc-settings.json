@@ -1,15 +1,20 @@
 {
+    "typescript.validate.enable": true,
+    "typescript.suggest.enabled": true,
+    "javascript.validate.enable": true,
+    "javascript.suggestionActions.enabled": true,
+    "javascript.suggest.autoImports": true,
+    "javascript.suggest.paths": true,
+    "javascript.suggest.includeCompletionsForImportStatements": true,
     "coc.preferences.formatOnSaveFiletypes": [],
     "diagnostic.virtualText": true,
     "diagnostic.virtualTextPrefix": "// _",
     "snippets.autoTrigger": false,
-    "javascript.validate.enable": true,
     "diagnostic.level": "hint",
     "suggest.minTriggerInputLength": 2,
     "codeLens.enable": false,
     "coc.preferences.colorSupport": false,
-    "coc.preferences.extensionUpdateCheck": "daily",
-    "javascript.suggestionActions.enabled": true,
+    "coc.preferences.extensionUpdateCheck": "daily"
     /* "prettier.semi": false, */
     /* "prettier.endOfLine": "lf", */
     /* "prettier.printWidth": 120, */
