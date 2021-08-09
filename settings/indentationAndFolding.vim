@@ -1,6 +1,6 @@
 " Use spaces instead of tabs
-set shiftwidth=4
-set tabstop=4
+" set shiftwidth=4
+" set tabstop=4
 
 set autoindent
 set expandtab

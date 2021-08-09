@@ -110,9 +110,9 @@ Plug 'tpope/vim-repeat'
     Plug 'niftylettuce/vim-jinja'
 
     "linting
-    Plug 'vim-syntastic/syntastic'
-        source ~/.vim/settingsForPlugins/syntastic.vim
-    Plug 'gcorne/vim-sass-lint'
+    " Plug 'vim-syntastic/syntastic'
+    "     source ~/.vim/settingsForPlugins/syntastic.vim
+    " Plug 'gcorne/vim-sass-lint'
 
     " JAVACSRIPT
     " Plug 'othree/javascript-libraries-syntax.vim'
@@ -133,6 +133,9 @@ Plug 'tpope/vim-repeat'
     " PARENTHESES IN DIFFERENT COLOR !!
     Plug 'luochen1990/rainbow'
         source ~/.vim/settingsForPlugins/rainbow.vim
+
+    " Auto-detect intentation style
+    Plug 'tpope/vim-sleuth'
     Plug 'nathanaelkane/vim-indent-guides'
         source ~/.vim/settingsForPlugins/vim-indent-guides.vim
     Plug 'zeekay/vim-beautify'
