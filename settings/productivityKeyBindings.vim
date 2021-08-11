@@ -1,4 +1,7 @@
+" jk to go back to normal mode
 imap jk <esc>
+" No fcking way! Nope, I don't want ex mode.
+map Q <Nop>
 
 " Type ',,' to save file (a lot faster than ':w<Enter>'):
 nnoremap <Leader><Leader> :write<cr>
@@ -14,7 +17,7 @@ nnoremap <leader>ev :tabnew $vimrc<CR>
 nnoremap <leader>ec :source %<CR>:echom 'SOURCE current file'<CR>
 nnoremap <leader>es :source $vimrc <CR>:echom 'SOURCE vimrc'<CR>
 " auto reload vimrc
-" bug: it reloadnig only in vimrc, not in source's
+" bug: it reloadnig only in vimrc
 augroup reload_vimrc
     autocmd!
     autocmd BufWritePost $vimrc       source $vimrc | echom "SOURCE ".$vimrc
@@ -26,11 +29,11 @@ nnoremap <silent> <leader>cd :lcd %:p:h<CR>
 
 " Toggle list (display unprintable characters).
 nnoremap <F8> :set list!<CR>
-imap <F8> <c-o>:set list!<CR>
+imap <F8> <esc>:set list!<CR>i
 
 " Toggle spell check
 nnoremap <F7> :setlocal spell! spell?<CR>
-imap <F7> <c-o>:setlocal spell! spell?<CR>
+imap <F7> <esc>:setlocal spell! spell?<CR>i
 
 " remove html tag, keep content
 map <leader>dt "aditcat<C-x><C-r>a<ESC>
@@ -52,7 +55,7 @@ map q: :q
 nnoremap <CR> @@
 
 " Insert line bellow (like enter), but cursor will stay on same line.
-inoremap <C-O> <C-o>O
+inoremap <C-S-O> <C-o>O
 
 " Yanking/Pasting
 nnoremap <leader>p "+p
