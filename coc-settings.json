@@ -1,6 +1,7 @@
 {
     "typescript.validate.enable": true,
     "typescript.suggest.enabled": true,
+    "javascript.suggest.names":  true,
     "javascript.validate.enable": true,
     "javascript.suggestionActions.enabled": true,
     "javascript.suggest.autoImports": true,
@@ -14,6 +15,8 @@
     "suggest.minTriggerInputLength": 2,
     "codeLens.enable": false,
     "coc.preferences.colorSupport": false,
+    "coc.preferences.highlightTimeout": 200,
+    "coc.preferences.semanticTokensHighlights": true,
     "coc.preferences.extensionUpdateCheck": "daily"
     /* "prettier.semi": false, */
     /* "prettier.endOfLine": "lf", */
