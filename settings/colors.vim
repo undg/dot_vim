@@ -6,7 +6,8 @@ set background=dark
 hi Normal               ctermbg=0 guibg=#131313
 hi ColorColumn          ctermbg=0 guibg=#303030
 hi LineNr               ctermbg=0 guibg=#3C3836
-hi CocHighlightText     ctermbg=0 guibg=#224422
+hi CocHighlightText     ctermbg=0 guibg=#4C4C44
+hi Search               ctermbg=0 guibg=0 guifg=0
 
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
 
