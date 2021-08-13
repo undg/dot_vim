@@ -11,18 +11,19 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=4
 
-" Disable highlight till next search ',/'
-map <silent> <leader>/ :noh<cr>
+" Disable highlight till next search
+map <silent> /<esc> :noh<cr>
 
 " useful when studying strange source code.
 source ~/.vim/func/AutoHighlightToggle.vim
 nnoremap <leader>hh :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
-" search visual selected '//'
+" search visual selected
 vnoremap // y/<C-R>"<CR>
+vnoremap ?? y?<C-R>"<CR>
 
-" selecting/searching yanked text 'gp'
-map gp `[v`]
+" selecting/searching yanked text
+" map gp `[v`]
 map g/ /<C-r>"
 
 " Highlight yanked
@@ -45,4 +46,4 @@ vnoremap <leader>S y:grep! "\b<C-R>"\b"<CR>:cw<CR>
 
 
 nnoremap <leader>ss :grep! "\b<C-R><C-W>\b"
-vnoremap <leader>ss y:grep! "\b<C-R>"\b"
+vnoremap <leader>ss y:grep! "\b<C-R>"\tb"

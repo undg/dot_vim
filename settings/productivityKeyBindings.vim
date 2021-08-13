@@ -1,7 +1,10 @@
 " jk to go back to normal mode
 imap jk <esc>
+" Stop that stupid window from popping up:
+map q: :q
 " No fcking way! Nope, I don't want ex mode.
 map Q <Nop>
+
 
 " Type ',,' to save file (a lot faster than ':w<Enter>'):
 nnoremap <Leader><Leader> :write<cr>
@@ -48,9 +51,6 @@ map <leader>gb :0r!git rev-parse --abbrev-ref HEAD<CR>A:<SPACE>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Stop that stupid window from popping up:
-map q: :q
-
 " repeat last macro
 nnoremap <CR> @@
 
@@ -60,10 +60,22 @@ inoremap <C-S-O> <C-o>O
 " Yanking/Pasting
 nnoremap <leader>p "+p
 vnoremap <leader>y "+y
+nnoremap Y y$
 " Only visual, keep same yank in register
 vnoremap <leader>p "_dP
-" Delete and paste to end. Keep cursor in position.
-nnoremap <leader>D v$hc<c-r>0<esc>gvO<esc>
+
+" Keep in center
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+nnoremap <C-n> <cmd>cnext<CR>zzzv
+nnoremap <C-p> <cmd>cprev<CR>zzzv
+
+" Extra break points
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap ! !<C-g>u
+inoremap ? ?<C-g>u
 
 " print all files from current directory except index.
 command! -bar Clear :0,$delete
@@ -73,3 +85,4 @@ command! -bar DeleteCss :%s/^.*\.scss$\n//g
 command! -bar DeleteEmptyLines :%s/^$\n//g
 command! -bar ExportAllJsSubstitute :%s/^\(.*\)$/export \* from '\.\/\1'/g|:%s/\(.js\|.ts\|.jsx\|.tsx\)//g|:sort u
 command! ExportAll Clear|GetFileList|:0delete|DeleteIndexJs|DeleteCss|DeleteEmptyLines|ExportAllJsSubstitute|:nohlsearch
+

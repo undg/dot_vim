@@ -27,9 +27,11 @@ Plug 'tpope/vim-repeat'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'Xuyuanp/nerdtree-git-plugin'
         source ~/.vim/settingsForPlugins/nerdtree.vim
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
-        source ~/.vim/settingsForPlugins/fzf.vim
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+        source ~/.vim/settingsForPlugins/telescope.vim
+
+
     " quickfix window (cw) open in split/tab...
     Plug 'yssl/QFEnter'
     augroup myvimrc
@@ -37,13 +39,8 @@ Plug 'tpope/vim-repeat'
         autocmd QuickFixCmdPost [^l]* cwindow
         autocmd QuickFixCmdPost l*    lwindow
     augroup END
-    " Plug 'rafaqz/ranger.vim'
-    " Plug 'francoiscabrol/ranger.vim'
-    "     source ~/.vim/settingsForPlugins/ranger.vim
 
 " PRODUCTIVITY
-    " Plug 'Shougo/neoyank.vim'
-    " Plug 'vim-scripts/YankRing.vim'
     Plug 'bfredl/nvim-miniyank'
         source ~/.vim/settingsForPlugins/nvim-miniyank.vim
 
@@ -52,7 +49,6 @@ Plug 'tpope/vim-repeat'
     Plug 'lilydjwg/colorizer', {'on': ['ColorHighlight', 'ColorToggle']}
         source ~/.vim/settingsForPlugins/colorizer.vim
     Plug 'blindFS/vim-colorpicker' " , { 'on': 'ColorPicker' }
-    "Plug 'davidhalter/jedi-vim' " python
 
     Plug 'tpope/vim-commentary'
     Plug 'tmhedberg/SimpylFold'
@@ -87,8 +83,6 @@ Plug 'tpope/vim-repeat'
 
 
 " SYNTAX
-    " Plug 'ycm-core/YouCompleteMe'
-    "     source ~/.vim/settingsForPlugins/youcompleteme.vim
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
         source ~/.vim/settingsForPlugins/coc.vim
 
@@ -109,28 +103,11 @@ Plug 'tpope/vim-repeat'
         source ~/.vim/settingsForPlugins/emmet-vim.vim
     Plug 'niftylettuce/vim-jinja'
 
-    "linting
-    " Plug 'vim-syntastic/syntastic'
-    "     source ~/.vim/settingsForPlugins/syntastic.vim
-    " Plug 'gcorne/vim-sass-lint'
-
-    " JAVACSRIPT
-    " Plug 'othree/javascript-libraries-syntax.vim'
-    " Plug 'ianks/vim-tsx'
-    " Plug 'leafgarland/typescript-vim'
-    " Plug 'neoclide/vim-jsx-improve' " have to be before other syntax plugins.
-    " Plug 'jelera/vim-javascript-syntax' " keep it last
-
-
-    " Plug 'ervandew/supertab'
-    " AUTO ADD CLOSING
+    " Auto closing
     Plug 'Raimondi/delimitMate'
         source ~/.vim/settingsForPlugins/delimate.vim
     Plug 'tmhedberg/matchit'
-    " sass and cs3 syntax
-    " Plug 'hail2u/vim-css3-syntax'
-    " Plug 'cakebaker/scss-syntax.vim'
-    " PARENTHESES IN DIFFERENT COLOR !!
+    " Parentheses in different color
     Plug 'luochen1990/rainbow'
         source ~/.vim/settingsForPlugins/rainbow.vim
 
@@ -139,10 +116,6 @@ Plug 'tpope/vim-repeat'
     Plug 'nathanaelkane/vim-indent-guides'
         source ~/.vim/settingsForPlugins/vim-indent-guides.vim
     Plug 'zeekay/vim-beautify'
-
-    " c# and razor
-    " Plug 'OrangeT/vim-csharp'
-    " Plug 'adamclerk/vim-razor'
 
 " THEME
     Plug 'morhetz/gruvbox'
