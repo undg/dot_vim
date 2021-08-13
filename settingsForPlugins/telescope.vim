@@ -6,9 +6,10 @@ if has_key(plugs, "telescope.nvim")
   " nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
   " Using Lua functions
-  nnoremap <leader>. <cmd>lua require('telescope.builtin').find_files()<cr>
-  nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-  nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+  nnoremap <leader>. <cmd>lua require('telescope.builtin').git_files()<cr>
+  nnoremap <leader>m <cmd>lua require('telescope.builtin').find_files()<cr>
+  nnoremap <leader>b <cmd>lua require('telescope.builtin').buffers()<cr>
+  nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
   nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
   nnoremap <leader>fs <cmd>lua require('telescope.builtin').grep_string()<cr>
 
