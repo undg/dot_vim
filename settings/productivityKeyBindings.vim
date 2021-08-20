@@ -37,6 +37,11 @@ imap <F8> <esc>:set list!<CR>i
 " Toggle spell check
 nnoremap <F7> :setlocal spell! spell?<CR>
 imap <F7> <esc>:setlocal spell! spell?<CR>i
+" more consistent spell search/jump. 
+nnoremap z] ]s
+nnoremap ]z ]s
+nnoremap [z [s
+nnoremap z[ [s
 
 " remove html tag, keep content
 map <leader>dt "aditcat<C-x><C-r>a<ESC>
