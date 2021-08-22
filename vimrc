@@ -29,6 +29,7 @@
     source ~/.vim/settings/indentationAndFolding.vim
     source ~/.vim/settings/searchAndHighlighting.vim
     source ~/.vim/settings/productivityKeyBindings.vim
+    source ~/.vim/settings/spelling.vim
     source ~/.vim/settings/customVimrc.vim
 
 
