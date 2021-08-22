@@ -30,7 +30,8 @@ set mouse=vn
 set history=900
 
 set lbr
-set tw=120
+" do not wrap long lines, I'll wrap me myself or prettier will do it.
+set textwidth=0
 
 " Set <so> lines to the cursor and relative numbers
 set so=5
