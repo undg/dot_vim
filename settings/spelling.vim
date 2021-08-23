@@ -23,6 +23,6 @@ endfunction
 nmap zs "zyiw <cmd>echon TransDefine()<cr>
 vmap zs "zy   <cmd>echon TransDefine()<cr>
 
-nmap <silent> zt "zyiw <cmd>call TransTranslate()<cr>
-vmap <silent> zt "zy   <cmd>call TransTranslate()<cr>
+nmap <silent> zx "zyiw <cmd>call TransTranslate()<cr>
+vmap <silent> zx "zy   <cmd>call TransTranslate()<cr>
 
