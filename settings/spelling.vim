@@ -1,7 +1,6 @@
 " Toggle spell check
-nnoremap zz :setlocal spell! spell?<CR>
-nnoremap <F7> zz
-imap <F7> <esc>zzi
+nmap <F7> :setlocal spell! spell?<CR>
+imap <F7> <esc>:setlocal spell! spell?<CR>a
 
 " More consistent spell checking. Keep using same fingers.
 nnoremap z] ]s
@@ -9,9 +8,21 @@ nnoremap ]z ]s
 nnoremap [z [s
 nnoremap z[ [s
 
-nnoremap zs "zyiw <cmd> echon system('trans -no-ansi -speak "' . getreg('z') . '"')<cr>
-vnoremap zs "zy   <cmd> echon system('trans -no-ansi -speak "' . getreg('z') . '"')<cr>
+function! Getreg()
+    return substitute(getreg('z'), '[^a-zA-Z0-9 .,:]', ' ' , 'g')
+endfunction
 
-nnoremap <silent> zt "zyiw <cmd> call system('trans en:pl --play -b "' . getreg('z') . '"')<cr>
-vnoremap <silent> zt "zy   <cmd> call system('trans en:pl --play -b "' . getreg('z') . '"')<cr>
+function! TransDefine()
+    return system('trans -no-ansi -speak -join-sentence ' . Getreg())
+endfunction
+
+function! TransTranslate()
+    return system('trans en:pl --play --brief -join-sentence ' . Getreg())
+endfunction
+
+nmap zs "zyiw <cmd>echon TransDefine()<cr>
+vmap zs "zy   <cmd>echon TransDefine()<cr>
+
+nmap <silent> zt "zyiw <cmd>call TransTranslate()<cr>
+vmap <silent> zt "zy   <cmd>call TransTranslate()<cr>
 
