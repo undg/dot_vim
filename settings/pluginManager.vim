@@ -80,6 +80,7 @@ Plug 'tpope/vim-repeat'
         source ~/.vim/settingsForPlugins/colorizer.vim
     Plug 'blindFS/vim-colorpicker' " , { 'on': 'ColorPicker' }
     Plug 'troydm/zoomwintab.vim'
+        source ~/.vim/settingsForPlugins/zoomwintab.vim
 
 
 " SYNTAX
