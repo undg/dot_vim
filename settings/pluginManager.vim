@@ -44,12 +44,6 @@ Plug 'tpope/vim-repeat'
     Plug 'bfredl/nvim-miniyank'
         source ~/.vim/settingsForPlugins/nvim-miniyank.vim
 
-    Plug 'und3rdg/Tabmerge' " , {'on': ['Tabmerge']} 
-
-    Plug 'lilydjwg/colorizer', {'on': ['ColorHighlight', 'ColorToggle']}
-        source ~/.vim/settingsForPlugins/colorizer.vim
-    Plug 'blindFS/vim-colorpicker' " , { 'on': 'ColorPicker' }
-
     Plug 'tpope/vim-commentary'
     Plug 'tmhedberg/SimpylFold'
         source ~/.vim/settingsForPlugins/simplyfold.vim
@@ -57,20 +51,11 @@ Plug 'tpope/vim-repeat'
         vmap <leader>t :Tabularize/
     Plug 'dhruvasagar/vim-table-mode' " , {'on': ['TableModeToggle', 'TableModeEnable']}
         source ~/.vim/settingsForPlugins/vim-table-mode.vim " <,tb>
-    Plug 'AndrewRadev/linediff.vim' " , {'on': ['Linediff']}
-
-    Plug 'christoomey/vim-tmux-navigator'
-        source ~/.vim/settingsForPlugins/vim-tmux-navigator.vim
-    Plug 'benmills/vimux'
-        source ~/.vim/settingsForPlugins/vimux.vim
-    Plug 'blueyed/vim-diminactive'
 
     Plug 'terryma/vim-expand-region'
         source ~/.vim/settingsForPlugins/vim-expand-region.vim
     Plug 'terryma/vim-smooth-scroll'
         source ~/.vim/settingsForPlugins/vim-smooth-scroll.vim
-    Plug 'simeji/winresizer' " , {'on': ['WinResizerStartResize']}
-        source ~/.vim/settingsForPlugins/winresizer.vim
     Plug 'vimwiki/vimwiki'
         source ~/.vim/settingsForPlugins/vimwiki.vim
     Plug 'djoshea/vim-autoread'
@@ -80,6 +65,21 @@ Plug 'tpope/vim-repeat'
     Plug 'jiangmiao/auto-pairs'
     Plug 'simnalamburt/vim-mundo'
     Plug 'rhysd/vim-grammarous'
+
+" Window, layout look and feel
+    Plug 'simeji/winresizer' " , {'on': ['WinResizerStartResize']}
+        source ~/.vim/settingsForPlugins/winresizer.vim
+    Plug 'christoomey/vim-tmux-navigator'
+        source ~/.vim/settingsForPlugins/vim-tmux-navigator.vim
+    Plug 'benmills/vimux'
+        source ~/.vim/settingsForPlugins/vimux.vim
+    Plug 'blueyed/vim-diminactive'
+    Plug 'AndrewRadev/linediff.vim' " , {'on': ['Linediff']}
+    Plug 'und3rdg/Tabmerge' " , {'on': ['Tabmerge']} 
+    Plug 'lilydjwg/colorizer', {'on': ['ColorHighlight', 'ColorToggle']}
+        source ~/.vim/settingsForPlugins/colorizer.vim
+    Plug 'blindFS/vim-colorpicker' " , { 'on': 'ColorPicker' }
+    Plug 'troydm/zoomwintab.vim'
 
 
 " SYNTAX

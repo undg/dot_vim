@@ -9,9 +9,11 @@ if has_key(plugs, "telescope.nvim")
   nnoremap <leader>. <cmd>lua require('telescope.builtin').git_files()<cr>
   nnoremap <leader>m <cmd>lua require('telescope.builtin').find_files()<cr>
   nnoremap <leader>b <cmd>lua require('telescope.builtin').buffers()<cr>
-  nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
-  nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-  nnoremap <leader>fs <cmd>lua require('telescope.builtin').grep_string()<cr>
+  nnoremap <leader>th <cmd>lua require('telescope.builtin').help_tags()<cr>
+  nnoremap <leader>tg <cmd>lua require('telescope.builtin').live_grep()<cr>
+  nnoremap <leader>ts <cmd>lua require('telescope.builtin').grep_string()<cr>
+  nnoremap <leader>tk <cmd>lua require('telescope.builtin').keymaps()<cr>
 
+  " Replace default keybinding
   nnoremap z= <cmd>lua require('telescope.builtin').spell_suggest()<cr>
 endif

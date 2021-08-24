@@ -1,8 +1,8 @@
 " jk to go back to normal mode
 imap jk <esc>
-" Stop that stupid window from popping up:
+" Stop that stupid window from popping up!
 map q: :q
-" No fcking way! Nope, I don't want ex mode.
+" No fcking way! Nope, I don't want ex mode!
 map Q <Nop>
 
 
@@ -72,6 +72,10 @@ inoremap , ,<C-g>u
 inoremap . .<C-g>u
 inoremap ! !<C-g>u
 inoremap ? ?<C-g>u
+
+" Why it is not default in vim and tmux? 
+nnoremap <c-w>- <cmd>split<cr>
+nnoremap <c-w>\ <cmd>vsplit<cr>
 
 " print all files from current directory except index.
 command! -bar Clear :0,$delete
