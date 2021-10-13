@@ -3,33 +3,33 @@ hi! TAB_BG         guifg=#5f5f5f guibg=#c8c8c8 cterm=none gui=none ctermfg=59 ct
 hi! TAB_ACTIVE_BG  guifg=#5f5f5f guibg=#ffaf00 cterm=none gui=none ctermfg=59 ctermbg=214
 
 function! Tabline()
-    let s = ''
-    let s .= '%#TAB_BAR_BG# '
+    let tabBarStr = ''
+    let tabBarStr .= '%#TAB_BAR_BG# '
     for i in range(tabpagenr('$'))
-        let tab = i + 1
-        let winnr = tabpagewinnr(tab)
-        let buflist = tabpagebuflist(tab)
-        let bufnr = buflist[winnr - 1]
-        let bufname = bufname(bufnr)
-        let bufmodified = getbufvar(bufnr, "&mod")
+        let tabNr = i + 1
+        let winNr = tabpagewinnr(tabNr)
+        let bufList = tabpagebuflist(tabNr)
+        let bufNr = bufList[winNr - 1]
+        let bufName = bufname(bufNr)
+        let bufModified = getbufvar(bufNr, "&mod")
 
-        let s .= '%' . tab . 'T'
-        let s .= (tab == tabpagenr() ? '%#TAB_ACTIVE_BG#' : '%#TAB_BG#')
-        let s .= ' ' . tab .'°'
-        let s .= (bufname != '' ? fnamemodify(bufname, ':t')  : '[No Name]')
-
-        if bufmodified
-            let s .= '[+]'
-        endif
-        let s .= ' '
-        let s .= '%#TAB_BAR_BG# '
+        " initialise tab title background
+        let tabBarStr .= (tabNr == tabpagenr() ? '%#TAB_ACTIVE_BG# ' : '%#TAB_BG# ')
+        " tab number with apostrophe
+        let tabBarStr .= tabNr .'°'
+        " file/buffer name
+        let tabBarStr .= (bufName != '' ? fnamemodify(bufName, ':t')  : '[No Name]') 
+        " saved status
+        let tabBarStr .= bufModified ? '[+]' : ''
+        " restore tab bar background
+        let tabBarStr .= ' %#TAB_BAR_BG# '
     endfor
 
-    let s .= '%#TAB_BAR_BG#'
+    let tabBarStr .= '%#TAB_BAR_BG#'
     if (exists("g:tablineclosebutton"))
-        let s .= '%=%999XX'
+        let tabBarStr .= '%=%999XX'
     endif
-    return s
+    return tabBarStr
 endfunction
 
 set tabline=%!Tabline()

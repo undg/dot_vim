@@ -18,7 +18,6 @@
 
 " <SETTINGS>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
     source ~/.vim/settings/general.vim
     source ~/.vim/settings/colors.vim
     source ~/.vim/func/Tabline.vim
@@ -31,8 +30,6 @@
     source ~/.vim/settings/productivityKeyBindings.vim
     source ~/.vim/settings/spelling.vim
     source ~/.vim/settings/customVimrc.vim
-
-
 
 
 " ~/.vim/settingsForPlugins/

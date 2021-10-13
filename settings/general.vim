@@ -11,6 +11,10 @@ filetype indent on
 " nvim, vim
 au BufRead,BufNewFile *.nvim         set filetype=vim
 
+" tsconfig.json is actually jsonc, help TypeScript set the correct filetype
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
+autocmd BufRead,BufNewFile coc-settings.json set filetype=jsonc
+
 " indentation
 " au BufRead,BufNewFile *.*            set ts=4 sw=4
 " au BufRead,BufNewFile *.s[ac]ss      setlocal ts=2 sw=2
@@ -26,15 +30,16 @@ set autoread
 set notimeout
 set ttimeout
 
-set mouse=vn
+set mouse=n
 set history=900
 
-set lbr
 " do not wrap long lines, I'll wrap me myself or prettier will do it.
 set textwidth=0
-
-" Set <so> lines to the cursor and relative numbers
-set so=5
+" ...and if they need to be long, just display them with line break.  ...and if they need to be long, just display them with line break.  ...and if they need to be long, just display them with line break.  ...and if they need to be long, just display them with line break.  ...and if they need to be long, just display them with line break.  ...and if they need to be long, just display them with line break.
+set linebreak
+set breakindent
+set breakindentopt=min:60,shift:0,sbr
+let &showbreak = '+++ '
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -68,4 +73,6 @@ set nolist
 
 set path+=**
 set wildmenu
+set wildmode=longest:full,full
+set wildoptions=pum,tagfile
 

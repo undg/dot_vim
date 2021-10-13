@@ -17,12 +17,12 @@
     "coc.preferences.colorSupport": false,
     "coc.preferences.highlightTimeout": 200,
     "coc.preferences.semanticTokensHighlights": true,
-    "coc.preferences.extensionUpdateCheck": "daily"
-    /* "prettier.semi": false, */
-    /* "prettier.endOfLine": "lf", */
-    /* "prettier.printWidth": 120, */
-    /* "prettier.useTabs": false, */
-    /* "prettier.singleQuote": true, */
-    /* "prettier.tabWidth": 4, */
-    /* "prettier.trailingComma": "es5", */
+    "coc.preferences.extensionUpdateCheck": "daily",
+    "prettier.semi": false, 
+    "prettier.endOfLine": "lf",
+    "prettier.printWidth": 120,
+    "prettier.useTabs": false,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "es5"
 }

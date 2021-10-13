@@ -1,5 +1,6 @@
 " Run...
 map <Leader>vv :call VimuxRunCommand("./" . bufname("%"))<CR>
+map <Leader>vt :call VimuxRunCommand("tsc " . bufname("%"))<CR>
 map <Leader>vn :call VimuxRunCommand("node " . bufname("%"))<CR>
 map <Leader>vg :call VimuxRunCommand("gulp bar")<CR>
 

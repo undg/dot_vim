@@ -16,9 +16,9 @@ nnoremap <leader>s :mksession!<CR>
 nnoremap <leader>q :quit<cr>
 
 " Open vimrc with ',ev'
-nnoremap <leader>ev :tabnew $vimrc<CR>
-nnoremap <leader>ec :source %<CR>:echom 'SOURCE current file'<CR>
-nnoremap <leader>es :source $vimrc <CR>:echom 'SOURCE vimrc'<CR>
+nnoremap <leader>ev <CMD>tabnew $vimrc \| lcd %:p:h<CR>
+nnoremap <leader>ec <CMD>source %<CR>:echom 'SOURCE current file'<CR>
+nnoremap <leader>es <CMD>source $vimrc <CR>:echom 'SOURCE vimrc'<CR>
 " auto reload vimrc
 " bug: it reloadnig only in vimrc
 augroup reload_vimrc
@@ -51,11 +51,12 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 nnoremap <CR> @@
 
 " Insert line bellow (like enter), but cursor will stay on same line.
-inoremap <C-S-O> <C-o>O
+" inoremap <C-S-O> <C-o>O
 
 " Yanking/Pasting
 nnoremap <leader>p "+p
 vnoremap <leader>y "+y
+" Yank to end of line
 nnoremap Y y$
 " Only visual, keep same yank in register
 vnoremap <leader>p "_dP
