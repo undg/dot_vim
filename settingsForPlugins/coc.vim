@@ -18,6 +18,7 @@ set shortmess+=c
 set signcolumn=yes
 
 let g:coc_global_extensions = [ 
+        \"@yaegassy/coc-ansible",
         \"coc-css",
         \"coc-deno",
         \"coc-docthis",
