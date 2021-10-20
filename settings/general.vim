@@ -74,5 +74,9 @@ set nolist
 set path+=**
 set wildmenu
 set wildmode=longest:full,full
-set wildoptions=pum,tagfile
+if has('nvim')
+    set wildoptions=pum,tagfile
+else
+    set wildoptions=tagfile
+endif
 

@@ -28,8 +28,14 @@ Plug 'tpope/vim-repeat'
     Plug 'Xuyuanp/nerdtree-git-plugin'
         source ~/.vim/settingsForPlugins/nerdtree.vim
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
+    if has('nvim')
+        Plug 'nvim-telescope/telescope.nvim'
         source ~/.vim/settingsForPlugins/telescope.vim
+    else
+        Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+        Plug 'junegunn/fzf.vim'
+        source ~/.vim/settingsForPlugins/fzf.vim
+    endif
 
 
     " quickfix window (cw) open in split/tab...

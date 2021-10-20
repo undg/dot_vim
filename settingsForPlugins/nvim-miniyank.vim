@@ -70,8 +70,5 @@
     let g:miniyank_maxitems = 50
 
 " ## It doesn't persist across reboots!
-
 " Sigh, just why? Okay, do
-
-    let g:miniyank_filename = "/tmp/.miniyank.mpack"
-
+    let g:miniyank_filename = $HOME."/tmp/.miniyank.mpack"
