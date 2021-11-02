@@ -24,5 +24,21 @@
     "prettier.useTabs": false,
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
-    "prettier.trailingComma": "es5"
+    "prettier.trailingComma": "es5",
+
+    "tailwindCSS.jsLanguages": [
+        "javascript",
+        "javascriptreact",
+        "reason",
+        "typescriptreact"
+    ],
+    "tailwindCSS.cssLanguages": [
+        "css",
+        "less",
+        "postcss",
+        "sass",
+        "scss",
+        "stylus",
+        "vue"
+    ],
 }

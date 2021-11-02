@@ -47,8 +47,10 @@ Plug 'tpope/vim-repeat'
     augroup END
 
 " PRODUCTIVITY
+    if has('nvim')
     Plug 'bfredl/nvim-miniyank'
         source ~/.vim/settingsForPlugins/nvim-miniyank.vim
+    endif
 
     Plug 'tpope/vim-commentary'
     Plug 'tmhedberg/SimpylFold'
