@@ -48,8 +48,13 @@ Plug 'tpope/vim-repeat'
 
 " PRODUCTIVITY
     if has('nvim')
-    Plug 'bfredl/nvim-miniyank'
-        source ~/.vim/settingsForPlugins/nvim-miniyank.vim
+        Plug 'bfredl/nvim-miniyank'
+            source ~/.vim/settingsForPlugins/nvim-miniyank.vim
+
+        Plug 'nvim-lua/plenary.nvim' " don't forget to add this one if you don't have it yet!
+        Plug 'nvim-lua/popup.nvim'
+        Plug 'ThePrimeagen/harpoon'
+            source ~/.vim/settingsForPlugins/harpoon.vim
     endif
 
     Plug 'tpope/vim-commentary'
