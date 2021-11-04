@@ -55,7 +55,14 @@ Plug 'tpope/vim-repeat'
         Plug 'nvim-lua/popup.nvim'
         Plug 'ThePrimeagen/harpoon'
             source ~/.vim/settingsForPlugins/harpoon.vim
+
     endif
+
+    " experimentl copilot
+    Plug 'github/copilot.vim'
+        imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+        let g:copilot_no_tab_map = v:true
+        highlight CopilotSuggestion guifg=#555555 ctermfg=8
 
     Plug 'tpope/vim-commentary'
     Plug 'tmhedberg/SimpylFold'
@@ -99,6 +106,8 @@ Plug 'tpope/vim-repeat'
 " SYNTAX
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
         source ~/.vim/settingsForPlugins/coc.vim
+
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
     " post install (yarn install | npm install) then load plugin only for editing supported files
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
