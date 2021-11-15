@@ -1,5 +1,6 @@
 " Treat long lines as break lines (useful when moving around in them) map j gj
 map k gk
+map j gj
 
 "split navigations
 nnoremap <C-h> <C-w><C-h>

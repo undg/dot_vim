@@ -25,16 +25,16 @@ map <silent> <F2> :call ToogleFocusCloseNerdTree()<cr>
 map <silent> <leader><F2> :NERDTreeTabsClose<cr>
 map <silent> <F3> :NERDTreeTabsFind<cr>
 
-" let NERDTreeMapOpenSplit      = 's'
-" let NERDTreeMapOpenVSplit     = 'v'
-" let NERDTreeMapPreviewSplit   = 'ps'
-" let NERDTreeMapPreviewVSplit  = 'pv'
+let NERDTreeMapOpenSplit      = 's'
+let NERDTreeMapOpenVSplit     = 'v'
+let NERDTreeMapPreviewSplit   = 'ps'
+let NERDTreeMapPreviewVSplit  = 'pv'
 
-let NERDTreeMapOpenSplit      = '-'
-let NERDTreeMapOpenVSplit     = '\'
+" let NERDTreeMapOpenSplit      = '-'
+" let NERDTreeMapOpenVSplit     = '\'
 
-let NERDTreeMapPreviewSplit   = 'p-'
-let NERDTreeMapPreviewVSplit  = 'p\'
+" let NERDTreeMapPreviewSplit   = 'p-'
+" let NERDTreeMapPreviewVSplit  = 'p\'
 
 let NERDTreeWinSize = 44
 let NERDTreeShowHidden=0

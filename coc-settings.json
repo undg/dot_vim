@@ -41,4 +41,11 @@
         "stylus",
         "vue"
     ],
+    "Lua.workspace.library": [
+      "${3rd}/skynet/library"
+    ],
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.diagnostics.globals": [
+      "vim"
+    ],
 }

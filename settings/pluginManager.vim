@@ -27,15 +27,14 @@ Plug 'tpope/vim-repeat'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'Xuyuanp/nerdtree-git-plugin'
         source ~/.vim/settingsForPlugins/nerdtree.vim
-    Plug 'nvim-lua/plenary.nvim'
-    if has('nvim')
-        Plug 'nvim-telescope/telescope.nvim'
-        source ~/.vim/settingsForPlugins/telescope.vim
-    else
+    " if has('nvim')
+        " Plug 'nvim-telescope/telescope.nvim'
+        " source ~/.vim/settingsForPlugins/telescope.vim
+    " else
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
         Plug 'junegunn/fzf.vim'
         source ~/.vim/settingsForPlugins/fzf.vim
-    endif
+    " endif
 
 
     " quickfix window (cw) open in split/tab...
@@ -55,7 +54,6 @@ Plug 'tpope/vim-repeat'
         Plug 'nvim-lua/popup.nvim'
         Plug 'ThePrimeagen/harpoon'
             source ~/.vim/settingsForPlugins/harpoon.vim
-
     endif
 
     " experimentl copilot
@@ -74,13 +72,13 @@ Plug 'tpope/vim-repeat'
 
     Plug 'terryma/vim-expand-region'
         source ~/.vim/settingsForPlugins/vim-expand-region.vim
-    Plug 'terryma/vim-smooth-scroll'
-        source ~/.vim/settingsForPlugins/vim-smooth-scroll.vim
+    " Plug 'terryma/vim-smooth-scroll'
+    "     source ~/.vim/settingsForPlugins/vim-smooth-scroll.vim
     Plug 'vimwiki/vimwiki'
         source ~/.vim/settingsForPlugins/vimwiki.vim
     Plug 'djoshea/vim-autoread'
-    Plug 'kshenoy/vim-signature' " , {'on': ['SignatureToggleSigns']}
-        nnoremap mt :SignatureToggleSigns<cr>
+    " Plug 'kshenoy/vim-signature' " , {'on': ['SignatureToggleSigns']}
+        " nnoremap mt :SignatureToggleSigns<cr>
     Plug 'tpope/vim-surround'
     Plug 'jiangmiao/auto-pairs'
     Plug 'simnalamburt/vim-mundo'
